@@ -473,13 +473,13 @@ UIAspectRatioConstraint_14.AspectRatio = 1.567
 
 -- Scripts:
 
-local function TFVDM_fake_script() -- ScreenGui.LocalScript 
+local function QSXV_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local vis = false
 	
 	for i,v in script.Parent:GetDescendants() do
-		if not v:IsA("LocalScript") and not v:IsA("TextLabel") and not v:IsA("UICorner") and not v:IsA("UIGradient") then
+		if not v:IsA("LocalScript") and not v:IsA("TextLabel") and not v:IsA("UICorner") and not v:IsA("UIGradient") and not v:IsA("UIAspectRatioConstraint") then
 			v.Transparency = 1
 		elseif v:IsA("TextLabel") then
 			v.TextTransparency = 1
@@ -525,8 +525,8 @@ local function TFVDM_fake_script() -- ScreenGui.LocalScript
 		end
 	end)
 end
-coroutine.wrap(TFVDM_fake_script)()
-local function RHTLEGI_fake_script() -- Welcome.LocalScript 
+coroutine.wrap(QSXV_fake_script)()
+local function GBNADG_fake_script() -- Welcome.LocalScript 
 	local script = Instance.new('LocalScript', Welcome)
 
 	local TweenService = game:GetService("TweenService")
@@ -556,8 +556,8 @@ local function RHTLEGI_fake_script() -- Welcome.LocalScript
 		end
 	end
 end
-coroutine.wrap(RHTLEGI_fake_script)()
-local function IBQERN_fake_script() -- Switch1.LocalScript 
+coroutine.wrap(GBNADG_fake_script)()
+local function GVPKKZA_fake_script() -- Switch1.LocalScript 
 	local script = Instance.new('LocalScript', Switch1)
 
 	local toggle = script.Parent
@@ -632,8 +632,8 @@ local function IBQERN_fake_script() -- Switch1.LocalScript
 		end
 	end)
 end
-coroutine.wrap(IBQERN_fake_script)()
-local function DIWQSJ_fake_script() -- f.LocalScript 
+coroutine.wrap(GVPKKZA_fake_script)()
+local function SZKB_fake_script() -- f.LocalScript 
 	local script = Instance.new('LocalScript', f)
 
 	local Button = script.Parent
@@ -650,14 +650,14 @@ local function DIWQSJ_fake_script() -- f.LocalScript
 		end
 	end)
 end
-coroutine.wrap(DIWQSJ_fake_script)()
-local function DWNCB_fake_script() -- TextLabel_4.LocalScript 
+coroutine.wrap(SZKB_fake_script)()
+local function LARWBO_fake_script() -- TextLabel_4.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel_4)
 
 	script.Parent.Text = "Welcome ".. game.Players.LocalPlayer.DisplayName .."."
 end
-coroutine.wrap(DWNCB_fake_script)()
-local function VZXISEE_fake_script() -- Top.LocalScript 
+coroutine.wrap(LARWBO_fake_script)()
+local function MHQJWF_fake_script() -- Top.LocalScript 
 	local script = Instance.new('LocalScript', Top)
 
 	local localplayer = game:GetService("Players").LocalPlayer
@@ -757,6 +757,6 @@ local function VZXISEE_fake_script() -- Top.LocalScript
 		end
 	end)
 end
-coroutine.wrap(VZXISEE_fake_script)()
+coroutine.wrap(MHQJWF_fake_script)()
 	
 end
