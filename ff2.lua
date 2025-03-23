@@ -15,8 +15,8 @@ if not loadstring then
 	error("Your executor doesn’t support loadstring!")
 end
 
-local API_URL = "https://api.github.com/repos/mxqontopgames/Nyoma/commits/main"
-local GITHUB_URL_BASE = "https://raw.githubusercontent.com/mxqontopgames/Nyoma/"
+local API_URL = "https://api.github.com/repos/mxqontopgames/lunorhub/commits/main"
+local GITHUB_URL_BASE = "https://raw.githubusercontent.com/mxqontopgames/lunorhub/"
 
 local function fetchKeys()
 	local commitResponse = fetch(API_URL)
