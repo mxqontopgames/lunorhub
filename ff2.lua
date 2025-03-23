@@ -92,10 +92,15 @@ local TextButton = Instance.new("TextButton")
 local UIGradient_2 = Instance.new("UIGradient")
 local UIGradient_3 = Instance.new("UIGradient")
 local UIGradient_4 = Instance.new("UIGradient")
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 local Switch = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 local Switch1 = Instance.new("Frame")
 local UICorner_4 = Instance.new("UICorner")
+local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
 local Tabs = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
 local CatchingTab_2 = Instance.new("Frame")
@@ -105,26 +110,35 @@ local UIGradient_5 = Instance.new("UIGradient")
 local UIGradient_6 = Instance.new("UIGradient")
 local UIGradient_7 = Instance.new("UIGradient")
 local f = Instance.new("TextButton")
+local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
 local PlayerTab = Instance.new("Frame")
 local UICorner_7 = Instance.new("UICorner")
 local TextLabel_2 = Instance.new("TextLabel")
 local UIGradient_8 = Instance.new("UIGradient")
 local UIGradient_9 = Instance.new("UIGradient")
 local UIGradient_10 = Instance.new("UIGradient")
+local UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
 local AutomaticsTab = Instance.new("Frame")
 local UICorner_8 = Instance.new("UICorner")
 local TextLabel_3 = Instance.new("TextLabel")
 local UIGradient_11 = Instance.new("UIGradient")
 local UIGradient_12 = Instance.new("UIGradient")
 local UIGradient_13 = Instance.new("UIGradient")
+local UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint")
 local TextLabel_4 = Instance.new("TextLabel")
 local UIGradient_14 = Instance.new("UIGradient")
+local UIAspectRatioConstraint_10 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_11 = Instance.new("UIAspectRatioConstraint")
 local Top = Instance.new("Frame")
 local UICorner_9 = Instance.new("UICorner")
 local TextLabel_5 = Instance.new("TextLabel")
 local UIGradient_15 = Instance.new("UIGradient")
 local UIGradient_16 = Instance.new("UIGradient")
 local UIGradient_17 = Instance.new("UIGradient")
+local UIAspectRatioConstraint_12 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_13 = Instance.new("UIAspectRatioConstraint")
+local UIAspectRatioConstraint_14 = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
 
@@ -156,8 +170,8 @@ UI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 UI.BackgroundTransparency = 1.000
 UI.BorderColor3 = Color3.fromRGB(0, 0, 0)
 UI.BorderSizePixel = 0
-UI.Position = UDim2.new(0.259878457, 0, 0.25, 0)
-UI.Size = UDim2.new(0.479365617, 0, 0.499388725, 0)
+UI.Position = UDim2.new(0.248797268, 0, 0.233520865, 0)
+UI.Size = UDim2.new(0.501528025, 0, 0.531090677, 0)
 
 CatchingTab.Name = "CatchingTab"
 CatchingTab.Parent = UI
@@ -173,7 +187,7 @@ UICorner.Parent = CatchingTab
 
 Background.Name = "Background"
 Background.Parent = CatchingTab
-Background.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+Background.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 Background.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Background.BorderSizePixel = 0
 Background.Position = UDim2.new(0.3386226, 0, 0.160161376, 0)
@@ -188,8 +202,8 @@ TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.BackgroundTransparency = 1.000
 TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.0390540808, 0, -0.0190578643, 0)
-TextButton.Size = UDim2.new(0.499892205, 0, 1.01905775, 0)
+TextButton.Position = UDim2.new(0.0390541069, 0, 0.103011958, 0)
+TextButton.Size = UDim2.new(0.499892205, 0, 0.815811336, 0)
 TextButton.Font = Enum.Font.FredokaOne
 TextButton.Text = "Magnets"
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -207,29 +221,44 @@ UIGradient_3.Parent = TextButton
 UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
 UIGradient_4.Parent = TextButton
 
+UIAspectRatioConstraint.Parent = TextButton
+UIAspectRatioConstraint.AspectRatio = 4.428
+
 Switch.Name = "Switch"
 Switch.Parent = Background
 Switch.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Switch.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Switch.BorderSizePixel = 0
-Switch.Position = UDim2.new(0.748475194, 0, 0.237906903, 0)
-Switch.Size = UDim2.new(0.21085389, 0, 0.558846653, 0)
+Switch.Position = UDim2.new(0.750888586, 0, 0.237907037, 0)
+Switch.Size = UDim2.new(0.208440527, 0, 0.558846653, 0)
 Switch.ZIndex = 2
 
 UICorner_3.CornerRadius = UDim.new(20, 0)
 UICorner_3.Parent = Switch
+
+UIAspectRatioConstraint_2.Parent = Switch
+UIAspectRatioConstraint_2.AspectRatio = 2.695
 
 Switch1.Name = "Switch1"
 Switch1.Parent = Background
 Switch1.BackgroundColor3 = Color3.fromRGB(29, 63, 255)
 Switch1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Switch1.BorderSizePixel = 0
-Switch1.Position = UDim2.new(0.732853532, 0, 0.193779767, 0)
-Switch1.Size = UDim2.new(0.090663217, 0, 0.602973759, 0)
+Switch1.Position = UDim2.new(0.749747157, 0, 0.193779647, 0)
+Switch1.Size = UDim2.new(0.0834231302, 0, 0.6029737, 0)
 Switch1.ZIndex = 3
 
 UICorner_4.CornerRadius = UDim.new(20, 0)
 UICorner_4.Parent = Switch1
+
+UIAspectRatioConstraint_3.Parent = Switch1
+UIAspectRatioConstraint_3.AspectRatio = 1.000
+
+UIAspectRatioConstraint_4.Parent = Background
+UIAspectRatioConstraint_4.AspectRatio = 7.226
+
+UIAspectRatioConstraint_5.Parent = CatchingTab
+UIAspectRatioConstraint_5.AspectRatio = 1.567
 
 Tabs.Name = "Tabs"
 Tabs.Parent = UI
@@ -293,6 +322,9 @@ f.TextSize = 14.000
 f.TextTransparency = 1.000
 f.TextWrapped = true
 
+UIAspectRatioConstraint_6.Parent = CatchingTab_2
+UIAspectRatioConstraint_6.AspectRatio = 3.897
+
 PlayerTab.Name = "PlayerTab"
 PlayerTab.Parent = Tabs
 PlayerTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
@@ -328,6 +360,9 @@ UIGradient_9.Parent = TextLabel_2
 UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
 UIGradient_10.Parent = TextLabel_2
 
+UIAspectRatioConstraint_7.Parent = PlayerTab
+UIAspectRatioConstraint_7.AspectRatio = 3.897
+
 AutomaticsTab.Name = "AutomaticsTab"
 AutomaticsTab.Parent = Tabs
 AutomaticsTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
@@ -346,7 +381,7 @@ TextLabel_3.BackgroundTransparency = 1.000
 TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_3.BorderSizePixel = 0
 TextLabel_3.Position = UDim2.new(0, 0, 0.0516880676, 0)
-TextLabel_3.Size = UDim2.new(0.999999762, 0, 0.849056304, 0)
+TextLabel_3.Size = UDim2.new(0.999999702, 0, 0.849056244, 0)
 TextLabel_3.Font = Enum.Font.FredokaOne
 TextLabel_3.Text = "Autos"
 TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -362,6 +397,12 @@ UIGradient_12.Parent = TextLabel_3
 
 UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
 UIGradient_13.Parent = TextLabel_3
+
+UIAspectRatioConstraint_8.Parent = TextLabel_3
+UIAspectRatioConstraint_8.AspectRatio = 4.590
+
+UIAspectRatioConstraint_9.Parent = AutomaticsTab
+UIAspectRatioConstraint_9.AspectRatio = 3.897
 
 TextLabel_4.Parent = Tabs
 TextLabel_4.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
@@ -380,13 +421,19 @@ TextLabel_4.TextWrapped = true
 UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
 UIGradient_14.Parent = TextLabel_4
 
+UIAspectRatioConstraint_10.Parent = TextLabel_4
+UIAspectRatioConstraint_10.AspectRatio = 2.145
+
+UIAspectRatioConstraint_11.Parent = Tabs
+UIAspectRatioConstraint_11.AspectRatio = 0.526
+
 Top.Name = "Top"
 Top.Parent = UI
 Top.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
 Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Top.BorderSizePixel = 0
-Top.Position = UDim2.new(2.41878524e-07, 0, 7.67711867e-08, 0)
-Top.Size = UDim2.new(0.999999702, 0, 0.129584551, 0)
+Top.Position = UDim2.new(2.24204854e-07, 0, 3.51235258e-07, 0)
+Top.Size = UDim2.new(0.999999702, 0, 0.128740042, 0)
 Top.ZIndex = 891718247
 
 UICorner_9.CornerRadius = UDim.new(0, 4)
@@ -415,11 +462,22 @@ UIGradient_16.Parent = TextLabel_5
 UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
 UIGradient_17.Parent = TextLabel_5
 
+UIAspectRatioConstraint_12.Parent = TextLabel_5
+UIAspectRatioConstraint_12.AspectRatio = 4.040
+
+UIAspectRatioConstraint_13.Parent = Top
+UIAspectRatioConstraint_13.AspectRatio = 12.169
+
+UIAspectRatioConstraint_14.Parent = UI
+UIAspectRatioConstraint_14.AspectRatio = 1.567
+
 -- Scripts:
 
-local function VYZUYUC_fake_script() -- ScreenGui.LocalScript 
+local function TFVDM_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
+	local vis = false
+	
 	for i,v in script.Parent:GetDescendants() do
 		if not v:IsA("LocalScript") and not v:IsA("TextLabel") and not v:IsA("UICorner") and not v:IsA("UIGradient") then
 			v.Transparency = 1
@@ -427,9 +485,48 @@ local function VYZUYUC_fake_script() -- ScreenGui.LocalScript
 			v.TextTransparency = 1
 		end
 	end
+	
+	task.wait(3)
+	
+	vis = true
+	
+	game:GetService("UserInputService").InputBegan:Connect(function(input,gp)
+		if input.KeyCode == Enum.KeyCode.RightShift and not gp then
+			if not vis then
+				local TweenService = game:GetService("TweenService")
+	
+				local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	
+				for _, v in script.Parent.UI:GetDescendants() do
+					if v:IsA("Frame") and v.Name ~= "UI" then
+						TweenService:Create(v, tweenInfo, {Transparency = 0}):Play()
+					elseif v:IsA("TextLabel") then
+						TweenService:Create(v, tweenInfo, {TextTransparency = 0}):Play()
+					elseif v:IsA("TextButton") and v.Name ~= "f" then
+						TweenService:Create(v, tweenInfo, {TextTransparency = 0}):Play()
+					end
+				end
+			else
+				local TweenService = game:GetService("TweenService")
+	
+				local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	
+				for _, v in script.Parent.UI:GetDescendants() do
+					if v:IsA("Frame") and v.Name ~= "UI" then
+						TweenService:Create(v, tweenInfo, {Transparency = 1}):Play()
+					elseif v:IsA("TextLabel") then
+						TweenService:Create(v, tweenInfo, {TextTransparency = 1}):Play()
+					elseif v:IsA("TextButton") and v.Name ~= "f" then
+						TweenService:Create(v, tweenInfo, {TextTransparency = 1}):Play()
+					end
+				end
+			end
+			vis = not vis
+		end
+	end)
 end
-coroutine.wrap(VYZUYUC_fake_script)()
-local function LFMN_fake_script() -- Welcome.LocalScript 
+coroutine.wrap(TFVDM_fake_script)()
+local function RHTLEGI_fake_script() -- Welcome.LocalScript 
 	local script = Instance.new('LocalScript', Welcome)
 
 	local TweenService = game:GetService("TweenService")
@@ -459,8 +556,8 @@ local function LFMN_fake_script() -- Welcome.LocalScript
 		end
 	end
 end
-coroutine.wrap(LFMN_fake_script)()
-local function YWGHRT_fake_script() -- Switch1.LocalScript 
+coroutine.wrap(RHTLEGI_fake_script)()
+local function IBQERN_fake_script() -- Switch1.LocalScript 
 	local script = Instance.new('LocalScript', Switch1)
 
 	local toggle = script.Parent
@@ -509,28 +606,34 @@ local function YWGHRT_fake_script() -- Switch1.LocalScript
 	end)
 	
 	mouse.Button1Down:Connect(function()
-		local player = game.Players.LocalPlayer
+		local player = game:GetService("Players").LocalPlayer
 		if player and player.Character and toggled then
-			local rightHand = player.Character:FindFirstChild("CatchRight")
-			local leftHand = player.Character:FindFirstChild("CatchLeft")
+			local mind = math.huge
+			local cf = nil
 	
-			if rightHand and leftHand then
-				for _, part in ipairs(workspace:GetDescendants()) do
-					if part:IsA("BasePart") and part ~= rightHand and part ~= leftHand then
-						print(part)
-						firetouchinterest(leftHand, part, 0)
-						firetouchinterest(rightHand, part, 0)
-						task.wait(0.1)
-						firetouchinterest(leftHand, part, 1)
-						firetouchinterest(rightHand, part, 1)
+			for i,v in workspace:GetChildren() do
+				if v.Name == "Football" and v:IsA('BasePart') then
+					if (v.Position - game:GetService("Players").LocalPlayer.Character.Head.Position).Magnitude < mind then
+						mind = (v.Position - game:GetService("Players").LocalPlayer.Character.Head.Position).Magnitude
+						cf = v
 					end
 				end
+			end
+	
+			local st = tick()
+	
+			while tick() - st < 3 and cf do
+				firetouchinterest(game:GetService("Players").LocalPlayer.Character.CatchRight,cf,0)
+				firetouchinterest(game:GetService("Players").LocalPlayer.Character.CatchLeft,cf,0)
+				task.wait(0.1)
+				firetouchinterest(game:GetService("Players").LocalPlayer.Character.CatchRight,cf,1)
+				firetouchinterest(game:GetService("Players").LocalPlayer.Character.CatchLeft,cf,1)
 			end
 		end
 	end)
 end
-coroutine.wrap(YWGHRT_fake_script)()
-local function VARHYL_fake_script() -- f.LocalScript 
+coroutine.wrap(IBQERN_fake_script)()
+local function DIWQSJ_fake_script() -- f.LocalScript 
 	local script = Instance.new('LocalScript', f)
 
 	local Button = script.Parent
@@ -547,14 +650,14 @@ local function VARHYL_fake_script() -- f.LocalScript
 		end
 	end)
 end
-coroutine.wrap(VARHYL_fake_script)()
-local function BEMOAC_fake_script() -- TextLabel_4.LocalScript 
+coroutine.wrap(DIWQSJ_fake_script)()
+local function DWNCB_fake_script() -- TextLabel_4.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel_4)
 
 	script.Parent.Text = "Welcome ".. game.Players.LocalPlayer.DisplayName .."."
 end
-coroutine.wrap(BEMOAC_fake_script)()
-local function QXOLAI_fake_script() -- Top.LocalScript 
+coroutine.wrap(DWNCB_fake_script)()
+local function VZXISEE_fake_script() -- Top.LocalScript 
 	local script = Instance.new('LocalScript', Top)
 
 	local localplayer = game:GetService("Players").LocalPlayer
@@ -654,6 +757,6 @@ local function QXOLAI_fake_script() -- Top.LocalScript
 		end
 	end)
 end
-coroutine.wrap(QXOLAI_fake_script)()
-
+coroutine.wrap(VZXISEE_fake_script)()
+	
 end
