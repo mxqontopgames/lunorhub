@@ -29,7 +29,7 @@ local function fetchKeys()
 		warn("Failed to parse commit hash!")
 		return nil
 	end
-	local response = fetch(GITHUB_URL_BASE .. commitHash .. "/fpskeys.lua")
+	local response = fetch(GITHUB_URL_BASE .. commitHash .. "/ff2keys.lua")
 	if not response then
 		warn("Failed to fetch keys!")
 		return nil
