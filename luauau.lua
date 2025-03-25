@@ -1,4 +1,123 @@
--- Gui to Lua
+-- Ensure the LPH-related functions are properly defined if not already
+if not LPHOBFUSCATED then
+    getfenv().LPH_NO_VIRTUALIZE = function(func) return func end
+    getfenv().LPH_JIT_MAX = function(func) return func end
+end
+
+LPH_JIT_MAX(function()
+    local Hooks, Targets, Whitelisted = {}, {}, {
+        {655, 775, 724, 633, 891},
+        {760, 760, 771, 665, 898},
+        {660, 759, 751, 863, 771},
+    }
+
+    -- Function to compare the equality of two tables
+    local function AreTablesEqual(a, b)
+        if #a ~= #b then return false end
+        for i, v in ipairs(a) do
+            if b[i] ~= v then return false end
+        end
+        return true
+    end
+
+    LPH_NO_VIRTUALIZE(function()
+        -- Scan garbage collected objects for target functions and metatables
+        for _, obj in ipairs(getgc(true)) do
+            if type(obj) == "function" then
+                local scriptSource, lineNumber = debug.info(obj, "sl")
+                if scriptSource:find("PlayerModule.LocalScript") and table.find({42, 51, 61}, lineNumber) then
+                    table.insert(Targets, obj)
+                end
+            elseif type(obj) == "table" and rawlen(obj) == 19 and getrawmetatable(obj) then
+                Targets.call = rawget(getrawmetatable(obj), "__call")
+            end
+        end
+    end)()
+
+    -- Validate that all necessary targets are found
+    if not (Targets[1] and Targets[2] and Targets[3] and Targets.call) then
+        warn("Bypass initialization failed")
+        return
+    else
+        print("BYPASSWORKEDPRO")
+local fetch
+if httpget then
+	fetch = httpget
+elseif http and http.get then
+	fetch = http.get
+elseif http and http.request then
+	fetch = function(url) return http.request({Url = url, Method = "GET"}).Body end
+elseif game and game.HttpGet then
+	fetch = function(url) return game:HttpGet(url, true) end
+else
+	error("Your executor doesn’t support any known HTTP functions!")
+end
+
+if not loadstring then
+	error("Your executor doesn’t support loadstring!")
+end
+
+local API_URL = "https://api.github.com/repos/mxqontopgames/lunorhub/commits/main"
+local GITHUB_URL_BASE = "https://raw.githubusercontent.com/mxqontopgames/lunorhub/"
+
+local function fetchKeys()
+	local commitResponse = fetch(API_URL)
+	if not commitResponse then
+		warn("Failed to fetch commit!")
+		return nil
+	end
+	local commitHash = commitResponse:match('"sha":"(.-)"')
+	if not commitHash then
+		warn("Failed to parse commit hash!")
+		return nil
+	end
+	local response = fetch(GITHUB_URL_BASE .. commitHash .. "/ff2keys.lua")
+	if not response then
+		warn("Failed to fetch keys!")
+		return nil
+	end
+	local keys = loadstring(response)()
+	if not keys or type(keys) ~= "table" then
+		warn("Failed to extract table from response!")
+		return nil
+	end
+	return keys
+end
+
+local function validatePlayerKey()
+	local player = game.Players.LocalPlayer
+	if not player then
+		warn("LocalPlayer not found!")
+		return false
+	end
+
+	local keys = fetchKeys()
+	if not keys then
+		warn("Key fetch failed for " .. player.Name)
+		return false
+	end
+
+	if not next(keys) then
+		warn("Please generate a key from the Discord with your UserId (" .. player.UserId .. "!)")
+		return false
+	end
+
+	for key, data in pairs(keys) do
+		if data.userId == player.UserId and data.active == true then
+			return true
+		end
+	end
+	warn("Please generate a key from the Discord with your UserId (" .. player.UserId .. "!)")
+	return false
+end
+
+local hasValidKey = validatePlayerKey()
+if not hasValidKey then
+	game.Players.LocalPlayer:Kick("Please do not execute without a key.")
+end
+
+if hasValidKey then
+
 -- Version: 3.2
 
 -- Instances:
@@ -2427,3 +2546,36 @@ local function NUNO_fake_script() -- Switch1_5.LocalScript
 	end)
 end
 coroutine.wrap(NUNO_fake_script)()
+
+			end				
+
+end
+
+    local scriptIdentifier = debug.info(Targets[1], "s")
+
+    -- Hook the debug.info function to return the spoofed script path
+    Hooks.debug_info = hookfunction(debug.info, LPH_NO_VIRTUALIZE(function(...)
+        local args = {...}
+        if not checkcaller() and AreTablesEqual(args, {2, "s"}) then
+            return scriptIdentifier
+        end
+        return Hooks.debug_info(...)
+    end))
+
+    -- Neutralize the identified functions by hooking them to empty functions
+    for i = 1, 3 do
+        hookfunction(Targets[i], LPH_NO_VIRTUALIZE(function() end))
+    end
+
+    -- Hook the call metamethod to allow only whitelisted calls
+    Hooks.call = hookfunction(Targets.call, LPH_NO_VIRTUALIZE(function(self, ...)
+        local callArgs = {...}
+        for _, whitelist in ipairs(Whitelisted) do
+            if AreTablesEqual(whitelist, callArgs) then
+                return Hooks.call(self, ...)
+            end
+        end
+    end))
+
+    task.wait(3)
+end)()
