@@ -117,1325 +117,1444 @@ if not hasValidKey then
 end
 
 if hasValidKey then
-
+-- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
 
- ScreenGui = Instance.new("ScreenGui")
-local Welcome = Instance.new("TextLabel")
- UIGradient = Instance.new("UIGradient")
- UI = Instance.new("Frame")
- CatchingTab = Instance.new("Frame")
- UICorner = Instance.new("UICorner")
- Background = Instance.new("Frame")
- UICorner_2 = Instance.new("UICorner")
- Switch = Instance.new("Frame")
- UICorner_3 = Instance.new("UICorner")
- UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
- Switch1 = Instance.new("Frame")
- UICorner_4 = Instance.new("UICorner")
- TextLabel = Instance.new("TextLabel")
- UIGradient_2 = Instance.new("UIGradient")
- UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
- UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
- Slider1Background = Instance.new("Frame")
- UICorner_5 = Instance.new("UICorner")
- Slider = Instance.new("Frame")
- UICorner_6 = Instance.new("UICorner")
- Amount = Instance.new("TextLabel")
- SliderThing = Instance.new("Frame")
- UICorner_7 = Instance.new("UICorner")
- UIGradient_3 = Instance.new("UIGradient")
- UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
- TextButton = Instance.new("TextButton")
- UIGradient_4 = Instance.new("UIGradient")
- UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
- Tabs = Instance.new("Frame")
- UICorner_8 = Instance.new("UICorner")
- CatchingTab_2 = Instance.new("Frame")
- UICorner_9 = Instance.new("UICorner")
- TextLabel_2 = Instance.new("TextLabel")
- UIGradient_5 = Instance.new("UIGradient")
- f = Instance.new("TextButton")
- UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
- PlayerTab = Instance.new("Frame")
- UICorner_10 = Instance.new("UICorner")
- TextLabel_3 = Instance.new("TextLabel")
- UIGradient_6 = Instance.new("UIGradient")
- f_2 = Instance.new("TextButton")
- UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
- AutomaticsTab = Instance.new("Frame")
- UICorner_11 = Instance.new("UICorner")
- TextLabel_4 = Instance.new("TextLabel")
- UIGradient_7 = Instance.new("UIGradient")
- UIGradient_8 = Instance.new("UIGradient")
- UIGradient_9 = Instance.new("UIGradient")
- UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint")
- UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint")
- TextLabel_5 = Instance.new("TextLabel")
- UIGradient_10 = Instance.new("UIGradient")
- UIAspectRatioConstraint_10 = Instance.new("UIAspectRatioConstraint")
- UIAspectRatioConstraint_11 = Instance.new("UIAspectRatioConstraint")
- VisualsTab = Instance.new("Frame")
- UICorner_12 = Instance.new("UICorner")
- TextLabel_6 = Instance.new("TextLabel")
- UIGradient_11 = Instance.new("UIGradient")
- UIAspectRatioConstraint_12 = Instance.new("UIAspectRatioConstraint")
- f_3 = Instance.new("TextButton")
- UIAspectRatioConstraint_13 = Instance.new("UIAspectRatioConstraint")
- Top = Instance.new("Frame")
- UICorner_13 = Instance.new("UICorner")
- TextLabel_7 = Instance.new("TextLabel")
- UIGradient_12 = Instance.new("UIGradient")
- UIAspectRatioConstraint_14 = Instance.new("UIAspectRatioConstraint")
- UIAspectRatioConstraint_15 = Instance.new("UIAspectRatioConstraint")
- Label = Instance.new("ImageLabel")
- UIAspectRatioConstraint_16 = Instance.new("UIAspectRatioConstraint")
- UIAspectRatioConstraint_17 = Instance.new("UIAspectRatioConstraint")
- PlayerTab_2 = Instance.new("Frame")
- UICorner_14 = Instance.new("UICorner")
- UIAspectRatioConstraint_18 = Instance.new("UIAspectRatioConstraint")
- JpAeBackground = Instance.new("Frame")
- UICorner_15 = Instance.new("UICorner")
- Switch_2 = Instance.new("Frame")
- UICorner_16 = Instance.new("UICorner")
- UIAspectRatioConstraint_19 = Instance.new("UIAspectRatioConstraint")
- Switch1_2 = Instance.new("Frame")
- UICorner_17 = Instance.new("UICorner")
- UIAspectRatioConstraint_20 = Instance.new("UIAspectRatioConstraint")
- TextLabel_8 = Instance.new("TextLabel")
- UIGradient_13 = Instance.new("UIGradient")
- UIGradient_14 = Instance.new("UIGradient")
- UIGradient_15 = Instance.new("UIGradient")
- UIAspectRatioConstraint_21 = Instance.new("UIAspectRatioConstraint")
- Slider1Background_2 = Instance.new("Frame")
- UICorner_18 = Instance.new("UICorner")
- TextButton_2 = Instance.new("TextButton")
- UIGradient_16 = Instance.new("UIGradient")
- UIGradient_17 = Instance.new("UIGradient")
- UIGradient_18 = Instance.new("UIGradient")
- UIAspectRatioConstraint_22 = Instance.new("UIAspectRatioConstraint")
- Slider_2 = Instance.new("Frame")
- UICorner_19 = Instance.new("UICorner")
- Amount_2 = Instance.new("TextLabel")
- SliderThing_2 = Instance.new("Frame")
- UICorner_20 = Instance.new("UICorner")
- UIGradient_19 = Instance.new("UIGradient")
- UIAspectRatioConstraint_23 = Instance.new("UIAspectRatioConstraint")
- TextLabel_9 = Instance.new("TextLabel")
- UIGradient_20 = Instance.new("UIGradient")
- UIGradient_21 = Instance.new("UIGradient")
- UIGradient_22 = Instance.new("UIGradient")
- UIAspectRatioConstraint_24 = Instance.new("UIAspectRatioConstraint")
- DynamicAeBackground = Instance.new("Frame")
- UICorner_21 = Instance.new("UICorner")
- Switch_3 = Instance.new("Frame")
- UICorner_22 = Instance.new("UICorner")
- UIAspectRatioConstraint_25 = Instance.new("UIAspectRatioConstraint")
- Switch1_3 = Instance.new("Frame")
- UICorner_23 = Instance.new("UICorner")
- UIAspectRatioConstraint_26 = Instance.new("UIAspectRatioConstraint")
- TextLabel_10 = Instance.new("TextLabel")
- UIGradient_23 = Instance.new("UIGradient")
- UIGradient_24 = Instance.new("UIGradient")
- UIGradient_25 = Instance.new("UIGradient")
- UIAspectRatioConstraint_27 = Instance.new("UIAspectRatioConstraint")
- Divider = Instance.new("Frame")
- UIAspectRatioConstraint_28 = Instance.new("UIAspectRatioConstraint")
- QuickTP = Instance.new("Frame")
- UICorner_24 = Instance.new("UICorner")
- Switch_4 = Instance.new("Frame")
- UICorner_25 = Instance.new("UICorner")
- UIAspectRatioConstraint_29 = Instance.new("UIAspectRatioConstraint")
- Switch1_4 = Instance.new("Frame")
- UICorner_26 = Instance.new("UICorner")
- UIAspectRatioConstraint_30 = Instance.new("UIAspectRatioConstraint")
- TextLabel_11 = Instance.new("TextLabel")
- UIGradient_26 = Instance.new("UIGradient")
- UIGradient_27 = Instance.new("UIGradient")
- UIGradient_28 = Instance.new("UIGradient")
- UIAspectRatioConstraint_31 = Instance.new("UIAspectRatioConstraint")
- QuickTPKeybind = Instance.new("Frame")
- UICorner_27 = Instance.new("UICorner")
- TextLabel_12 = Instance.new("TextLabel")
- UIGradient_29 = Instance.new("UIGradient")
- UIGradient_30 = Instance.new("UIGradient")
- UIGradient_31 = Instance.new("UIGradient")
- UIAspectRatioConstraint_32 = Instance.new("UIAspectRatioConstraint")
- TextButton_3 = Instance.new("TextButton")
- UICorner_28 = Instance.new("UICorner")
- Putinkey = Instance.new("TextLabel")
- UIGradient_32 = Instance.new("UIGradient")
- UIGradient_33 = Instance.new("UIGradient")
- UIGradient_34 = Instance.new("UIGradient")
- UIAspectRatioConstraint_33 = Instance.new("UIAspectRatioConstraint")
- Walkspeed = Instance.new("Frame")
- UICorner_29 = Instance.new("UICorner")
- TextButton_4 = Instance.new("TextButton")
- UIGradient_35 = Instance.new("UIGradient")
- UIGradient_36 = Instance.new("UIGradient")
- UIGradient_37 = Instance.new("UIGradient")
- UIAspectRatioConstraint_34 = Instance.new("UIAspectRatioConstraint")
- Slider_3 = Instance.new("Frame")
- UICorner_30 = Instance.new("UICorner")
- Amount_3 = Instance.new("TextLabel")
- SliderThing_3 = Instance.new("Frame")
- UICorner_31 = Instance.new("UICorner")
- UIGradient_38 = Instance.new("UIGradient")
- UIAspectRatioConstraint_35 = Instance.new("UIAspectRatioConstraint")
- TextLabel_13 = Instance.new("TextLabel")
- UIGradient_39 = Instance.new("UIGradient")
- UIGradient_40 = Instance.new("UIGradient")
- UIGradient_41 = Instance.new("UIGradient")
- UIAspectRatioConstraint_36 = Instance.new("UIAspectRatioConstraint")
- VisualsTab_2 = Instance.new("Frame")
- UICorner_32 = Instance.new("UICorner")
- UIAspectRatioConstraint_37 = Instance.new("UIAspectRatioConstraint")
- Background_2 = Instance.new("Frame")
- UICorner_33 = Instance.new("UICorner")
- Switch_5 = Instance.new("Frame")
- UICorner_34 = Instance.new("UICorner")
- UIAspectRatioConstraint_38 = Instance.new("UIAspectRatioConstraint")
- Switch1_5 = Instance.new("Frame")
- UICorner_35 = Instance.new("UICorner")
- TextLabel_14 = Instance.new("TextLabel")
-local UIGradient_42 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_39 = Instance.new("UIAspectRatioConstraint")
+local ScreenGui = {
+	ScreenGui = Instance.new("ScreenGui"),
+	Welcome = Instance.new("TextLabel"),
+	UIGradient = Instance.new("UIGradient"),
+	UI = Instance.new("Frame"),
+	CatchingTab = Instance.new("Frame"),
+	UICorner = Instance.new("UICorner"),
+	Background = Instance.new("Frame"),
+	UICorner_2 = Instance.new("UICorner"),
+	Switch = Instance.new("Frame"),
+	UICorner_3 = Instance.new("UICorner"),
+	UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint"),
+	Switch1 = Instance.new("Frame"),
+	UICorner_4 = Instance.new("UICorner"),
+	TextLabel = Instance.new("TextLabel"),
+	UIGradient_2 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint"),
+	Slider1Background = Instance.new("Frame"),
+	UICorner_5 = Instance.new("UICorner"),
+	Slider = Instance.new("Frame"),
+	UICorner_6 = Instance.new("UICorner"),
+	Amount = Instance.new("TextLabel"),
+	SliderThing = Instance.new("Frame"),
+	UICorner_7 = Instance.new("UICorner"),
+	UIGradient_3 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint"),
+	TextButton = Instance.new("TextButton"),
+	UIGradient_4 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint"),
+	Tabs = Instance.new("Frame"),
+	UICorner_8 = Instance.new("UICorner"),
+	CatchingTab_2 = Instance.new("Frame"),
+	UICorner_9 = Instance.new("UICorner"),
+	TextLabel_2 = Instance.new("TextLabel"),
+	UIGradient_5 = Instance.new("UIGradient"),
+	f = Instance.new("TextButton"),
+	UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint"),
+	PlayerTab = Instance.new("Frame"),
+	UICorner_10 = Instance.new("UICorner"),
+	TextLabel_3 = Instance.new("TextLabel"),
+	UIGradient_6 = Instance.new("UIGradient"),
+	f_2 = Instance.new("TextButton"),
+	UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint"),
+	AutomaticsTab = Instance.new("Frame"),
+	UICorner_11 = Instance.new("UICorner"),
+	TextLabel_4 = Instance.new("TextLabel"),
+	UIGradient_7 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint"),
+	f_3 = Instance.new("TextButton"),
+	UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint"),
+	TextLabel_5 = Instance.new("TextLabel"),
+	UIGradient_8 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_10 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_11 = Instance.new("UIAspectRatioConstraint"),
+	VisualsTab = Instance.new("Frame"),
+	UICorner_12 = Instance.new("UICorner"),
+	TextLabel_6 = Instance.new("TextLabel"),
+	UIGradient_9 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_12 = Instance.new("UIAspectRatioConstraint"),
+	f_4 = Instance.new("TextButton"),
+	UIAspectRatioConstraint_13 = Instance.new("UIAspectRatioConstraint"),
+	Top = Instance.new("Frame"),
+	UICorner_13 = Instance.new("UICorner"),
+	TextLabel_7 = Instance.new("TextLabel"),
+	UIGradient_10 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_14 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_15 = Instance.new("UIAspectRatioConstraint"),
+	Label = Instance.new("ImageLabel"),
+	UIAspectRatioConstraint_16 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_17 = Instance.new("UIAspectRatioConstraint"),
+	PlayerTab_2 = Instance.new("Frame"),
+	UICorner_14 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_18 = Instance.new("UIAspectRatioConstraint"),
+	JpAeBackground = Instance.new("Frame"),
+	UICorner_15 = Instance.new("UICorner"),
+	Switch_2 = Instance.new("Frame"),
+	UICorner_16 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_19 = Instance.new("UIAspectRatioConstraint"),
+	Switch1_2 = Instance.new("Frame"),
+	UICorner_17 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_20 = Instance.new("UIAspectRatioConstraint"),
+	TextLabel_8 = Instance.new("TextLabel"),
+	UIGradient_11 = Instance.new("UIGradient"),
+	UIGradient_12 = Instance.new("UIGradient"),
+	UIGradient_13 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_21 = Instance.new("UIAspectRatioConstraint"),
+	Slider1Background_2 = Instance.new("Frame"),
+	UICorner_18 = Instance.new("UICorner"),
+	TextButton_2 = Instance.new("TextButton"),
+	UIGradient_14 = Instance.new("UIGradient"),
+	UIGradient_15 = Instance.new("UIGradient"),
+	UIGradient_16 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_22 = Instance.new("UIAspectRatioConstraint"),
+	Slider_2 = Instance.new("Frame"),
+	UICorner_19 = Instance.new("UICorner"),
+	Amount_2 = Instance.new("TextLabel"),
+	SliderThing_2 = Instance.new("Frame"),
+	UICorner_20 = Instance.new("UICorner"),
+	UIGradient_17 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_23 = Instance.new("UIAspectRatioConstraint"),
+	TextLabel_9 = Instance.new("TextLabel"),
+	UIGradient_18 = Instance.new("UIGradient"),
+	UIGradient_19 = Instance.new("UIGradient"),
+	UIGradient_20 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_24 = Instance.new("UIAspectRatioConstraint"),
+	DynamicAeBackground = Instance.new("Frame"),
+	UICorner_21 = Instance.new("UICorner"),
+	Switch_3 = Instance.new("Frame"),
+	UICorner_22 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_25 = Instance.new("UIAspectRatioConstraint"),
+	Switch1_3 = Instance.new("Frame"),
+	UICorner_23 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_26 = Instance.new("UIAspectRatioConstraint"),
+	TextLabel_10 = Instance.new("TextLabel"),
+	UIGradient_21 = Instance.new("UIGradient"),
+	UIGradient_22 = Instance.new("UIGradient"),
+	UIGradient_23 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_27 = Instance.new("UIAspectRatioConstraint"),
+	Divider = Instance.new("Frame"),
+	UIAspectRatioConstraint_28 = Instance.new("UIAspectRatioConstraint"),
+	QuickTP = Instance.new("Frame"),
+	UICorner_24 = Instance.new("UICorner"),
+	Switch_4 = Instance.new("Frame"),
+	UICorner_25 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_29 = Instance.new("UIAspectRatioConstraint"),
+	Switch1_4 = Instance.new("Frame"),
+	UICorner_26 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_30 = Instance.new("UIAspectRatioConstraint"),
+	TextLabel_11 = Instance.new("TextLabel"),
+	UIGradient_24 = Instance.new("UIGradient"),
+	UIGradient_25 = Instance.new("UIGradient"),
+	UIGradient_26 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_31 = Instance.new("UIAspectRatioConstraint"),
+	QuickTPKeybind = Instance.new("Frame"),
+	UICorner_27 = Instance.new("UICorner"),
+	TextLabel_12 = Instance.new("TextLabel"),
+	UIGradient_27 = Instance.new("UIGradient"),
+	UIGradient_28 = Instance.new("UIGradient"),
+	UIGradient_29 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_32 = Instance.new("UIAspectRatioConstraint"),
+	TextButton_3 = Instance.new("TextButton"),
+	UICorner_28 = Instance.new("UICorner"),
+	Putinkey = Instance.new("TextLabel"),
+	UIGradient_30 = Instance.new("UIGradient"),
+	UIGradient_31 = Instance.new("UIGradient"),
+	UIGradient_32 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_33 = Instance.new("UIAspectRatioConstraint"),
+	Walkspeed = Instance.new("Frame"),
+	UICorner_29 = Instance.new("UICorner"),
+	TextButton_4 = Instance.new("TextButton"),
+	UIGradient_33 = Instance.new("UIGradient"),
+	UIGradient_34 = Instance.new("UIGradient"),
+	UIGradient_35 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_34 = Instance.new("UIAspectRatioConstraint"),
+	Slider_3 = Instance.new("Frame"),
+	UICorner_30 = Instance.new("UICorner"),
+	Amount_3 = Instance.new("TextLabel"),
+	SliderThing_3 = Instance.new("Frame"),
+	UICorner_31 = Instance.new("UICorner"),
+	UIGradient_36 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_35 = Instance.new("UIAspectRatioConstraint"),
+	TextLabel_13 = Instance.new("TextLabel"),
+	UIGradient_37 = Instance.new("UIGradient"),
+	UIGradient_38 = Instance.new("UIGradient"),
+	UIGradient_39 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_36 = Instance.new("UIAspectRatioConstraint"),
+	VisualsTab_2 = Instance.new("Frame"),
+	UICorner_32 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_37 = Instance.new("UIAspectRatioConstraint"),
+	Background_2 = Instance.new("Frame"),
+	UICorner_33 = Instance.new("UICorner"),
+	Switch_5 = Instance.new("Frame"),
+	UICorner_34 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_38 = Instance.new("UIAspectRatioConstraint"),
+	Switch1_5 = Instance.new("Frame"),
+	UICorner_35 = Instance.new("UICorner"),
+	TextLabel_14 = Instance.new("TextLabel"),
+	UIGradient_40 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_39 = Instance.new("UIAspectRatioConstraint"),
+	AutomaticsTab_2 = Instance.new("Frame"),
+	UICorner_36 = Instance.new("UICorner"),
+	Background_3 = Instance.new("Frame"),
+	UICorner_37 = Instance.new("UICorner"),
+	Switch_6 = Instance.new("Frame"),
+	UICorner_38 = Instance.new("UICorner"),
+	UIAspectRatioConstraint_40 = Instance.new("UIAspectRatioConstraint"),
+	Switch1_6 = Instance.new("Frame"),
+	UICorner_39 = Instance.new("UICorner"),
+	TextLabel_15 = Instance.new("TextLabel"),
+	UIGradient_41 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_41 = Instance.new("UIAspectRatioConstraint"),
+	UIAspectRatioConstraint_42 = Instance.new("UIAspectRatioConstraint"),
+	Slider1Background_3 = Instance.new("Frame"),
+	UICorner_40 = Instance.new("UICorner"),
+	Slider_4 = Instance.new("Frame"),
+	UICorner_41 = Instance.new("UICorner"),
+	Amount_4 = Instance.new("TextLabel"),
+	SliderThing_4 = Instance.new("Frame"),
+	UICorner_42 = Instance.new("UICorner"),
+	UIGradient_42 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_43 = Instance.new("UIAspectRatioConstraint"),
+	TextButton_5 = Instance.new("TextButton"),
+	UIGradient_43 = Instance.new("UIGradient"),
+	UIAspectRatioConstraint_44 = Instance.new("UIAspectRatioConstraint"),
+}
 
 --Properties:
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.ResetOnSpawn = false
-
-Welcome.Name = "Welcome"
-Welcome.Parent = ScreenGui
-Welcome.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
-Welcome.BackgroundTransparency = 1.000
-Welcome.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Welcome.BorderSizePixel = 0
-Welcome.Position = UDim2.new(0.228072792, 0, 0.431837827, 0)
-Welcome.Size = UDim2.new(0.542345762, 0, 0.133126125, 0)
-Welcome.ZIndex = 784121829
-Welcome.Font = Enum.Font.FredokaOne
-Welcome.TextColor3 = Color3.fromRGB(255, 255, 255)
-Welcome.TextScaled = true
-Welcome.TextSize = 14.000
-Welcome.TextTransparency = 1.000
-Welcome.TextWrapped = true
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient.Parent = Welcome
-
-UI.Name = "UI"
-UI.Parent = ScreenGui
-UI.AnchorPoint = Vector2.new(0.5, 0)
-UI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-UI.BackgroundTransparency = 1.000
-UI.BorderColor3 = Color3.fromRGB(0, 0, 0)
-UI.BorderSizePixel = 0
-UI.Position = UDim2.new(0.520841718, 0, 0.266503662, 0)
-UI.Size = UDim2.new(0.480953246, 0, 0.519834936, 0)
-
-CatchingTab.Name = "CatchingTab"
-CatchingTab.Parent = UI
-CatchingTab.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-CatchingTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CatchingTab.BorderSizePixel = 0
-CatchingTab.Position = UDim2.new(-4.484097e-08, 0, 7.02470544e-08, 0)
-CatchingTab.Size = UDim2.new(0.999999702, 0, 1.00000012, 0)
-CatchingTab.ZIndex = 19
-
-UICorner.CornerRadius = UDim.new(0, 12)
-UICorner.Parent = CatchingTab
-
-Background.Name = "Background"
-Background.Parent = CatchingTab
-Background.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Background.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Background.BorderSizePixel = 0
-Background.Position = UDim2.new(0.3386226, 0, 0.167370707, 0)
-Background.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-Background.ZIndex = 2
-
-UICorner_2.CornerRadius = UDim.new(0, 4)
-UICorner_2.Parent = Background
-
-Switch.Name = "Switch"
-Switch.Parent = Background
-Switch.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
-Switch.BackgroundTransparency = 0.800
-Switch.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch.BorderSizePixel = 0
-Switch.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
-Switch.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
-Switch.ZIndex = 2
-
-UICorner_3.CornerRadius = UDim.new(20, 0)
-UICorner_3.Parent = Switch
-
-UIAspectRatioConstraint.Parent = Switch
-UIAspectRatioConstraint.AspectRatio = 2.695
-
-Switch1.Name = "Switch1"
-Switch1.Parent = Background
-Switch1.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
-Switch1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch1.BorderSizePixel = 0
-Switch1.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
-Switch1.Size = UDim2.new(0.0623449758, 0, 0.515391111, 0)
-Switch1.ZIndex = 3
-
-UICorner_4.CornerRadius = UDim.new(20, 0)
-UICorner_4.Parent = Switch1
-
-TextLabel.Parent = Background
-TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.BackgroundTransparency = 1.000
-TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(-0.102759957, 0, 0.190000206, 0)
-TextLabel.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
-TextLabel.Font = Enum.Font.FredokaOne
-TextLabel.Text = "Magnets"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
-
-UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_2.Parent = TextLabel
-
-UIAspectRatioConstraint_2.Parent = TextLabel
-UIAspectRatioConstraint_2.AspectRatio = 7.126
-
-UIAspectRatioConstraint_3.Parent = CatchingTab
-UIAspectRatioConstraint_3.AspectRatio = 1.567
-
-Slider1Background.Name = "Slider1Background"
-Slider1Background.Parent = CatchingTab
-Slider1Background.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Slider1Background.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Slider1Background.BorderSizePixel = 0
-Slider1Background.Position = UDim2.new(0.3386226, 0, 0.289369017, 0)
-Slider1Background.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-Slider1Background.ZIndex = 2
-
-UICorner_5.CornerRadius = UDim.new(0, 4)
-UICorner_5.Parent = Slider1Background
-
-Slider.Name = "Slider"
-Slider.Parent = Slider1Background
-Slider.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
-Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Slider.BorderSizePixel = 0
-Slider.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
-Slider.Size = UDim2.new(0.526183188, 0, 0.266752243, 0)
-
-UICorner_6.CornerRadius = UDim.new(10, 0)
-UICorner_6.Parent = Slider
-
-Amount.Name = "Amount"
-Amount.Parent = Slider
-Amount.BackgroundColor3 = Color3.fromRGB(127, 0, 255)
-Amount.BackgroundTransparency = 1.000
-Amount.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Amount.BorderSizePixel = 0
-Amount.Position = UDim2.new(1.03362942, 0, -0.3846156, 0)
-Amount.Size = UDim2.new(0.0987537429, 0, 1.69230783, 0)
-Amount.Font = Enum.Font.FredokaOne
-Amount.Text = "1"
-Amount.TextColor3 = Color3.fromRGB(127, 0, 255)
-Amount.TextScaled = true
-Amount.TextSize = 14.000
-Amount.TextWrapped = true
-
-SliderThing.Name = "SliderThing"
-SliderThing.Parent = Slider1Background
-SliderThing.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SliderThing.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SliderThing.BorderSizePixel = 0
-SliderThing.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
-SliderThing.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
-
-UICorner_7.CornerRadius = UDim.new(10, 0)
-UICorner_7.Parent = SliderThing
-
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_3.Parent = SliderThing
-
-UIAspectRatioConstraint_4.Parent = SliderThing
-UIAspectRatioConstraint_4.AspectRatio = 1.077
-
-TextButton.Parent = Slider1Background
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.BackgroundTransparency = 1.000
-TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.BorderSizePixel = 0
-TextButton.Position = UDim2.new(0.0153534925, 0, 0.186521262, 0)
-TextButton.Size = UDim2.new(0.320536941, 0, 0.773980498, 0)
-TextButton.Font = Enum.Font.FredokaOne
-TextButton.Text = "Mags Range"
-TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-TextButton.TextXAlignment = Enum.TextXAlignment.Left
-
-UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_4.Parent = TextButton
-
-UIAspectRatioConstraint_5.Parent = TextButton
-UIAspectRatioConstraint_5.AspectRatio = 4.428
-
-Tabs.Name = "Tabs"
-Tabs.Parent = UI
-Tabs.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-Tabs.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Tabs.BorderSizePixel = 0
-Tabs.Position = UDim2.new(0.0230841599, 0, 0.146699294, 0)
-Tabs.Size = UDim2.new(0.273622662, 0, 0.814180732, 0)
-Tabs.ZIndex = 1398047
-
-UICorner_8.CornerRadius = UDim.new(0, 4)
-UICorner_8.Parent = Tabs
-
-CatchingTab_2.Name = "CatchingTab"
-CatchingTab_2.Parent = Tabs
-CatchingTab_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-CatchingTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CatchingTab_2.BorderSizePixel = 0
-CatchingTab_2.Position = UDim2.new(0.0404332392, 0, 0.0189995263, 0)
-CatchingTab_2.Size = UDim2.new(0.91500473, 0, 0.12362013, 0)
-CatchingTab_2.ZIndex = 0
-
-UICorner_9.CornerRadius = UDim.new(0, 4)
-UICorner_9.Parent = CatchingTab_2
-
-TextLabel_2.Parent = CatchingTab_2
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
-TextLabel_2.BackgroundTransparency = 1.000
-TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0, 0, 0.0516880676, 0)
-TextLabel_2.Size = UDim2.new(0.999999762, 0, 0.849056304, 0)
-TextLabel_2.Font = Enum.Font.FredokaOne
-TextLabel_2.Text = "Catching"
-TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
-
-UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_5.Parent = TextLabel_2
-
-f.Name = "f"
-f.Parent = TextLabel_2
-f.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-f.BackgroundTransparency = 0.999
-f.BorderColor3 = Color3.fromRGB(0, 0, 0)
-f.BorderSizePixel = 0
-f.Size = UDim2.new(1, 0, 1, 0)
-f.Font = Enum.Font.FredokaOne
-f.Text = "Catching"
-f.TextColor3 = Color3.fromRGB(255, 255, 255)
-f.TextScaled = true
-f.TextSize = 14.000
-f.TextTransparency = 1.000
-f.TextWrapped = true
-
-UIAspectRatioConstraint_6.Parent = CatchingTab_2
-UIAspectRatioConstraint_6.AspectRatio = 3.897
-
-PlayerTab.Name = "PlayerTab"
-PlayerTab.Parent = Tabs
-PlayerTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-PlayerTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-PlayerTab.BorderSizePixel = 0
-PlayerTab.Position = UDim2.new(0.0404333025, 0, 0.163171247, 0)
-PlayerTab.Size = UDim2.new(0.91500473, 0, 0.12362013, 0)
-PlayerTab.ZIndex = 0
-
-UICorner_10.CornerRadius = UDim.new(0, 4)
-UICorner_10.Parent = PlayerTab
-
-TextLabel_3.Parent = PlayerTab
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
-TextLabel_3.BackgroundTransparency = 1.000
-TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Position = UDim2.new(0, 0, 0.0516880676, 0)
-TextLabel_3.Size = UDim2.new(0.999999762, 0, 0.849056304, 0)
-TextLabel_3.Font = Enum.Font.FredokaOne
-TextLabel_3.Text = "Player"
-TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_6.Parent = TextLabel_3
-
-f_2.Name = "f"
-f_2.Parent = TextLabel_3
-f_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-f_2.BackgroundTransparency = 0.999
-f_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-f_2.BorderSizePixel = 0
-f_2.Size = UDim2.new(1, 0, 1, 0)
-f_2.Font = Enum.Font.FredokaOne
-f_2.Text = "Catching"
-f_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-f_2.TextScaled = true
-f_2.TextSize = 14.000
-f_2.TextTransparency = 1.000
-f_2.TextWrapped = true
-
-UIAspectRatioConstraint_7.Parent = PlayerTab
-UIAspectRatioConstraint_7.AspectRatio = 3.897
-
-AutomaticsTab.Name = "AutomaticsTab"
-AutomaticsTab.Parent = Tabs
-AutomaticsTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-AutomaticsTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AutomaticsTab.BorderSizePixel = 0
-AutomaticsTab.Position = UDim2.new(0.0404333025, 0, 0.307342976, 0)
-AutomaticsTab.Size = UDim2.new(0.91500473, 0, 0.12362013, 0)
-AutomaticsTab.ZIndex = 0
-
-UICorner_11.CornerRadius = UDim.new(0, 4)
-UICorner_11.Parent = AutomaticsTab
-
-TextLabel_4.Parent = AutomaticsTab
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
-TextLabel_4.BackgroundTransparency = 1.000
-TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.BorderSizePixel = 0
-TextLabel_4.Position = UDim2.new(0, 0, 0.0516880676, 0)
-TextLabel_4.Size = UDim2.new(0.999999702, 0, 0.849056244, 0)
-TextLabel_4.Font = Enum.Font.FredokaOne
-TextLabel_4.Text = "Autos"
-TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_4.TextScaled = true
-TextLabel_4.TextSize = 14.000
-TextLabel_4.TextWrapped = true
-
-UIGradient_7.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_7.Parent = TextLabel_4
-
-UIGradient_8.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_8.Parent = TextLabel_4
-
-UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_9.Parent = TextLabel_4
-
-UIAspectRatioConstraint_8.Parent = TextLabel_4
-UIAspectRatioConstraint_8.AspectRatio = 4.590
-
-UIAspectRatioConstraint_9.Parent = AutomaticsTab
-UIAspectRatioConstraint_9.AspectRatio = 3.897
-
-TextLabel_5.Parent = Tabs
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
-TextLabel_5.BackgroundTransparency = 1.000
-TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.BorderSizePixel = 0
-TextLabel_5.Position = UDim2.new(0.0234109145, 0, 0.864349425, 0)
-TextLabel_5.Size = UDim2.new(0.944368541, 0, 0.135602579, 0)
-TextLabel_5.ZIndex = 784121829
-TextLabel_5.Font = Enum.Font.FredokaOne
-TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_5.TextScaled = true
-TextLabel_5.TextSize = 14.000
-TextLabel_5.TextWrapped = true
-
-UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_10.Parent = TextLabel_5
-
-UIAspectRatioConstraint_10.Parent = TextLabel_5
-UIAspectRatioConstraint_10.AspectRatio = 3.667
-
-UIAspectRatioConstraint_11.Parent = Tabs
-UIAspectRatioConstraint_11.AspectRatio = 0.526
-
-VisualsTab.Name = "VisualsTab"
-VisualsTab.Parent = Tabs
-VisualsTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-VisualsTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
-VisualsTab.BorderSizePixel = 0
-VisualsTab.Position = UDim2.new(0.040433161, 0, 0.455816448, 0)
-VisualsTab.Size = UDim2.new(0.91500473, 0, 0.12362013, 0)
-VisualsTab.ZIndex = 0
-
-UICorner_12.CornerRadius = UDim.new(0, 4)
-UICorner_12.Parent = VisualsTab
-
-TextLabel_6.Parent = VisualsTab
-TextLabel_6.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
-TextLabel_6.BackgroundTransparency = 1.000
-TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_6.BorderSizePixel = 0
-TextLabel_6.Position = UDim2.new(0, 0, 0.0516880676, 0)
-TextLabel_6.Size = UDim2.new(0.999999702, 0, 0.849056244, 0)
-TextLabel_6.Font = Enum.Font.FredokaOne
-TextLabel_6.Text = "Visuals"
-TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_6.TextScaled = true
-TextLabel_6.TextSize = 14.000
-TextLabel_6.TextWrapped = true
-
-UIGradient_11.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_11.Parent = TextLabel_6
-
-UIAspectRatioConstraint_12.Parent = TextLabel_6
-UIAspectRatioConstraint_12.AspectRatio = 4.590
-
-f_3.Name = "f"
-f_3.Parent = TextLabel_6
-f_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-f_3.BackgroundTransparency = 0.999
-f_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-f_3.BorderSizePixel = 0
-f_3.Size = UDim2.new(1, 0, 1, 0)
-f_3.Font = Enum.Font.FredokaOne
-f_3.Text = "Catching"
-f_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-f_3.TextScaled = true
-f_3.TextSize = 14.000
-f_3.TextTransparency = 1.000
-f_3.TextWrapped = true
-
-UIAspectRatioConstraint_13.Parent = VisualsTab
-UIAspectRatioConstraint_13.AspectRatio = 3.897
-
-Top.Name = "Top"
-Top.Parent = UI
-Top.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
-Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Top.BorderSizePixel = 0
-Top.Position = UDim2.new(2.24204854e-07, 0, 3.51235258e-07, 0)
-Top.Size = UDim2.new(0.999999702, 0, 0.128740042, 0)
-Top.ZIndex = 1398047
-
-UICorner_13.CornerRadius = UDim.new(0, 4)
-UICorner_13.Parent = Top
-
-TextLabel_7.Parent = Top
-TextLabel_7.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
-TextLabel_7.BackgroundTransparency = 1.000
-TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_7.BorderSizePixel = 0
-TextLabel_7.Position = UDim2.new(-1.34522949e-07, 0, 0.115182973, 0)
-TextLabel_7.Size = UDim2.new(0.246454805, 0, 1.10871196, 0)
-TextLabel_7.Font = Enum.Font.FredokaOne
-TextLabel_7.Text = "Lunor"
-TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_7.TextScaled = true
-TextLabel_7.TextSize = 14.000
-TextLabel_7.TextWrapped = true
-
-UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_12.Parent = TextLabel_7
-
-UIAspectRatioConstraint_14.Parent = TextLabel_7
-UIAspectRatioConstraint_14.AspectRatio = 4.040
-
-UIAspectRatioConstraint_15.Parent = Top
-UIAspectRatioConstraint_15.AspectRatio = 12.169
-
-Label.Name = "Label"
-Label.Parent = Top
-Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Label.BackgroundTransparency = 1.000
-Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Label.BorderSizePixel = 0
-Label.Position = UDim2.new(0.921281993, 0, 0.0518035479, 0)
-Label.Size = UDim2.new(0.0787179098, 0, 0.874838829, 0)
-Label.Image = "rbxassetid://94594775251689"
-
-UIAspectRatioConstraint_16.Parent = Label
-UIAspectRatioConstraint_16.AspectRatio = 1.095
-
-UIAspectRatioConstraint_17.Parent = UI
-UIAspectRatioConstraint_17.AspectRatio = 1.567
-
-PlayerTab_2.Name = "PlayerTab"
-PlayerTab_2.Parent = UI
-PlayerTab_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-PlayerTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-PlayerTab_2.BorderSizePixel = 0
-PlayerTab_2.Position = UDim2.new(-4.484097e-08, 0, 7.02470544e-08, 0)
-PlayerTab_2.Size = UDim2.new(0.999999702, 0, 1.00000012, 0)
-PlayerTab_2.ZIndex = 19
-
-UICorner_14.CornerRadius = UDim.new(0, 12)
-UICorner_14.Parent = PlayerTab_2
-
-UIAspectRatioConstraint_18.Parent = PlayerTab_2
-UIAspectRatioConstraint_18.AspectRatio = 1.567
-
-JpAeBackground.Name = "JpAeBackground"
-JpAeBackground.Parent = PlayerTab_2
-JpAeBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-JpAeBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
-JpAeBackground.BorderSizePixel = 0
-JpAeBackground.Position = UDim2.new(0.3386226, 0, 0.156037912, 0)
-JpAeBackground.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-JpAeBackground.ZIndex = 2
-
-UICorner_15.CornerRadius = UDim.new(0, 4)
-UICorner_15.Parent = JpAeBackground
-
-Switch_2.Name = "Switch"
-Switch_2.Parent = JpAeBackground
-Switch_2.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
-Switch_2.BackgroundTransparency = 0.800
-Switch_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch_2.BorderSizePixel = 0
-Switch_2.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
-Switch_2.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
-Switch_2.ZIndex = 2
-
-UICorner_16.CornerRadius = UDim.new(20, 0)
-UICorner_16.Parent = Switch_2
-
-UIAspectRatioConstraint_19.Parent = Switch_2
-UIAspectRatioConstraint_19.AspectRatio = 2.695
-
-Switch1_2.Name = "Switch1"
-Switch1_2.Parent = JpAeBackground
-Switch1_2.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
-Switch1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch1_2.BorderSizePixel = 0
-Switch1_2.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
-Switch1_2.Size = UDim2.new(0.0623448342, 0, 0.515391111, 0)
-Switch1_2.ZIndex = 3
-
-UICorner_17.CornerRadius = UDim.new(20, 0)
-UICorner_17.Parent = Switch1_2
-
-UIAspectRatioConstraint_20.Parent = Switch1_2
-UIAspectRatioConstraint_20.AspectRatio = 1.029
-
-TextLabel_8.Parent = JpAeBackground
-TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_8.BackgroundTransparency = 1.000
-TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_8.BorderSizePixel = 0
-TextLabel_8.Position = UDim2.new(-0.00176383986, 0, 0.189999953, 0)
-TextLabel_8.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
-TextLabel_8.Font = Enum.Font.FredokaOne
-TextLabel_8.Text = "Angle enhancer"
-TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_8.TextScaled = true
-TextLabel_8.TextSize = 14.000
-TextLabel_8.TextWrapped = true
-
-UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_13.Parent = TextLabel_8
-
-UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_14.Parent = TextLabel_8
-
-UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_15.Parent = TextLabel_8
-
-UIAspectRatioConstraint_21.Parent = TextLabel_8
-UIAspectRatioConstraint_21.AspectRatio = 7.126
-
-Slider1Background_2.Name = "Slider1Background"
-Slider1Background_2.Parent = PlayerTab_2
-Slider1Background_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Slider1Background_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Slider1Background_2.BorderSizePixel = 0
-Slider1Background_2.Position = UDim2.new(0.337416887, 0, 0.278036118, 0)
-Slider1Background_2.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-Slider1Background_2.ZIndex = 2
-
-UICorner_18.CornerRadius = UDim.new(0, 4)
-UICorner_18.Parent = Slider1Background_2
-
-TextButton_2.Parent = Slider1Background_2
-TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.BackgroundTransparency = 1.000
-TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.BorderSizePixel = 0
-TextButton_2.Position = UDim2.new(0.0153534925, 0, 0.186521262, 0)
-TextButton_2.Size = UDim2.new(0.320536941, 0, 0.773980498, 0)
-TextButton_2.Font = Enum.Font.FredokaOne
-TextButton_2.Text = ""
-TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
-TextButton_2.TextXAlignment = Enum.TextXAlignment.Left
-
-UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_16.Parent = TextButton_2
-
-UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_17.Parent = TextButton_2
-
-UIGradient_18.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_18.Parent = TextButton_2
-
-UIAspectRatioConstraint_22.Parent = TextButton_2
-UIAspectRatioConstraint_22.AspectRatio = 4.428
-
-Slider_2.Name = "Slider"
-Slider_2.Parent = Slider1Background_2
-Slider_2.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
-Slider_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Slider_2.BorderSizePixel = 0
-Slider_2.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
-Slider_2.Size = UDim2.new(0.526183188, 0, 0.266752243, 0)
-
-UICorner_19.CornerRadius = UDim.new(10, 0)
-UICorner_19.Parent = Slider_2
-
-Amount_2.Name = "Amount"
-Amount_2.Parent = Slider_2
-Amount_2.BackgroundColor3 = Color3.fromRGB(127, 0, 255)
-Amount_2.BackgroundTransparency = 1.000
-Amount_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Amount_2.BorderSizePixel = 0
-Amount_2.Position = UDim2.new(1.03362942, 0, -0.3846156, 0)
-Amount_2.Size = UDim2.new(0.0987537429, 0, 1.69230783, 0)
-Amount_2.Font = Enum.Font.FredokaOne
-Amount_2.Text = "50"
-Amount_2.TextColor3 = Color3.fromRGB(127, 0, 255)
-Amount_2.TextScaled = true
-Amount_2.TextSize = 14.000
-Amount_2.TextWrapped = true
-
-SliderThing_2.Name = "SliderThing"
-SliderThing_2.Parent = Slider1Background_2
-SliderThing_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SliderThing_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SliderThing_2.BorderSizePixel = 0
-SliderThing_2.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
-SliderThing_2.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
-
-UICorner_20.CornerRadius = UDim.new(10, 0)
-UICorner_20.Parent = SliderThing_2
-
-UIGradient_19.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_19.Parent = SliderThing_2
-
-UIAspectRatioConstraint_23.Parent = SliderThing_2
-UIAspectRatioConstraint_23.AspectRatio = 1.077
-
-TextLabel_9.Parent = Slider1Background_2
-TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_9.BackgroundTransparency = 1.000
-TextLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_9.BorderSizePixel = 0
-TextLabel_9.Position = UDim2.new(-0.0433501154, 0, 0.240512311, 0)
-TextLabel_9.Size = UDim2.new(0.442484707, 0, 0.552336633, 0)
-TextLabel_9.Font = Enum.Font.FredokaOne
-TextLabel_9.Text = "Angle height"
-TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_9.TextScaled = true
-TextLabel_9.TextSize = 14.000
-TextLabel_9.TextWrapped = true
-
-UIGradient_20.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_20.Parent = TextLabel_9
-
-UIGradient_21.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_21.Parent = TextLabel_9
-
-UIGradient_22.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_22.Parent = TextLabel_9
-
-UIAspectRatioConstraint_24.Parent = TextLabel_9
-UIAspectRatioConstraint_24.AspectRatio = 7.126
-
-DynamicAeBackground.Name = "DynamicAeBackground"
-DynamicAeBackground.Parent = PlayerTab_2
-DynamicAeBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-DynamicAeBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
-DynamicAeBackground.BorderSizePixel = 0
-DynamicAeBackground.Position = UDim2.new(0.337416977, 0, 0.442551225, 0)
-DynamicAeBackground.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-DynamicAeBackground.ZIndex = 2
-
-UICorner_21.CornerRadius = UDim.new(0, 4)
-UICorner_21.Parent = DynamicAeBackground
-
-Switch_3.Name = "Switch"
-Switch_3.Parent = DynamicAeBackground
-Switch_3.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
-Switch_3.BackgroundTransparency = 0.800
-Switch_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch_3.BorderSizePixel = 0
-Switch_3.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
-Switch_3.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
-Switch_3.ZIndex = 2
-
-UICorner_22.CornerRadius = UDim.new(20, 0)
-UICorner_22.Parent = Switch_3
-
-UIAspectRatioConstraint_25.Parent = Switch_3
-UIAspectRatioConstraint_25.AspectRatio = 2.695
-
-Switch1_3.Name = "Switch1"
-Switch1_3.Parent = DynamicAeBackground
-Switch1_3.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
-Switch1_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch1_3.BorderSizePixel = 0
-Switch1_3.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
-Switch1_3.Size = UDim2.new(0.0623448342, 0, 0.515391111, 0)
-Switch1_3.ZIndex = 3
-
-UICorner_23.CornerRadius = UDim.new(20, 0)
-UICorner_23.Parent = Switch1_3
-
-UIAspectRatioConstraint_26.Parent = Switch1_3
-UIAspectRatioConstraint_26.AspectRatio = 1.029
-
-TextLabel_10.Parent = DynamicAeBackground
-TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_10.BackgroundTransparency = 1.000
-TextLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_10.BorderSizePixel = 0
-TextLabel_10.Position = UDim2.new(0.0160588827, 0, 0.0889752209, 0)
-TextLabel_10.Size = UDim2.new(0.672795475, 0, 1.2213819, 0)
-TextLabel_10.Font = Enum.Font.FredokaOne
-TextLabel_10.Text = "Angle enhancer (dynamic)"
-TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_10.TextScaled = true
-TextLabel_10.TextSize = 14.000
-TextLabel_10.TextWrapped = true
-
-UIGradient_23.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_23.Parent = TextLabel_10
-
-UIGradient_24.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_24.Parent = TextLabel_10
-
-UIGradient_25.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_25.Parent = TextLabel_10
-
-UIAspectRatioConstraint_27.Parent = TextLabel_10
-UIAspectRatioConstraint_27.AspectRatio = 7.126
-
-Divider.Name = "Divider"
-Divider.Parent = PlayerTab_2
-Divider.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Divider.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Divider.BorderSizePixel = 0
-Divider.Position = UDim2.new(0.323155016, 0, 0.413085133, 0)
-Divider.Size = UDim2.new(0.64706099, 0, 0.00460370956, 0)
-
-UIAspectRatioConstraint_28.Parent = Divider
-UIAspectRatioConstraint_28.AspectRatio = 224.000
-
-QuickTP.Name = "QuickTP"
-QuickTP.Parent = PlayerTab_2
-QuickTP.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-QuickTP.BorderColor3 = Color3.fromRGB(0, 0, 0)
-QuickTP.BorderSizePixel = 0
-QuickTP.Position = UDim2.new(0.336754739, 0, 0.56834358, 0)
-QuickTP.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-QuickTP.ZIndex = 2
-
-UICorner_24.CornerRadius = UDim.new(0, 4)
-UICorner_24.Parent = QuickTP
-
-Switch_4.Name = "Switch"
-Switch_4.Parent = QuickTP
-Switch_4.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
-Switch_4.BackgroundTransparency = 0.800
-Switch_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch_4.BorderSizePixel = 0
-Switch_4.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
-Switch_4.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
-Switch_4.ZIndex = 2
-
-UICorner_25.CornerRadius = UDim.new(20, 0)
-UICorner_25.Parent = Switch_4
-
-UIAspectRatioConstraint_29.Parent = Switch_4
-UIAspectRatioConstraint_29.AspectRatio = 2.695
-
-Switch1_4.Name = "Switch1"
-Switch1_4.Parent = QuickTP
-Switch1_4.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
-Switch1_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch1_4.BorderSizePixel = 0
-Switch1_4.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
-Switch1_4.Size = UDim2.new(0.0623448342, 0, 0.515391111, 0)
-Switch1_4.ZIndex = 3
-
-UICorner_26.CornerRadius = UDim.new(20, 0)
-UICorner_26.Parent = Switch1_4
-
-UIAspectRatioConstraint_30.Parent = Switch1_4
-UIAspectRatioConstraint_30.AspectRatio = 1.029
-
-TextLabel_11.Parent = QuickTP
-TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_11.BackgroundTransparency = 1.000
-TextLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_11.BorderSizePixel = 0
-TextLabel_11.Position = UDim2.new(-0.103007227, 0, 0.189999655, 0)
-TextLabel_11.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
-TextLabel_11.Font = Enum.Font.FredokaOne
-TextLabel_11.Text = "Quick Tp"
-TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_11.TextScaled = true
-TextLabel_11.TextSize = 14.000
-TextLabel_11.TextWrapped = true
-
-UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_26.Parent = TextLabel_11
-
-UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_27.Parent = TextLabel_11
-
-UIGradient_28.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_28.Parent = TextLabel_11
-
-UIAspectRatioConstraint_31.Parent = TextLabel_11
-UIAspectRatioConstraint_31.AspectRatio = 7.126
-
-QuickTPKeybind.Name = "QuickTPKeybind"
-QuickTPKeybind.Parent = PlayerTab_2
-QuickTPKeybind.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-QuickTPKeybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
-QuickTPKeybind.BorderSizePixel = 0
-QuickTPKeybind.Position = UDim2.new(0.336754739, 0, 0.695767164, 0)
-QuickTPKeybind.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-QuickTPKeybind.ZIndex = 2
-
-UICorner_27.CornerRadius = UDim.new(0, 4)
-UICorner_27.Parent = QuickTPKeybind
-
-TextLabel_12.Parent = QuickTPKeybind
-TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_12.BackgroundTransparency = 1.000
-TextLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_12.BorderSizePixel = 0
-TextLabel_12.Position = UDim2.new(-0.0232394971, 0, 0.189999655, 0)
-TextLabel_12.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
-TextLabel_12.Font = Enum.Font.FredokaOne
-TextLabel_12.Text = "Quick Tp Bind:"
-TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_12.TextScaled = true
-TextLabel_12.TextSize = 14.000
-TextLabel_12.TextWrapped = true
-
-UIGradient_29.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_29.Parent = TextLabel_12
-
-UIGradient_30.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_30.Parent = TextLabel_12
-
-UIGradient_31.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_31.Parent = TextLabel_12
-
-UIAspectRatioConstraint_32.Parent = TextLabel_12
-UIAspectRatioConstraint_32.AspectRatio = 7.126
-
-TextButton_3.Parent = QuickTPKeybind
-TextButton_3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_3.BorderSizePixel = 0
-TextButton_3.Position = UDim2.new(0.886393547, 0, 0.0789476708, 0)
-TextButton_3.Size = UDim2.new(0.0923932269, 0, 0.769655704, 0)
-TextButton_3.Font = Enum.Font.FredokaOne
-TextButton_3.Text = "F"
-TextButton_3.TextColor3 = Color3.fromRGB(99, 0, 255)
-TextButton_3.TextScaled = true
-TextButton_3.TextSize = 14.000
-TextButton_3.TextWrapped = true
-
-UICorner_28.Parent = TextButton_3
-
-Putinkey.Name = "Putinkey"
-Putinkey.Parent = QuickTPKeybind
-Putinkey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Putinkey.BackgroundTransparency = 1.000
-Putinkey.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Putinkey.BorderSizePixel = 0
-Putinkey.Position = UDim2.new(0.510590672, 0, 0.268255562, 0)
-Putinkey.Size = UDim2.new(0.374206126, 0, 0.598999918, 0)
-Putinkey.Visible = false
-Putinkey.Font = Enum.Font.FredokaOne
-Putinkey.Text = "Press a key..."
-Putinkey.TextColor3 = Color3.fromRGB(255, 255, 255)
-Putinkey.TextScaled = true
-Putinkey.TextSize = 14.000
-Putinkey.TextWrapped = true
-
-UIGradient_32.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_32.Parent = Putinkey
-
-UIGradient_33.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_33.Parent = Putinkey
-
-UIGradient_34.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_34.Parent = Putinkey
-
-UIAspectRatioConstraint_33.Parent = Putinkey
-UIAspectRatioConstraint_33.AspectRatio = 7.126
-
-Walkspeed.Name = "Walkspeed"
-Walkspeed.Parent = PlayerTab_2
-Walkspeed.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Walkspeed.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Walkspeed.BorderSizePixel = 0
-Walkspeed.Position = UDim2.new(0.336211205, 0, 0.820126295, 0)
-Walkspeed.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-Walkspeed.ZIndex = 2
-
-UICorner_29.CornerRadius = UDim.new(0, 4)
-UICorner_29.Parent = Walkspeed
-
-TextButton_4.Parent = Walkspeed
-TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_4.BackgroundTransparency = 1.000
-TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_4.BorderSizePixel = 0
-TextButton_4.Position = UDim2.new(0.0153534925, 0, 0.186521262, 0)
-TextButton_4.Size = UDim2.new(0.320536941, 0, 0.773980498, 0)
-TextButton_4.Font = Enum.Font.FredokaOne
-TextButton_4.Text = ""
-TextButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_4.TextScaled = true
-TextButton_4.TextSize = 14.000
-TextButton_4.TextWrapped = true
-TextButton_4.TextXAlignment = Enum.TextXAlignment.Left
-
-UIGradient_35.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_35.Parent = TextButton_4
-
-UIGradient_36.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_36.Parent = TextButton_4
-
-UIGradient_37.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_37.Parent = TextButton_4
-
-UIAspectRatioConstraint_34.Parent = TextButton_4
-UIAspectRatioConstraint_34.AspectRatio = 4.428
-
-Slider_3.Name = "Slider"
-Slider_3.Parent = Walkspeed
-Slider_3.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
-Slider_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Slider_3.BorderSizePixel = 0
-Slider_3.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
-Slider_3.Size = UDim2.new(0.526183188, 0, 0.266752243, 0)
-
-UICorner_30.CornerRadius = UDim.new(10, 0)
-UICorner_30.Parent = Slider_3
-
-Amount_3.Name = "Amount"
-Amount_3.Parent = Slider_3
-Amount_3.BackgroundColor3 = Color3.fromRGB(127, 0, 255)
-Amount_3.BackgroundTransparency = 1.000
-Amount_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Amount_3.BorderSizePixel = 0
-Amount_3.Position = UDim2.new(1.03362942, 0, -0.3846156, 0)
-Amount_3.Size = UDim2.new(0.0987537429, 0, 1.69230783, 0)
-Amount_3.Font = Enum.Font.FredokaOne
-Amount_3.Text = "20"
-Amount_3.TextColor3 = Color3.fromRGB(127, 0, 255)
-Amount_3.TextScaled = true
-Amount_3.TextSize = 14.000
-Amount_3.TextWrapped = true
-
-SliderThing_3.Name = "SliderThing"
-SliderThing_3.Parent = Walkspeed
-SliderThing_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SliderThing_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SliderThing_3.BorderSizePixel = 0
-SliderThing_3.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
-SliderThing_3.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
-
-UICorner_31.CornerRadius = UDim.new(10, 0)
-UICorner_31.Parent = SliderThing_3
-
-UIGradient_38.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_38.Parent = SliderThing_3
-
-UIAspectRatioConstraint_35.Parent = SliderThing_3
-UIAspectRatioConstraint_35.AspectRatio = 1.077
-
-TextLabel_13.Parent = Walkspeed
-TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_13.BackgroundTransparency = 1.000
-TextLabel_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_13.BorderSizePixel = 0
-TextLabel_13.Position = UDim2.new(-0.0433501154, 0, 0.240512311, 0)
-TextLabel_13.Size = UDim2.new(0.442484707, 0, 0.552336633, 0)
-TextLabel_13.Font = Enum.Font.FredokaOne
-TextLabel_13.Text = "Walk Speed"
-TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_13.TextScaled = true
-TextLabel_13.TextSize = 14.000
-TextLabel_13.TextWrapped = true
-
-UIGradient_39.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_39.Parent = TextLabel_13
-
-UIGradient_40.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_40.Parent = TextLabel_13
-
-UIGradient_41.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_41.Parent = TextLabel_13
-
-UIAspectRatioConstraint_36.Parent = TextLabel_13
-UIAspectRatioConstraint_36.AspectRatio = 7.126
-
-VisualsTab_2.Name = "VisualsTab"
-VisualsTab_2.Parent = UI
-VisualsTab_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-VisualsTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-VisualsTab_2.BorderSizePixel = 0
-VisualsTab_2.Position = UDim2.new(-4.484097e-08, 0, 7.02470544e-08, 0)
-VisualsTab_2.Size = UDim2.new(0.999999702, 0, 1.00000012, 0)
-VisualsTab_2.ZIndex = 2
-
-UICorner_32.CornerRadius = UDim.new(0, 12)
-UICorner_32.Parent = VisualsTab_2
-
-UIAspectRatioConstraint_37.Parent = VisualsTab_2
-UIAspectRatioConstraint_37.AspectRatio = 1.567
-
-Background_2.Name = "Background"
-Background_2.Parent = VisualsTab_2
-Background_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-Background_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Background_2.BorderSizePixel = 0
-Background_2.Position = UDim2.new(0.3386226, 0, 0.167370707, 0)
-Background_2.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
-Background_2.ZIndex = 2
-
-UICorner_33.CornerRadius = UDim.new(0, 4)
-UICorner_33.Parent = Background_2
-
-Switch_5.Name = "Switch"
-Switch_5.Parent = Background_2
-Switch_5.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
-Switch_5.BackgroundTransparency = 0.800
-Switch_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch_5.BorderSizePixel = 0
-Switch_5.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
-Switch_5.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
-Switch_5.ZIndex = 2
-
-UICorner_34.CornerRadius = UDim.new(20, 0)
-UICorner_34.Parent = Switch_5
-
-UIAspectRatioConstraint_38.Parent = Switch_5
-UIAspectRatioConstraint_38.AspectRatio = 2.695
-
-Switch1_5.Name = "Switch1"
-Switch1_5.Parent = Background_2
-Switch1_5.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
-Switch1_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Switch1_5.BorderSizePixel = 0
-Switch1_5.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
-Switch1_5.Size = UDim2.new(0.0623449758, 0, 0.515391111, 0)
-Switch1_5.ZIndex = 3
-
-UICorner_35.CornerRadius = UDim.new(20, 0)
-UICorner_35.Parent = Switch1_5
-
-TextLabel_14.Parent = Background_2
-TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_14.BackgroundTransparency = 1.000
-TextLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_14.BorderSizePixel = 0
-TextLabel_14.Position = UDim2.new(-0.075813219, 0, 0.190000266, 0)
-TextLabel_14.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
-TextLabel_14.Font = Enum.Font.FredokaOne
-TextLabel_14.Text = "Ball Hitbox"
-TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel_14.TextScaled = true
-TextLabel_14.TextSize = 14.000
-TextLabel_14.TextWrapped = true
-
-UIGradient_42.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_42.Parent = TextLabel_14
-
-UIAspectRatioConstraint_39.Parent = TextLabel_14
-UIAspectRatioConstraint_39.AspectRatio = 7.126
+ScreenGui.ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ScreenGui.ResetOnSpawn = false
+
+ScreenGui.Welcome.Name = "Welcome"
+ScreenGui.Welcome.Parent = ScreenGui.ScreenGui
+ScreenGui.Welcome.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
+ScreenGui.Welcome.BackgroundTransparency = 1.000
+ScreenGui.Welcome.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Welcome.BorderSizePixel = 0
+ScreenGui.Welcome.Position = UDim2.new(0.228072792, 0, 0.431837827, 0)
+ScreenGui.Welcome.Size = UDim2.new(0.542345762, 0, 0.133126125, 0)
+ScreenGui.Welcome.ZIndex = 784121829
+ScreenGui.Welcome.Font = Enum.Font.FredokaOne
+ScreenGui.Welcome.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.Welcome.TextScaled = true
+ScreenGui.Welcome.TextSize = 14.000
+ScreenGui.Welcome.TextTransparency = 1.000
+ScreenGui.Welcome.TextWrapped = true
+
+ScreenGui.UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient.Parent = ScreenGui.Welcome
+
+ScreenGui.UI.Name = "UI"
+ScreenGui.UI.Parent = ScreenGui.ScreenGui
+ScreenGui.UI.AnchorPoint = Vector2.new(0.5, 0)
+ScreenGui.UI.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.UI.BackgroundTransparency = 1.000
+ScreenGui.UI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.UI.BorderSizePixel = 0
+ScreenGui.UI.Position = UDim2.new(0.520841718, 0, 0.266503662, 0)
+ScreenGui.UI.Size = UDim2.new(0.480953246, 0, 0.519834936, 0)
+
+ScreenGui.CatchingTab.Name = "CatchingTab"
+ScreenGui.CatchingTab.Parent = ScreenGui.UI
+ScreenGui.CatchingTab.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+ScreenGui.CatchingTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.CatchingTab.BorderSizePixel = 0
+ScreenGui.CatchingTab.Position = UDim2.new(-4.484097e-08, 0, 7.02470544e-08, 0)
+ScreenGui.CatchingTab.Size = UDim2.new(0.999999702, 0, 1.00000012, 0)
+ScreenGui.CatchingTab.ZIndex = 19
+
+ScreenGui.UICorner.CornerRadius = UDim.new(0, 12)
+ScreenGui.UICorner.Parent = ScreenGui.CatchingTab
+
+ScreenGui.Background.Name = "Background"
+ScreenGui.Background.Parent = ScreenGui.CatchingTab
+ScreenGui.Background.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.Background.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Background.BorderSizePixel = 0
+ScreenGui.Background.Position = UDim2.new(0.3386226, 0, 0.167370707, 0)
+ScreenGui.Background.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.Background.ZIndex = 2
+
+ScreenGui.UICorner_2.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_2.Parent = ScreenGui.Background
+
+ScreenGui.Switch.Name = "Switch"
+ScreenGui.Switch.Parent = ScreenGui.Background
+ScreenGui.Switch.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+ScreenGui.Switch.BackgroundTransparency = 0.800
+ScreenGui.Switch.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch.BorderSizePixel = 0
+ScreenGui.Switch.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
+ScreenGui.Switch.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
+ScreenGui.Switch.ZIndex = 2
+
+ScreenGui.UICorner_3.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_3.Parent = ScreenGui.Switch
+
+ScreenGui.UIAspectRatioConstraint.Parent = ScreenGui.Switch
+ScreenGui.UIAspectRatioConstraint.AspectRatio = 2.695
+
+ScreenGui.Switch1.Name = "Switch1"
+ScreenGui.Switch1.Parent = ScreenGui.Background
+ScreenGui.Switch1.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
+ScreenGui.Switch1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch1.BorderSizePixel = 0
+ScreenGui.Switch1.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
+ScreenGui.Switch1.Size = UDim2.new(0.0623449758, 0, 0.515391111, 0)
+ScreenGui.Switch1.ZIndex = 3
+
+ScreenGui.UICorner_4.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_4.Parent = ScreenGui.Switch1
+
+ScreenGui.TextLabel.Parent = ScreenGui.Background
+ScreenGui.TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel.BackgroundTransparency = 1.000
+ScreenGui.TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel.BorderSizePixel = 0
+ScreenGui.TextLabel.Position = UDim2.new(-0.102759957, 0, 0.190000206, 0)
+ScreenGui.TextLabel.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
+ScreenGui.TextLabel.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel.Text = "Magnets"
+ScreenGui.TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel.TextScaled = true
+ScreenGui.TextLabel.TextSize = 14.000
+ScreenGui.TextLabel.TextWrapped = true
+
+ScreenGui.UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_2.Parent = ScreenGui.TextLabel
+
+ScreenGui.UIAspectRatioConstraint_2.Parent = ScreenGui.TextLabel
+ScreenGui.UIAspectRatioConstraint_2.AspectRatio = 7.126
+
+ScreenGui.UIAspectRatioConstraint_3.Parent = ScreenGui.CatchingTab
+ScreenGui.UIAspectRatioConstraint_3.AspectRatio = 1.567
+
+ScreenGui.Slider1Background.Name = "Slider1Background"
+ScreenGui.Slider1Background.Parent = ScreenGui.CatchingTab
+ScreenGui.Slider1Background.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.Slider1Background.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Slider1Background.BorderSizePixel = 0
+ScreenGui.Slider1Background.Position = UDim2.new(0.3386226, 0, 0.289369017, 0)
+ScreenGui.Slider1Background.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.Slider1Background.ZIndex = 2
+
+ScreenGui.UICorner_5.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_5.Parent = ScreenGui.Slider1Background
+
+ScreenGui.Slider.Name = "Slider"
+ScreenGui.Slider.Parent = ScreenGui.Slider1Background
+ScreenGui.Slider.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+ScreenGui.Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Slider.BorderSizePixel = 0
+ScreenGui.Slider.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
+ScreenGui.Slider.Size = UDim2.new(0.526183188, 0, 0.266752243, 0)
+
+ScreenGui.UICorner_6.CornerRadius = UDim.new(10, 0)
+ScreenGui.UICorner_6.Parent = ScreenGui.Slider
+
+ScreenGui.Amount.Name = "Amount"
+ScreenGui.Amount.Parent = ScreenGui.Slider
+ScreenGui.Amount.BackgroundColor3 = Color3.fromRGB(127, 0, 255)
+ScreenGui.Amount.BackgroundTransparency = 1.000
+ScreenGui.Amount.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Amount.BorderSizePixel = 0
+ScreenGui.Amount.Position = UDim2.new(1.03362942, 0, -0.3846156, 0)
+ScreenGui.Amount.Size = UDim2.new(0.0987537429, 0, 1.69230783, 0)
+ScreenGui.Amount.Font = Enum.Font.FredokaOne
+ScreenGui.Amount.Text = "1"
+ScreenGui.Amount.TextColor3 = Color3.fromRGB(127, 0, 255)
+ScreenGui.Amount.TextScaled = true
+ScreenGui.Amount.TextSize = 14.000
+ScreenGui.Amount.TextWrapped = true
+
+ScreenGui.SliderThing.Name = "SliderThing"
+ScreenGui.SliderThing.Parent = ScreenGui.Slider1Background
+ScreenGui.SliderThing.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.SliderThing.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.SliderThing.BorderSizePixel = 0
+ScreenGui.SliderThing.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
+ScreenGui.SliderThing.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
+
+ScreenGui.UICorner_7.CornerRadius = UDim.new(10, 0)
+ScreenGui.UICorner_7.Parent = ScreenGui.SliderThing
+
+ScreenGui.UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_3.Parent = ScreenGui.SliderThing
+
+ScreenGui.UIAspectRatioConstraint_4.Parent = ScreenGui.SliderThing
+ScreenGui.UIAspectRatioConstraint_4.AspectRatio = 1.077
+
+ScreenGui.TextButton.Parent = ScreenGui.Slider1Background
+ScreenGui.TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextButton.BackgroundTransparency = 1.000
+ScreenGui.TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextButton.BorderSizePixel = 0
+ScreenGui.TextButton.Position = UDim2.new(0.0153534925, 0, 0.186521262, 0)
+ScreenGui.TextButton.Size = UDim2.new(0.320536941, 0, 0.773980498, 0)
+ScreenGui.TextButton.Font = Enum.Font.FredokaOne
+ScreenGui.TextButton.Text = "Mags Range"
+ScreenGui.TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextButton.TextScaled = true
+ScreenGui.TextButton.TextSize = 14.000
+ScreenGui.TextButton.TextWrapped = true
+ScreenGui.TextButton.TextXAlignment = Enum.TextXAlignment.Left
+
+ScreenGui.UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_4.Parent = ScreenGui.TextButton
+
+ScreenGui.UIAspectRatioConstraint_5.Parent = ScreenGui.TextButton
+ScreenGui.UIAspectRatioConstraint_5.AspectRatio = 4.428
+
+ScreenGui.Tabs.Name = "Tabs"
+ScreenGui.Tabs.Parent = ScreenGui.UI
+ScreenGui.Tabs.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+ScreenGui.Tabs.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Tabs.BorderSizePixel = 0
+ScreenGui.Tabs.Position = UDim2.new(0.0230841599, 0, 0.146699294, 0)
+ScreenGui.Tabs.Size = UDim2.new(0.273622662, 0, 0.814180732, 0)
+ScreenGui.Tabs.ZIndex = 1398047
+
+ScreenGui.UICorner_8.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_8.Parent = ScreenGui.Tabs
+
+ScreenGui.CatchingTab_2.Name = "CatchingTab"
+ScreenGui.CatchingTab_2.Parent = ScreenGui.Tabs
+ScreenGui.CatchingTab_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.CatchingTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.CatchingTab_2.BorderSizePixel = 0
+ScreenGui.CatchingTab_2.Position = UDim2.new(0.0404332392, 0, 0.0189995263, 0)
+ScreenGui.CatchingTab_2.Size = UDim2.new(0.91500473, 0, 0.12362013, 0)
+ScreenGui.CatchingTab_2.ZIndex = 0
+
+ScreenGui.UICorner_9.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_9.Parent = ScreenGui.CatchingTab_2
+
+ScreenGui.TextLabel_2.Parent = ScreenGui.CatchingTab_2
+ScreenGui.TextLabel_2.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
+ScreenGui.TextLabel_2.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_2.BorderSizePixel = 0
+ScreenGui.TextLabel_2.Position = UDim2.new(0, 0, 0.0516880676, 0)
+ScreenGui.TextLabel_2.Size = UDim2.new(0.999999762, 0, 0.849056304, 0)
+ScreenGui.TextLabel_2.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_2.Text = "Catching"
+ScreenGui.TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_2.TextScaled = true
+ScreenGui.TextLabel_2.TextSize = 14.000
+ScreenGui.TextLabel_2.TextWrapped = true
+
+ScreenGui.UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_5.Parent = ScreenGui.TextLabel_2
+
+ScreenGui.f.Name = "f"
+ScreenGui.f.Parent = ScreenGui.TextLabel_2
+ScreenGui.f.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.f.BackgroundTransparency = 0.999
+ScreenGui.f.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.f.BorderSizePixel = 0
+ScreenGui.f.Size = UDim2.new(1, 0, 1, 0)
+ScreenGui.f.Font = Enum.Font.FredokaOne
+ScreenGui.f.Text = "Catching"
+ScreenGui.f.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.f.TextScaled = true
+ScreenGui.f.TextSize = 14.000
+ScreenGui.f.TextTransparency = 1.000
+ScreenGui.f.TextWrapped = true
+
+ScreenGui.UIAspectRatioConstraint_6.Parent = ScreenGui.CatchingTab_2
+ScreenGui.UIAspectRatioConstraint_6.AspectRatio = 3.897
+
+ScreenGui.PlayerTab.Name = "PlayerTab"
+ScreenGui.PlayerTab.Parent = ScreenGui.Tabs
+ScreenGui.PlayerTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.PlayerTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.PlayerTab.BorderSizePixel = 0
+ScreenGui.PlayerTab.Position = UDim2.new(0.0404333025, 0, 0.163171247, 0)
+ScreenGui.PlayerTab.Size = UDim2.new(0.91500473, 0, 0.12362013, 0)
+ScreenGui.PlayerTab.ZIndex = 0
+
+ScreenGui.UICorner_10.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_10.Parent = ScreenGui.PlayerTab
+
+ScreenGui.TextLabel_3.Parent = ScreenGui.PlayerTab
+ScreenGui.TextLabel_3.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
+ScreenGui.TextLabel_3.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_3.BorderSizePixel = 0
+ScreenGui.TextLabel_3.Position = UDim2.new(0, 0, 0.0516880676, 0)
+ScreenGui.TextLabel_3.Size = UDim2.new(0.999999762, 0, 0.849056304, 0)
+ScreenGui.TextLabel_3.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_3.Text = "Player"
+ScreenGui.TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_3.TextScaled = true
+ScreenGui.TextLabel_3.TextSize = 14.000
+ScreenGui.TextLabel_3.TextWrapped = true
+
+ScreenGui.UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_6.Parent = ScreenGui.TextLabel_3
+
+ScreenGui.f_2.Name = "f"
+ScreenGui.f_2.Parent = ScreenGui.TextLabel_3
+ScreenGui.f_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.f_2.BackgroundTransparency = 0.999
+ScreenGui.f_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.f_2.BorderSizePixel = 0
+ScreenGui.f_2.Size = UDim2.new(1, 0, 1, 0)
+ScreenGui.f_2.Font = Enum.Font.FredokaOne
+ScreenGui.f_2.Text = "Catching"
+ScreenGui.f_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.f_2.TextScaled = true
+ScreenGui.f_2.TextSize = 14.000
+ScreenGui.f_2.TextTransparency = 1.000
+ScreenGui.f_2.TextWrapped = true
+
+ScreenGui.UIAspectRatioConstraint_7.Parent = ScreenGui.PlayerTab
+ScreenGui.UIAspectRatioConstraint_7.AspectRatio = 3.897
+
+ScreenGui.AutomaticsTab.Name = "AutomaticsTab"
+ScreenGui.AutomaticsTab.Parent = ScreenGui.Tabs
+ScreenGui.AutomaticsTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.AutomaticsTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.AutomaticsTab.BorderSizePixel = 0
+ScreenGui.AutomaticsTab.Position = UDim2.new(0.0404333025, 0, 0.307342976, 0)
+ScreenGui.AutomaticsTab.Size = UDim2.new(0.91500473, 0, 0.12362013, 0)
+ScreenGui.AutomaticsTab.ZIndex = 0
+
+ScreenGui.UICorner_11.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_11.Parent = ScreenGui.AutomaticsTab
+
+ScreenGui.TextLabel_4.Parent = ScreenGui.AutomaticsTab
+ScreenGui.TextLabel_4.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
+ScreenGui.TextLabel_4.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_4.BorderSizePixel = 0
+ScreenGui.TextLabel_4.Position = UDim2.new(0, 0, 0.0516880676, 0)
+ScreenGui.TextLabel_4.Size = UDim2.new(0.999999702, 0, 0.849056244, 0)
+ScreenGui.TextLabel_4.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_4.Text = "Autos"
+ScreenGui.TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_4.TextScaled = true
+ScreenGui.TextLabel_4.TextSize = 14.000
+ScreenGui.TextLabel_4.TextWrapped = true
+
+ScreenGui.UIGradient_7.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_7.Parent = ScreenGui.TextLabel_4
+
+ScreenGui.UIAspectRatioConstraint_8.Parent = ScreenGui.TextLabel_4
+ScreenGui.UIAspectRatioConstraint_8.AspectRatio = 4.590
+
+ScreenGui.f_3.Name = "f"
+ScreenGui.f_3.Parent = ScreenGui.TextLabel_4
+ScreenGui.f_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.f_3.BackgroundTransparency = 0.999
+ScreenGui.f_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.f_3.BorderSizePixel = 0
+ScreenGui.f_3.Size = UDim2.new(1, 0, 1, 0)
+ScreenGui.f_3.Font = Enum.Font.FredokaOne
+ScreenGui.f_3.Text = "Catching"
+ScreenGui.f_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.f_3.TextScaled = true
+ScreenGui.f_3.TextSize = 14.000
+ScreenGui.f_3.TextTransparency = 1.000
+ScreenGui.f_3.TextWrapped = true
+
+ScreenGui.UIAspectRatioConstraint_9.Parent = ScreenGui.AutomaticsTab
+ScreenGui.UIAspectRatioConstraint_9.AspectRatio = 3.897
+
+ScreenGui.TextLabel_5.Parent = ScreenGui.Tabs
+ScreenGui.TextLabel_5.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
+ScreenGui.TextLabel_5.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_5.BorderSizePixel = 0
+ScreenGui.TextLabel_5.Position = UDim2.new(0.0234109145, 0, 0.864349425, 0)
+ScreenGui.TextLabel_5.Size = UDim2.new(0.944368541, 0, 0.135602579, 0)
+ScreenGui.TextLabel_5.ZIndex = 784121829
+ScreenGui.TextLabel_5.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_5.TextScaled = true
+ScreenGui.TextLabel_5.TextSize = 14.000
+ScreenGui.TextLabel_5.TextWrapped = true
+
+ScreenGui.UIGradient_8.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_8.Parent = ScreenGui.TextLabel_5
+
+ScreenGui.UIAspectRatioConstraint_10.Parent = ScreenGui.TextLabel_5
+ScreenGui.UIAspectRatioConstraint_10.AspectRatio = 3.667
+
+ScreenGui.UIAspectRatioConstraint_11.Parent = ScreenGui.Tabs
+ScreenGui.UIAspectRatioConstraint_11.AspectRatio = 0.526
+
+ScreenGui.VisualsTab.Name = "VisualsTab"
+ScreenGui.VisualsTab.Parent = ScreenGui.Tabs
+ScreenGui.VisualsTab.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.VisualsTab.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.VisualsTab.BorderSizePixel = 0
+ScreenGui.VisualsTab.Position = UDim2.new(0.040433161, 0, 0.455816448, 0)
+ScreenGui.VisualsTab.Size = UDim2.new(0.91500473, 0, 0.12362013, 0)
+ScreenGui.VisualsTab.ZIndex = 0
+
+ScreenGui.UICorner_12.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_12.Parent = ScreenGui.VisualsTab
+
+ScreenGui.TextLabel_6.Parent = ScreenGui.VisualsTab
+ScreenGui.TextLabel_6.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
+ScreenGui.TextLabel_6.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_6.BorderSizePixel = 0
+ScreenGui.TextLabel_6.Position = UDim2.new(0, 0, 0.0516880676, 0)
+ScreenGui.TextLabel_6.Size = UDim2.new(0.999999702, 0, 0.849056244, 0)
+ScreenGui.TextLabel_6.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_6.Text = "Visuals"
+ScreenGui.TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_6.TextScaled = true
+ScreenGui.TextLabel_6.TextSize = 14.000
+ScreenGui.TextLabel_6.TextWrapped = true
+
+ScreenGui.UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_9.Parent = ScreenGui.TextLabel_6
+
+ScreenGui.UIAspectRatioConstraint_12.Parent = ScreenGui.TextLabel_6
+ScreenGui.UIAspectRatioConstraint_12.AspectRatio = 4.590
+
+ScreenGui.f_4.Name = "f"
+ScreenGui.f_4.Parent = ScreenGui.TextLabel_6
+ScreenGui.f_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.f_4.BackgroundTransparency = 0.999
+ScreenGui.f_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.f_4.BorderSizePixel = 0
+ScreenGui.f_4.Size = UDim2.new(1, 0, 1, 0)
+ScreenGui.f_4.Font = Enum.Font.FredokaOne
+ScreenGui.f_4.Text = "Catching"
+ScreenGui.f_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.f_4.TextScaled = true
+ScreenGui.f_4.TextSize = 14.000
+ScreenGui.f_4.TextTransparency = 1.000
+ScreenGui.f_4.TextWrapped = true
+
+ScreenGui.UIAspectRatioConstraint_13.Parent = ScreenGui.VisualsTab
+ScreenGui.UIAspectRatioConstraint_13.AspectRatio = 3.897
+
+ScreenGui.Top.Name = "Top"
+ScreenGui.Top.Parent = ScreenGui.UI
+ScreenGui.Top.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
+ScreenGui.Top.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Top.BorderSizePixel = 0
+ScreenGui.Top.Position = UDim2.new(2.24204854e-07, 0, 3.51235258e-07, 0)
+ScreenGui.Top.Size = UDim2.new(0.999999702, 0, 0.128740042, 0)
+ScreenGui.Top.ZIndex = 1398047
+
+ScreenGui.UICorner_13.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_13.Parent = ScreenGui.Top
+
+ScreenGui.TextLabel_7.Parent = ScreenGui.Top
+ScreenGui.TextLabel_7.BackgroundColor3 = Color3.fromRGB(43, 177, 255)
+ScreenGui.TextLabel_7.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_7.BorderSizePixel = 0
+ScreenGui.TextLabel_7.Position = UDim2.new(-1.34522949e-07, 0, 0.115182973, 0)
+ScreenGui.TextLabel_7.Size = UDim2.new(0.246454805, 0, 1.10871196, 0)
+ScreenGui.TextLabel_7.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_7.Text = "Lunor"
+ScreenGui.TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_7.TextScaled = true
+ScreenGui.TextLabel_7.TextSize = 14.000
+ScreenGui.TextLabel_7.TextWrapped = true
+
+ScreenGui.UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_10.Parent = ScreenGui.TextLabel_7
+
+ScreenGui.UIAspectRatioConstraint_14.Parent = ScreenGui.TextLabel_7
+ScreenGui.UIAspectRatioConstraint_14.AspectRatio = 4.040
+
+ScreenGui.UIAspectRatioConstraint_15.Parent = ScreenGui.Top
+ScreenGui.UIAspectRatioConstraint_15.AspectRatio = 12.169
+
+ScreenGui.Label.Name = "Label"
+ScreenGui.Label.Parent = ScreenGui.Top
+ScreenGui.Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.Label.BackgroundTransparency = 1.000
+ScreenGui.Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Label.BorderSizePixel = 0
+ScreenGui.Label.Position = UDim2.new(0.921281993, 0, 0.0518035479, 0)
+ScreenGui.Label.Size = UDim2.new(0.0787179098, 0, 0.874838829, 0)
+ScreenGui.Label.Image = "rbxassetid://94594775251689"
+
+ScreenGui.UIAspectRatioConstraint_16.Parent = ScreenGui.Label
+ScreenGui.UIAspectRatioConstraint_16.AspectRatio = 1.095
+
+ScreenGui.UIAspectRatioConstraint_17.Parent = ScreenGui.UI
+ScreenGui.UIAspectRatioConstraint_17.AspectRatio = 1.567
+
+ScreenGui.PlayerTab_2.Name = "PlayerTab"
+ScreenGui.PlayerTab_2.Parent = ScreenGui.UI
+ScreenGui.PlayerTab_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+ScreenGui.PlayerTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.PlayerTab_2.BorderSizePixel = 0
+ScreenGui.PlayerTab_2.Position = UDim2.new(-4.484097e-08, 0, 7.02470544e-08, 0)
+ScreenGui.PlayerTab_2.Size = UDim2.new(0.999999702, 0, 1.00000012, 0)
+ScreenGui.PlayerTab_2.ZIndex = 19
+
+ScreenGui.UICorner_14.CornerRadius = UDim.new(0, 12)
+ScreenGui.UICorner_14.Parent = ScreenGui.PlayerTab_2
+
+ScreenGui.UIAspectRatioConstraint_18.Parent = ScreenGui.PlayerTab_2
+ScreenGui.UIAspectRatioConstraint_18.AspectRatio = 1.567
+
+ScreenGui.JpAeBackground.Name = "JpAeBackground"
+ScreenGui.JpAeBackground.Parent = ScreenGui.PlayerTab_2
+ScreenGui.JpAeBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.JpAeBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.JpAeBackground.BorderSizePixel = 0
+ScreenGui.JpAeBackground.Position = UDim2.new(0.3386226, 0, 0.156037912, 0)
+ScreenGui.JpAeBackground.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.JpAeBackground.ZIndex = 2
+
+ScreenGui.UICorner_15.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_15.Parent = ScreenGui.JpAeBackground
+
+ScreenGui.Switch_2.Name = "Switch"
+ScreenGui.Switch_2.Parent = ScreenGui.JpAeBackground
+ScreenGui.Switch_2.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+ScreenGui.Switch_2.BackgroundTransparency = 0.800
+ScreenGui.Switch_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch_2.BorderSizePixel = 0
+ScreenGui.Switch_2.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
+ScreenGui.Switch_2.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
+ScreenGui.Switch_2.ZIndex = 2
+
+ScreenGui.UICorner_16.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_16.Parent = ScreenGui.Switch_2
+
+ScreenGui.UIAspectRatioConstraint_19.Parent = ScreenGui.Switch_2
+ScreenGui.UIAspectRatioConstraint_19.AspectRatio = 2.695
+
+ScreenGui.Switch1_2.Name = "Switch1"
+ScreenGui.Switch1_2.Parent = ScreenGui.JpAeBackground
+ScreenGui.Switch1_2.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
+ScreenGui.Switch1_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch1_2.BorderSizePixel = 0
+ScreenGui.Switch1_2.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
+ScreenGui.Switch1_2.Size = UDim2.new(0.0623448342, 0, 0.515391111, 0)
+ScreenGui.Switch1_2.ZIndex = 3
+
+ScreenGui.UICorner_17.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_17.Parent = ScreenGui.Switch1_2
+
+ScreenGui.UIAspectRatioConstraint_20.Parent = ScreenGui.Switch1_2
+ScreenGui.UIAspectRatioConstraint_20.AspectRatio = 1.029
+
+ScreenGui.TextLabel_8.Parent = ScreenGui.JpAeBackground
+ScreenGui.TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_8.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_8.BorderSizePixel = 0
+ScreenGui.TextLabel_8.Position = UDim2.new(-0.00176383986, 0, 0.189999953, 0)
+ScreenGui.TextLabel_8.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
+ScreenGui.TextLabel_8.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_8.Text = "Angle enhancer"
+ScreenGui.TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_8.TextScaled = true
+ScreenGui.TextLabel_8.TextSize = 14.000
+ScreenGui.TextLabel_8.TextWrapped = true
+
+ScreenGui.UIGradient_11.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_11.Parent = ScreenGui.TextLabel_8
+
+ScreenGui.UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_12.Parent = ScreenGui.TextLabel_8
+
+ScreenGui.UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_13.Parent = ScreenGui.TextLabel_8
+
+ScreenGui.UIAspectRatioConstraint_21.Parent = ScreenGui.TextLabel_8
+ScreenGui.UIAspectRatioConstraint_21.AspectRatio = 7.126
+
+ScreenGui.Slider1Background_2.Name = "Slider1Background"
+ScreenGui.Slider1Background_2.Parent = ScreenGui.PlayerTab_2
+ScreenGui.Slider1Background_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.Slider1Background_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Slider1Background_2.BorderSizePixel = 0
+ScreenGui.Slider1Background_2.Position = UDim2.new(0.337416887, 0, 0.278036118, 0)
+ScreenGui.Slider1Background_2.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.Slider1Background_2.ZIndex = 2
+
+ScreenGui.UICorner_18.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_18.Parent = ScreenGui.Slider1Background_2
+
+ScreenGui.TextButton_2.Parent = ScreenGui.Slider1Background_2
+ScreenGui.TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextButton_2.BackgroundTransparency = 1.000
+ScreenGui.TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextButton_2.BorderSizePixel = 0
+ScreenGui.TextButton_2.Position = UDim2.new(0.0153534925, 0, 0.186521262, 0)
+ScreenGui.TextButton_2.Size = UDim2.new(0.320536941, 0, 0.773980498, 0)
+ScreenGui.TextButton_2.Font = Enum.Font.FredokaOne
+ScreenGui.TextButton_2.Text = ""
+ScreenGui.TextButton_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextButton_2.TextScaled = true
+ScreenGui.TextButton_2.TextSize = 14.000
+ScreenGui.TextButton_2.TextWrapped = true
+ScreenGui.TextButton_2.TextXAlignment = Enum.TextXAlignment.Left
+
+ScreenGui.UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_14.Parent = ScreenGui.TextButton_2
+
+ScreenGui.UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_15.Parent = ScreenGui.TextButton_2
+
+ScreenGui.UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_16.Parent = ScreenGui.TextButton_2
+
+ScreenGui.UIAspectRatioConstraint_22.Parent = ScreenGui.TextButton_2
+ScreenGui.UIAspectRatioConstraint_22.AspectRatio = 4.428
+
+ScreenGui.Slider_2.Name = "Slider"
+ScreenGui.Slider_2.Parent = ScreenGui.Slider1Background_2
+ScreenGui.Slider_2.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+ScreenGui.Slider_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Slider_2.BorderSizePixel = 0
+ScreenGui.Slider_2.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
+ScreenGui.Slider_2.Size = UDim2.new(0.526183188, 0, 0.266752243, 0)
+
+ScreenGui.UICorner_19.CornerRadius = UDim.new(10, 0)
+ScreenGui.UICorner_19.Parent = ScreenGui.Slider_2
+
+ScreenGui.Amount_2.Name = "Amount"
+ScreenGui.Amount_2.Parent = ScreenGui.Slider_2
+ScreenGui.Amount_2.BackgroundColor3 = Color3.fromRGB(127, 0, 255)
+ScreenGui.Amount_2.BackgroundTransparency = 1.000
+ScreenGui.Amount_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Amount_2.BorderSizePixel = 0
+ScreenGui.Amount_2.Position = UDim2.new(1.03362942, 0, -0.3846156, 0)
+ScreenGui.Amount_2.Size = UDim2.new(0.0987537429, 0, 1.69230783, 0)
+ScreenGui.Amount_2.Font = Enum.Font.FredokaOne
+ScreenGui.Amount_2.Text = "50"
+ScreenGui.Amount_2.TextColor3 = Color3.fromRGB(127, 0, 255)
+ScreenGui.Amount_2.TextScaled = true
+ScreenGui.Amount_2.TextSize = 14.000
+ScreenGui.Amount_2.TextWrapped = true
+
+ScreenGui.SliderThing_2.Name = "SliderThing"
+ScreenGui.SliderThing_2.Parent = ScreenGui.Slider1Background_2
+ScreenGui.SliderThing_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.SliderThing_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.SliderThing_2.BorderSizePixel = 0
+ScreenGui.SliderThing_2.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
+ScreenGui.SliderThing_2.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
+
+ScreenGui.UICorner_20.CornerRadius = UDim.new(10, 0)
+ScreenGui.UICorner_20.Parent = ScreenGui.SliderThing_2
+
+ScreenGui.UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_17.Parent = ScreenGui.SliderThing_2
+
+ScreenGui.UIAspectRatioConstraint_23.Parent = ScreenGui.SliderThing_2
+ScreenGui.UIAspectRatioConstraint_23.AspectRatio = 1.077
+
+ScreenGui.TextLabel_9.Parent = ScreenGui.Slider1Background_2
+ScreenGui.TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_9.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_9.BorderSizePixel = 0
+ScreenGui.TextLabel_9.Position = UDim2.new(-0.0433501154, 0, 0.240512311, 0)
+ScreenGui.TextLabel_9.Size = UDim2.new(0.442484707, 0, 0.552336633, 0)
+ScreenGui.TextLabel_9.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_9.Text = "Angle height"
+ScreenGui.TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_9.TextScaled = true
+ScreenGui.TextLabel_9.TextSize = 14.000
+ScreenGui.TextLabel_9.TextWrapped = true
+
+ScreenGui.UIGradient_18.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_18.Parent = ScreenGui.TextLabel_9
+
+ScreenGui.UIGradient_19.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_19.Parent = ScreenGui.TextLabel_9
+
+ScreenGui.UIGradient_20.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_20.Parent = ScreenGui.TextLabel_9
+
+ScreenGui.UIAspectRatioConstraint_24.Parent = ScreenGui.TextLabel_9
+ScreenGui.UIAspectRatioConstraint_24.AspectRatio = 7.126
+
+ScreenGui.DynamicAeBackground.Name = "DynamicAeBackground"
+ScreenGui.DynamicAeBackground.Parent = ScreenGui.PlayerTab_2
+ScreenGui.DynamicAeBackground.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.DynamicAeBackground.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.DynamicAeBackground.BorderSizePixel = 0
+ScreenGui.DynamicAeBackground.Position = UDim2.new(0.337416977, 0, 0.442551225, 0)
+ScreenGui.DynamicAeBackground.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.DynamicAeBackground.ZIndex = 2
+
+ScreenGui.UICorner_21.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_21.Parent = ScreenGui.DynamicAeBackground
+
+ScreenGui.Switch_3.Name = "Switch"
+ScreenGui.Switch_3.Parent = ScreenGui.DynamicAeBackground
+ScreenGui.Switch_3.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+ScreenGui.Switch_3.BackgroundTransparency = 0.800
+ScreenGui.Switch_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch_3.BorderSizePixel = 0
+ScreenGui.Switch_3.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
+ScreenGui.Switch_3.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
+ScreenGui.Switch_3.ZIndex = 2
+
+ScreenGui.UICorner_22.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_22.Parent = ScreenGui.Switch_3
+
+ScreenGui.UIAspectRatioConstraint_25.Parent = ScreenGui.Switch_3
+ScreenGui.UIAspectRatioConstraint_25.AspectRatio = 2.695
+
+ScreenGui.Switch1_3.Name = "Switch1"
+ScreenGui.Switch1_3.Parent = ScreenGui.DynamicAeBackground
+ScreenGui.Switch1_3.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
+ScreenGui.Switch1_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch1_3.BorderSizePixel = 0
+ScreenGui.Switch1_3.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
+ScreenGui.Switch1_3.Size = UDim2.new(0.0623448342, 0, 0.515391111, 0)
+ScreenGui.Switch1_3.ZIndex = 3
+
+ScreenGui.UICorner_23.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_23.Parent = ScreenGui.Switch1_3
+
+ScreenGui.UIAspectRatioConstraint_26.Parent = ScreenGui.Switch1_3
+ScreenGui.UIAspectRatioConstraint_26.AspectRatio = 1.029
+
+ScreenGui.TextLabel_10.Parent = ScreenGui.DynamicAeBackground
+ScreenGui.TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_10.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_10.BorderSizePixel = 0
+ScreenGui.TextLabel_10.Position = UDim2.new(0.0160588827, 0, 0.0889752209, 0)
+ScreenGui.TextLabel_10.Size = UDim2.new(0.672795475, 0, 1.2213819, 0)
+ScreenGui.TextLabel_10.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_10.Text = "Angle enhancer (dynamic)"
+ScreenGui.TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_10.TextScaled = true
+ScreenGui.TextLabel_10.TextSize = 14.000
+ScreenGui.TextLabel_10.TextWrapped = true
+
+ScreenGui.UIGradient_21.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_21.Parent = ScreenGui.TextLabel_10
+
+ScreenGui.UIGradient_22.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_22.Parent = ScreenGui.TextLabel_10
+
+ScreenGui.UIGradient_23.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_23.Parent = ScreenGui.TextLabel_10
+
+ScreenGui.UIAspectRatioConstraint_27.Parent = ScreenGui.TextLabel_10
+ScreenGui.UIAspectRatioConstraint_27.AspectRatio = 7.126
+
+ScreenGui.Divider.Name = "Divider"
+ScreenGui.Divider.Parent = ScreenGui.PlayerTab_2
+ScreenGui.Divider.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+ScreenGui.Divider.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Divider.BorderSizePixel = 0
+ScreenGui.Divider.Position = UDim2.new(0.323155016, 0, 0.413085133, 0)
+ScreenGui.Divider.Size = UDim2.new(0.64706099, 0, 0.00460370956, 0)
+
+ScreenGui.UIAspectRatioConstraint_28.Parent = ScreenGui.Divider
+ScreenGui.UIAspectRatioConstraint_28.AspectRatio = 224.000
+
+ScreenGui.QuickTP.Name = "QuickTP"
+ScreenGui.QuickTP.Parent = ScreenGui.PlayerTab_2
+ScreenGui.QuickTP.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.QuickTP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.QuickTP.BorderSizePixel = 0
+ScreenGui.QuickTP.Position = UDim2.new(0.336754739, 0, 0.56834358, 0)
+ScreenGui.QuickTP.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.QuickTP.ZIndex = 2
+
+ScreenGui.UICorner_24.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_24.Parent = ScreenGui.QuickTP
+
+ScreenGui.Switch_4.Name = "Switch"
+ScreenGui.Switch_4.Parent = ScreenGui.QuickTP
+ScreenGui.Switch_4.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+ScreenGui.Switch_4.BackgroundTransparency = 0.800
+ScreenGui.Switch_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch_4.BorderSizePixel = 0
+ScreenGui.Switch_4.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
+ScreenGui.Switch_4.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
+ScreenGui.Switch_4.ZIndex = 2
+
+ScreenGui.UICorner_25.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_25.Parent = ScreenGui.Switch_4
+
+ScreenGui.UIAspectRatioConstraint_29.Parent = ScreenGui.Switch_4
+ScreenGui.UIAspectRatioConstraint_29.AspectRatio = 2.695
+
+ScreenGui.Switch1_4.Name = "Switch1"
+ScreenGui.Switch1_4.Parent = ScreenGui.QuickTP
+ScreenGui.Switch1_4.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
+ScreenGui.Switch1_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch1_4.BorderSizePixel = 0
+ScreenGui.Switch1_4.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
+ScreenGui.Switch1_4.Size = UDim2.new(0.0623448342, 0, 0.515391111, 0)
+ScreenGui.Switch1_4.ZIndex = 3
+
+ScreenGui.UICorner_26.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_26.Parent = ScreenGui.Switch1_4
+
+ScreenGui.UIAspectRatioConstraint_30.Parent = ScreenGui.Switch1_4
+ScreenGui.UIAspectRatioConstraint_30.AspectRatio = 1.029
+
+ScreenGui.TextLabel_11.Parent = ScreenGui.QuickTP
+ScreenGui.TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_11.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_11.BorderSizePixel = 0
+ScreenGui.TextLabel_11.Position = UDim2.new(-0.103007227, 0, 0.189999655, 0)
+ScreenGui.TextLabel_11.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
+ScreenGui.TextLabel_11.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_11.Text = "Quick Tp"
+ScreenGui.TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_11.TextScaled = true
+ScreenGui.TextLabel_11.TextSize = 14.000
+ScreenGui.TextLabel_11.TextWrapped = true
+
+ScreenGui.UIGradient_24.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_24.Parent = ScreenGui.TextLabel_11
+
+ScreenGui.UIGradient_25.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_25.Parent = ScreenGui.TextLabel_11
+
+ScreenGui.UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_26.Parent = ScreenGui.TextLabel_11
+
+ScreenGui.UIAspectRatioConstraint_31.Parent = ScreenGui.TextLabel_11
+ScreenGui.UIAspectRatioConstraint_31.AspectRatio = 7.126
+
+ScreenGui.QuickTPKeybind.Name = "QuickTPKeybind"
+ScreenGui.QuickTPKeybind.Parent = ScreenGui.PlayerTab_2
+ScreenGui.QuickTPKeybind.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.QuickTPKeybind.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.QuickTPKeybind.BorderSizePixel = 0
+ScreenGui.QuickTPKeybind.Position = UDim2.new(0.336754739, 0, 0.695767164, 0)
+ScreenGui.QuickTPKeybind.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.QuickTPKeybind.ZIndex = 2
+
+ScreenGui.UICorner_27.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_27.Parent = ScreenGui.QuickTPKeybind
+
+ScreenGui.TextLabel_12.Parent = ScreenGui.QuickTPKeybind
+ScreenGui.TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_12.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_12.BorderSizePixel = 0
+ScreenGui.TextLabel_12.Position = UDim2.new(-0.0232394971, 0, 0.189999655, 0)
+ScreenGui.TextLabel_12.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
+ScreenGui.TextLabel_12.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_12.Text = "Quick Tp Bind:"
+ScreenGui.TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_12.TextScaled = true
+ScreenGui.TextLabel_12.TextSize = 14.000
+ScreenGui.TextLabel_12.TextWrapped = true
+
+ScreenGui.UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_27.Parent = ScreenGui.TextLabel_12
+
+ScreenGui.UIGradient_28.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_28.Parent = ScreenGui.TextLabel_12
+
+ScreenGui.UIGradient_29.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_29.Parent = ScreenGui.TextLabel_12
+
+ScreenGui.UIAspectRatioConstraint_32.Parent = ScreenGui.TextLabel_12
+ScreenGui.UIAspectRatioConstraint_32.AspectRatio = 7.126
+
+ScreenGui.TextButton_3.Parent = ScreenGui.QuickTPKeybind
+ScreenGui.TextButton_3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.TextButton_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextButton_3.BorderSizePixel = 0
+ScreenGui.TextButton_3.Position = UDim2.new(0.886393547, 0, 0.0789476708, 0)
+ScreenGui.TextButton_3.Size = UDim2.new(0.0923932269, 0, 0.769655704, 0)
+ScreenGui.TextButton_3.Font = Enum.Font.FredokaOne
+ScreenGui.TextButton_3.Text = "F"
+ScreenGui.TextButton_3.TextColor3 = Color3.fromRGB(99, 0, 255)
+ScreenGui.TextButton_3.TextScaled = true
+ScreenGui.TextButton_3.TextSize = 14.000
+ScreenGui.TextButton_3.TextWrapped = true
+
+ScreenGui.UICorner_28.Parent = ScreenGui.TextButton_3
+
+ScreenGui.Putinkey.Name = "Putinkey"
+ScreenGui.Putinkey.Parent = ScreenGui.QuickTPKeybind
+ScreenGui.Putinkey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.Putinkey.BackgroundTransparency = 1.000
+ScreenGui.Putinkey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Putinkey.BorderSizePixel = 0
+ScreenGui.Putinkey.Position = UDim2.new(0.510590672, 0, 0.268255562, 0)
+ScreenGui.Putinkey.Size = UDim2.new(0.374206126, 0, 0.598999918, 0)
+ScreenGui.Putinkey.Visible = false
+ScreenGui.Putinkey.Font = Enum.Font.FredokaOne
+ScreenGui.Putinkey.Text = "Press a key..."
+ScreenGui.Putinkey.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.Putinkey.TextScaled = true
+ScreenGui.Putinkey.TextSize = 14.000
+ScreenGui.Putinkey.TextWrapped = true
+
+ScreenGui.UIGradient_30.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_30.Parent = ScreenGui.Putinkey
+
+ScreenGui.UIGradient_31.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_31.Parent = ScreenGui.Putinkey
+
+ScreenGui.UIGradient_32.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_32.Parent = ScreenGui.Putinkey
+
+ScreenGui.UIAspectRatioConstraint_33.Parent = ScreenGui.Putinkey
+ScreenGui.UIAspectRatioConstraint_33.AspectRatio = 7.126
+
+ScreenGui.Walkspeed.Name = "Walkspeed"
+ScreenGui.Walkspeed.Parent = ScreenGui.PlayerTab_2
+ScreenGui.Walkspeed.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.Walkspeed.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Walkspeed.BorderSizePixel = 0
+ScreenGui.Walkspeed.Position = UDim2.new(0.336211205, 0, 0.820126295, 0)
+ScreenGui.Walkspeed.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.Walkspeed.ZIndex = 2
+
+ScreenGui.UICorner_29.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_29.Parent = ScreenGui.Walkspeed
+
+ScreenGui.TextButton_4.Parent = ScreenGui.Walkspeed
+ScreenGui.TextButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextButton_4.BackgroundTransparency = 1.000
+ScreenGui.TextButton_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextButton_4.BorderSizePixel = 0
+ScreenGui.TextButton_4.Position = UDim2.new(0.0153534925, 0, 0.186521262, 0)
+ScreenGui.TextButton_4.Size = UDim2.new(0.320536941, 0, 0.773980498, 0)
+ScreenGui.TextButton_4.Font = Enum.Font.FredokaOne
+ScreenGui.TextButton_4.Text = ""
+ScreenGui.TextButton_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextButton_4.TextScaled = true
+ScreenGui.TextButton_4.TextSize = 14.000
+ScreenGui.TextButton_4.TextWrapped = true
+ScreenGui.TextButton_4.TextXAlignment = Enum.TextXAlignment.Left
+
+ScreenGui.UIGradient_33.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_33.Parent = ScreenGui.TextButton_4
+
+ScreenGui.UIGradient_34.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_34.Parent = ScreenGui.TextButton_4
+
+ScreenGui.UIGradient_35.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_35.Parent = ScreenGui.TextButton_4
+
+ScreenGui.UIAspectRatioConstraint_34.Parent = ScreenGui.TextButton_4
+ScreenGui.UIAspectRatioConstraint_34.AspectRatio = 4.428
+
+ScreenGui.Slider_3.Name = "Slider"
+ScreenGui.Slider_3.Parent = ScreenGui.Walkspeed
+ScreenGui.Slider_3.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+ScreenGui.Slider_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Slider_3.BorderSizePixel = 0
+ScreenGui.Slider_3.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
+ScreenGui.Slider_3.Size = UDim2.new(0.526183188, 0, 0.266752243, 0)
+
+ScreenGui.UICorner_30.CornerRadius = UDim.new(10, 0)
+ScreenGui.UICorner_30.Parent = ScreenGui.Slider_3
+
+ScreenGui.Amount_3.Name = "Amount"
+ScreenGui.Amount_3.Parent = ScreenGui.Slider_3
+ScreenGui.Amount_3.BackgroundColor3 = Color3.fromRGB(127, 0, 255)
+ScreenGui.Amount_3.BackgroundTransparency = 1.000
+ScreenGui.Amount_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Amount_3.BorderSizePixel = 0
+ScreenGui.Amount_3.Position = UDim2.new(1.03362942, 0, -0.3846156, 0)
+ScreenGui.Amount_3.Size = UDim2.new(0.0987537429, 0, 1.69230783, 0)
+ScreenGui.Amount_3.Font = Enum.Font.FredokaOne
+ScreenGui.Amount_3.Text = "20"
+ScreenGui.Amount_3.TextColor3 = Color3.fromRGB(127, 0, 255)
+ScreenGui.Amount_3.TextScaled = true
+ScreenGui.Amount_3.TextSize = 14.000
+ScreenGui.Amount_3.TextWrapped = true
+
+ScreenGui.SliderThing_3.Name = "SliderThing"
+ScreenGui.SliderThing_3.Parent = ScreenGui.Walkspeed
+ScreenGui.SliderThing_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.SliderThing_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.SliderThing_3.BorderSizePixel = 0
+ScreenGui.SliderThing_3.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
+ScreenGui.SliderThing_3.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
+
+ScreenGui.UICorner_31.CornerRadius = UDim.new(10, 0)
+ScreenGui.UICorner_31.Parent = ScreenGui.SliderThing_3
+
+ScreenGui.UIGradient_36.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_36.Parent = ScreenGui.SliderThing_3
+
+ScreenGui.UIAspectRatioConstraint_35.Parent = ScreenGui.SliderThing_3
+ScreenGui.UIAspectRatioConstraint_35.AspectRatio = 1.077
+
+ScreenGui.TextLabel_13.Parent = ScreenGui.Walkspeed
+ScreenGui.TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_13.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_13.BorderSizePixel = 0
+ScreenGui.TextLabel_13.Position = UDim2.new(-0.0433501154, 0, 0.240512311, 0)
+ScreenGui.TextLabel_13.Size = UDim2.new(0.442484707, 0, 0.552336633, 0)
+ScreenGui.TextLabel_13.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_13.Text = "Walk Speed"
+ScreenGui.TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_13.TextScaled = true
+ScreenGui.TextLabel_13.TextSize = 14.000
+ScreenGui.TextLabel_13.TextWrapped = true
+
+ScreenGui.UIGradient_37.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_37.Parent = ScreenGui.TextLabel_13
+
+ScreenGui.UIGradient_38.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_38.Parent = ScreenGui.TextLabel_13
+
+ScreenGui.UIGradient_39.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_39.Parent = ScreenGui.TextLabel_13
+
+ScreenGui.UIAspectRatioConstraint_36.Parent = ScreenGui.TextLabel_13
+ScreenGui.UIAspectRatioConstraint_36.AspectRatio = 7.126
+
+ScreenGui.VisualsTab_2.Name = "VisualsTab"
+ScreenGui.VisualsTab_2.Parent = ScreenGui.UI
+ScreenGui.VisualsTab_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+ScreenGui.VisualsTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.VisualsTab_2.BorderSizePixel = 0
+ScreenGui.VisualsTab_2.Position = UDim2.new(-4.484097e-08, 0, 7.02470544e-08, 0)
+ScreenGui.VisualsTab_2.Size = UDim2.new(0.999999702, 0, 1.00000012, 0)
+ScreenGui.VisualsTab_2.ZIndex = 2
+
+ScreenGui.UICorner_32.CornerRadius = UDim.new(0, 12)
+ScreenGui.UICorner_32.Parent = ScreenGui.VisualsTab_2
+
+ScreenGui.UIAspectRatioConstraint_37.Parent = ScreenGui.VisualsTab_2
+ScreenGui.UIAspectRatioConstraint_37.AspectRatio = 1.567
+
+ScreenGui.Background_2.Name = "Background"
+ScreenGui.Background_2.Parent = ScreenGui.VisualsTab_2
+ScreenGui.Background_2.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.Background_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Background_2.BorderSizePixel = 0
+ScreenGui.Background_2.Position = UDim2.new(0.3386226, 0, 0.167370707, 0)
+ScreenGui.Background_2.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.Background_2.ZIndex = 2
+
+ScreenGui.UICorner_33.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_33.Parent = ScreenGui.Background_2
+
+ScreenGui.Switch_5.Name = "Switch"
+ScreenGui.Switch_5.Parent = ScreenGui.Background_2
+ScreenGui.Switch_5.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+ScreenGui.Switch_5.BackgroundTransparency = 0.800
+ScreenGui.Switch_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch_5.BorderSizePixel = 0
+ScreenGui.Switch_5.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
+ScreenGui.Switch_5.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
+ScreenGui.Switch_5.ZIndex = 2
+
+ScreenGui.UICorner_34.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_34.Parent = ScreenGui.Switch_5
+
+ScreenGui.UIAspectRatioConstraint_38.Parent = ScreenGui.Switch_5
+ScreenGui.UIAspectRatioConstraint_38.AspectRatio = 2.695
+
+ScreenGui.Switch1_5.Name = "Switch1"
+ScreenGui.Switch1_5.Parent = ScreenGui.Background_2
+ScreenGui.Switch1_5.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
+ScreenGui.Switch1_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch1_5.BorderSizePixel = 0
+ScreenGui.Switch1_5.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
+ScreenGui.Switch1_5.Size = UDim2.new(0.0623449758, 0, 0.515391111, 0)
+ScreenGui.Switch1_5.ZIndex = 3
+
+ScreenGui.UICorner_35.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_35.Parent = ScreenGui.Switch1_5
+
+ScreenGui.TextLabel_14.Parent = ScreenGui.Background_2
+ScreenGui.TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_14.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_14.BorderSizePixel = 0
+ScreenGui.TextLabel_14.Position = UDim2.new(-0.075813219, 0, 0.190000266, 0)
+ScreenGui.TextLabel_14.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
+ScreenGui.TextLabel_14.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_14.Text = "Ball Hitbox"
+ScreenGui.TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_14.TextScaled = true
+ScreenGui.TextLabel_14.TextSize = 14.000
+ScreenGui.TextLabel_14.TextWrapped = true
+
+ScreenGui.UIGradient_40.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_40.Parent = ScreenGui.TextLabel_14
+
+ScreenGui.UIAspectRatioConstraint_39.Parent = ScreenGui.TextLabel_14
+ScreenGui.UIAspectRatioConstraint_39.AspectRatio = 7.126
+
+ScreenGui.AutomaticsTab_2.Name = "AutomaticsTab"
+ScreenGui.AutomaticsTab_2.Parent = ScreenGui.UI
+ScreenGui.AutomaticsTab_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+ScreenGui.AutomaticsTab_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.AutomaticsTab_2.BorderSizePixel = 0
+ScreenGui.AutomaticsTab_2.Position = UDim2.new(-4.484097e-08, 0, 7.02470544e-08, 0)
+ScreenGui.AutomaticsTab_2.Size = UDim2.new(0.999999702, 0, 1.00000012, 0)
+ScreenGui.AutomaticsTab_2.ZIndex = 2
+
+ScreenGui.UICorner_36.CornerRadius = UDim.new(0, 12)
+ScreenGui.UICorner_36.Parent = ScreenGui.AutomaticsTab_2
+
+ScreenGui.Background_3.Name = "Background"
+ScreenGui.Background_3.Parent = ScreenGui.AutomaticsTab_2
+ScreenGui.Background_3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.Background_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Background_3.BorderSizePixel = 0
+ScreenGui.Background_3.Position = UDim2.new(0.3386226, 0, 0.167370707, 0)
+ScreenGui.Background_3.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.Background_3.ZIndex = 2
+
+ScreenGui.UICorner_37.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_37.Parent = ScreenGui.Background_3
+
+ScreenGui.Switch_6.Name = "Switch"
+ScreenGui.Switch_6.Parent = ScreenGui.Background_3
+ScreenGui.Switch_6.BackgroundColor3 = Color3.fromRGB(57, 57, 57)
+ScreenGui.Switch_6.BackgroundTransparency = 0.800
+ScreenGui.Switch_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch_6.BorderSizePixel = 0
+ScreenGui.Switch_6.Position = UDim2.new(0.798893094, 0, 0.237907037, 0)
+ScreenGui.Switch_6.Size = UDim2.new(0.160436109, 0, 0.558846653, 0)
+ScreenGui.Switch_6.ZIndex = 2
+
+ScreenGui.UICorner_38.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_38.Parent = ScreenGui.Switch_6
+
+ScreenGui.UIAspectRatioConstraint_40.Parent = ScreenGui.Switch_6
+ScreenGui.UIAspectRatioConstraint_40.AspectRatio = 2.695
+
+ScreenGui.Switch1_6.Name = "Switch1"
+ScreenGui.Switch1_6.Parent = ScreenGui.Background_3
+ScreenGui.Switch1_6.BackgroundColor3 = Color3.fromRGB(120, 52, 255)
+ScreenGui.Switch1_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Switch1_6.BorderSizePixel = 0
+ScreenGui.Switch1_6.Position = UDim2.new(0.798893154, 0, 0.228659093, 0)
+ScreenGui.Switch1_6.Size = UDim2.new(0.0623449758, 0, 0.515391111, 0)
+ScreenGui.Switch1_6.ZIndex = 3
+
+ScreenGui.UICorner_39.CornerRadius = UDim.new(20, 0)
+ScreenGui.UICorner_39.Parent = ScreenGui.Switch1_6
+
+ScreenGui.TextLabel_15.Parent = ScreenGui.Background_3
+ScreenGui.TextLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_15.BackgroundTransparency = 1.000
+ScreenGui.TextLabel_15.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextLabel_15.BorderSizePixel = 0
+ScreenGui.TextLabel_15.Position = UDim2.new(-0.0775939077, 0, 0.190000132, 0)
+ScreenGui.TextLabel_15.Size = UDim2.new(0.501999974, 0, 0.598999977, 0)
+ScreenGui.TextLabel_15.Font = Enum.Font.FredokaOne
+ScreenGui.TextLabel_15.Text = "Auto Catch"
+ScreenGui.TextLabel_15.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextLabel_15.TextScaled = true
+ScreenGui.TextLabel_15.TextSize = 14.000
+ScreenGui.TextLabel_15.TextWrapped = true
+
+ScreenGui.UIGradient_41.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_41.Parent = ScreenGui.TextLabel_15
+
+ScreenGui.UIAspectRatioConstraint_41.Parent = ScreenGui.TextLabel_15
+ScreenGui.UIAspectRatioConstraint_41.AspectRatio = 7.126
+
+ScreenGui.UIAspectRatioConstraint_42.Parent = ScreenGui.AutomaticsTab_2
+ScreenGui.UIAspectRatioConstraint_42.AspectRatio = 1.567
+
+ScreenGui.Slider1Background_3.Name = "Slider1Background"
+ScreenGui.Slider1Background_3.Parent = ScreenGui.AutomaticsTab_2
+ScreenGui.Slider1Background_3.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+ScreenGui.Slider1Background_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Slider1Background_3.BorderSizePixel = 0
+ScreenGui.Slider1Background_3.Position = UDim2.new(0.3386226, 0, 0.289369017, 0)
+ScreenGui.Slider1Background_3.Size = UDim2.new(0.608838677, 0, 0.112179428, 0)
+ScreenGui.Slider1Background_3.ZIndex = 2
+
+ScreenGui.UICorner_40.CornerRadius = UDim.new(0, 4)
+ScreenGui.UICorner_40.Parent = ScreenGui.Slider1Background_3
+
+ScreenGui.Slider_4.Name = "Slider"
+ScreenGui.Slider_4.Parent = ScreenGui.Slider1Background_3
+ScreenGui.Slider_4.BackgroundColor3 = Color3.fromRGB(49, 49, 49)
+ScreenGui.Slider_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Slider_4.BorderSizePixel = 0
+ScreenGui.Slider_4.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
+ScreenGui.Slider_4.Size = UDim2.new(0.526183188, 0, 0.266752243, 0)
+
+ScreenGui.UICorner_41.CornerRadius = UDim.new(10, 0)
+ScreenGui.UICorner_41.Parent = ScreenGui.Slider_4
+
+ScreenGui.Amount_4.Name = "Amount"
+ScreenGui.Amount_4.Parent = ScreenGui.Slider_4
+ScreenGui.Amount_4.BackgroundColor3 = Color3.fromRGB(127, 0, 255)
+ScreenGui.Amount_4.BackgroundTransparency = 1.000
+ScreenGui.Amount_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.Amount_4.BorderSizePixel = 0
+ScreenGui.Amount_4.Position = UDim2.new(1.03362942, 0, -0.3846156, 0)
+ScreenGui.Amount_4.Size = UDim2.new(0.0987537429, 0, 1.69230783, 0)
+ScreenGui.Amount_4.Font = Enum.Font.FredokaOne
+ScreenGui.Amount_4.Text = "1"
+ScreenGui.Amount_4.TextColor3 = Color3.fromRGB(127, 0, 255)
+ScreenGui.Amount_4.TextScaled = true
+ScreenGui.Amount_4.TextSize = 14.000
+ScreenGui.Amount_4.TextWrapped = true
+
+ScreenGui.SliderThing_4.Name = "SliderThing"
+ScreenGui.SliderThing_4.Parent = ScreenGui.Slider1Background_3
+ScreenGui.SliderThing_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.SliderThing_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.SliderThing_4.BorderSizePixel = 0
+ScreenGui.SliderThing_4.Position = UDim2.new(0.381311357, 0, 0.348829865, 0)
+ScreenGui.SliderThing_4.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
+
+ScreenGui.UICorner_42.CornerRadius = UDim.new(10, 0)
+ScreenGui.UICorner_42.Parent = ScreenGui.SliderThing_4
+
+ScreenGui.UIGradient_42.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_42.Parent = ScreenGui.SliderThing_4
+
+ScreenGui.UIAspectRatioConstraint_43.Parent = ScreenGui.SliderThing_4
+ScreenGui.UIAspectRatioConstraint_43.AspectRatio = 1.077
+
+ScreenGui.TextButton_5.Parent = ScreenGui.Slider1Background_3
+ScreenGui.TextButton_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextButton_5.BackgroundTransparency = 1.000
+ScreenGui.TextButton_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScreenGui.TextButton_5.BorderSizePixel = 0
+ScreenGui.TextButton_5.Position = UDim2.new(0.0153535372, 0, 0.186520994, 0)
+ScreenGui.TextButton_5.Size = UDim2.new(0.336831003, 0, 0.695151031, 0)
+ScreenGui.TextButton_5.Font = Enum.Font.FredokaOne
+ScreenGui.TextButton_5.Text = "Autocatch Range"
+ScreenGui.TextButton_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScreenGui.TextButton_5.TextScaled = true
+ScreenGui.TextButton_5.TextSize = 14.000
+ScreenGui.TextButton_5.TextWrapped = true
+ScreenGui.TextButton_5.TextXAlignment = Enum.TextXAlignment.Left
+
+ScreenGui.UIGradient_43.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+ScreenGui.UIGradient_43.Parent = ScreenGui.TextButton_5
+
+ScreenGui.UIAspectRatioConstraint_44.Parent = ScreenGui.TextButton_5
+ScreenGui.UIAspectRatioConstraint_44.AspectRatio = 4.428
 
 -- Scripts:
 
-local function XFDJIJ_fake_script() -- ScreenGui.LocalScript 
-	local script = Instance.new('LocalScript', ScreenGui)
-
-	local vis = false
-	
-	for i,v in script.Parent:GetDescendants() do
-		if not v:IsA("LocalScript") and not v:IsA("TextLabel") and not v:IsA("UICorner") and not v:IsA("UIGradient") and not v:IsA("UIAspectRatioConstraint") and not v:IsA("ImageLabel") then
-			v.Transparency = 1
-		elseif v:IsA("TextLabel") then
-			v.TextTransparency = 1
-		elseif v:IsA("ImageLabel") then
-			v.ImageTransparency = 1
-		end
-	end
-	
-	task.wait(3)
-	
-	vis = true
-	
-	game:GetService("UserInputService").InputBegan:Connect(function(input,gp)
-		if input.KeyCode == Enum.KeyCode.LeftControl then
-			if not vis then
-				local TweenService = game:GetService("TweenService")
-	
-				local tweenInfo = TweenInfo.new(.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
-	
-				for _, v in script.Parent.UI:GetDescendants() do
-					if v:IsA("Frame") and v.Name ~= "UI" or v:IsA("UIStroke") then
-						TweenService:Create(v, tweenInfo, {Transparency = 0}):Play()
-					elseif v:IsA("TextLabel") then
-						TweenService:Create(v, tweenInfo, {TextTransparency = 0}):Play()
-					elseif v:IsA("TextButton") and v.Name ~= "f" then
-						TweenService:Create(v, tweenInfo, {TextTransparency = 0}):Play()
-					elseif v:IsA("ImageLabel") then
-						TweenService:Create(v, tweenInfo, {ImageTransparency = 0}):Play()
-					end
-					
-					if v:IsA("TextButton") then
-						v.Interactable = true
-					end
-				end
-			else
-				local TweenService = game:GetService("TweenService")
-	
-				local tweenInfo = TweenInfo.new(.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
-	
-				for _, v in script.Parent.UI:GetDescendants() do
-					if v:IsA("Frame") and v.Name ~= "UI" or v:IsA("UIStroke") then
-						TweenService:Create(v, tweenInfo, {Transparency = 1}):Play()
-					elseif v:IsA("TextLabel") then
-						TweenService:Create(v, tweenInfo, {TextTransparency = 1}):Play()
-					elseif v:IsA("TextButton") and v.Name ~= "f" then
-						TweenService:Create(v, tweenInfo, {TextTransparency = 1}):Play()
-					elseif v:IsA("ImageLabel") then
-						TweenService:Create(v, tweenInfo, {ImageTransparency = 1}):Play()
-					end
-					
-					if v:IsA("TextButton") then
-						v.Interactable = false
-					end
-				end
-			end
-			vis = not vis
-		end
-	end)
-end
-coroutine.wrap(XFDJIJ_fake_script)()
-local function FPBHCBN_fake_script() -- Welcome.LocalScript 
-	local script = Instance.new('LocalScript', Welcome)
+local function RRZETB_fake_script() -- ScreenGui.Welcome.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Welcome)
 
 	local TweenService = game:GetService("TweenService")
 	local textLabel = script.Parent
@@ -1466,9 +1585,9 @@ local function FPBHCBN_fake_script() -- Welcome.LocalScript
 		end
 	end
 end
-coroutine.wrap(FPBHCBN_fake_script)()
-local function CVOOI_fake_script() -- Switch1.LocalScript 
-	local script = Instance.new('LocalScript', Switch1)
+coroutine.wrap(RRZETB_fake_script)()
+local function GDYWPDK_fake_script() -- ScreenGui.Switch1.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Switch1)
 
 	local toggle = script.Parent
 	local toggled = false
@@ -1596,15 +1715,15 @@ local function CVOOI_fake_script() -- Switch1.LocalScript
 		end
 	end)
 end
-coroutine.wrap(CVOOI_fake_script)()
-local function CRVNJZ_fake_script() -- Slider1Background.LocalScript 
-	local script = Instance.new('LocalScript', Slider1Background)
+coroutine.wrap(GDYWPDK_fake_script)()
+local function EZHT_fake_script() -- ScreenGui.Slider1Background.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Slider1Background)
 
 	
 end
-coroutine.wrap(CRVNJZ_fake_script)()
-local function NMRXQT_fake_script() -- SliderThing.LocalScript 
-	local script = Instance.new('LocalScript', SliderThing)
+coroutine.wrap(EZHT_fake_script)()
+local function TEVKQ_fake_script() -- ScreenGui.SliderThing.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.SliderThing)
 
 	local UserInputService = game:GetService("UserInputService")
 	local camera = workspace.CurrentCamera
@@ -1692,10 +1811,10 @@ local function NMRXQT_fake_script() -- SliderThing.LocalScript
 		holding = false
 	end)
 end
-coroutine.wrap(NMRXQT_fake_script)()
--- CatchingTab.SliderScript is disabled.
-local function GCQW_fake_script() -- f.LocalScript 
-	local script = Instance.new('LocalScript', f)
+coroutine.wrap(TEVKQ_fake_script)()
+-- ScreenGui.CatchingTab.SliderScript is disabled.
+local function MXJTV_fake_script() -- ScreenGui.f.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.f)
 
 	local Button = script.Parent
 	local UI = Button.Parent.Parent.Parent.Parent
@@ -1714,9 +1833,9 @@ local function GCQW_fake_script() -- f.LocalScript
 		end
 	end)
 end
-coroutine.wrap(GCQW_fake_script)()
-local function FNXZFU_fake_script() -- f_2.LocalScript 
-	local script = Instance.new('LocalScript', f_2)
+coroutine.wrap(MXJTV_fake_script)()
+local function EQMRE_fake_script() -- ScreenGui.f_2.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.f_2)
 
 	local Button = script.Parent
 	local UI = Button.Parent.Parent.Parent.Parent
@@ -1734,15 +1853,36 @@ local function FNXZFU_fake_script() -- f_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(FNXZFU_fake_script)()
-local function BVXN_fake_script() -- TextLabel_5.LocalScript 
-	local script = Instance.new('LocalScript', TextLabel_5)
+coroutine.wrap(EQMRE_fake_script)()
+local function MHTMD_fake_script() -- ScreenGui.f_3.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.f_3)
+
+	local Button = script.Parent
+	local UI = Button.Parent.Parent.Parent.Parent
+	local TabName = "AutomaticsTab"
+	
+	Button.MouseButton1Down:Connect(function()
+		for i,v in UI:GetChildren() do
+			pcall(function()
+				if v.Name ~= "Tabs" and v.Name ~= "Top" and v ~= UI:FindFirstChild(TabName) then
+					v.ZIndex = 0
+					print(v)
+				elseif v == UI:FindFirstChild(TabName) then
+					v.ZIndex = 19
+				end
+			end)
+		end
+	end)
+end
+coroutine.wrap(MHTMD_fake_script)()
+local function OBEJUDU_fake_script() -- ScreenGui.TextLabel_5.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.TextLabel_5)
 
 	script.Parent.Text = "Hello ".. game.Players.LocalPlayer.DisplayName .."!"
 end
-coroutine.wrap(BVXN_fake_script)()
-local function BGIKN_fake_script() -- f_3.LocalScript 
-	local script = Instance.new('LocalScript', f_3)
+coroutine.wrap(OBEJUDU_fake_script)()
+local function NVDK_fake_script() -- ScreenGui.f_4.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.f_4)
 
 	local Button = script.Parent
 	local UI = Button.Parent.Parent.Parent.Parent
@@ -1761,9 +1901,9 @@ local function BGIKN_fake_script() -- f_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(BGIKN_fake_script)()
-local function QLRKSK_fake_script() -- Top.LocalScript 
-	local script = Instance.new('LocalScript', Top)
+coroutine.wrap(NVDK_fake_script)()
+local function MMQCBQY_fake_script() -- ScreenGui.Top.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Top)
 
 	local localplayer = game:GetService("Players").LocalPlayer
 	local localmouse = localplayer:GetMouse()
@@ -1863,9 +2003,9 @@ local function QLRKSK_fake_script() -- Top.LocalScript
 	end)
 	
 end
-coroutine.wrap(QLRKSK_fake_script)()
-local function OVZHY_fake_script() -- Switch1_2.LocalScript 
-	local script = Instance.new('LocalScript', Switch1_2)
+coroutine.wrap(MMQCBQY_fake_script)()
+local function PBTDA_fake_script() -- ScreenGui.Switch1_2.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Switch1_2)
 
 	local toggle = script.Parent
 	local toggled = false
@@ -1969,15 +2109,15 @@ local function OVZHY_fake_script() -- Switch1_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(OVZHY_fake_script)()
-local function PNEHFQ_fake_script() -- Slider1Background_2.LocalScript 
-	local script = Instance.new('LocalScript', Slider1Background_2)
+coroutine.wrap(PBTDA_fake_script)()
+local function FRBQY_fake_script() -- ScreenGui.Slider1Background_2.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Slider1Background_2)
 
 	
 end
-coroutine.wrap(PNEHFQ_fake_script)()
-local function VVOI_fake_script() -- SliderThing_2.LocalScript 
-	local script = Instance.new('LocalScript', SliderThing_2)
+coroutine.wrap(FRBQY_fake_script)()
+local function IINUC_fake_script() -- ScreenGui.SliderThing_2.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.SliderThing_2)
 
 	local UserInputService = game:GetService("UserInputService")
 	local camera = workspace.CurrentCamera
@@ -2065,9 +2205,9 @@ local function VVOI_fake_script() -- SliderThing_2.LocalScript
 		holding = false
 	end)
 end
-coroutine.wrap(VVOI_fake_script)()
-local function YITUTIY_fake_script() -- Switch1_3.LocalScript 
-	local script = Instance.new('LocalScript', Switch1_3)
+coroutine.wrap(IINUC_fake_script)()
+local function EINXHN_fake_script() -- ScreenGui.Switch1_3.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Switch1_3)
 
 	local toggle = script.Parent
 	local toggled = false
@@ -2198,9 +2338,9 @@ local function YITUTIY_fake_script() -- Switch1_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(YITUTIY_fake_script)()
-local function CQTXV_fake_script() -- Switch1_4.LocalScript 
-	local script = Instance.new('LocalScript', Switch1_4)
+coroutine.wrap(EINXHN_fake_script)()
+local function SGKT_fake_script() -- ScreenGui.Switch1_4.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Switch1_4)
 
 	local toggle = script.Parent
 	local toggled = false
@@ -2284,9 +2424,9 @@ local function CQTXV_fake_script() -- Switch1_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(CQTXV_fake_script)()
-local function OKQWGCH_fake_script() -- TextButton_3.LocalScript 
-	local script = Instance.new('LocalScript', TextButton_3)
+coroutine.wrap(SGKT_fake_script)()
+local function YWKOOFH_fake_script() -- ScreenGui.TextButton_3.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.TextButton_3)
 
 	local characters = {
 		"One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Zero", "Minus", "Equals",  
@@ -2319,15 +2459,15 @@ local function OKQWGCH_fake_script() -- TextButton_3.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(OKQWGCH_fake_script)()
-local function LZZWB_fake_script() -- Walkspeed.LocalScript 
-	local script = Instance.new('LocalScript', Walkspeed)
+coroutine.wrap(YWKOOFH_fake_script)()
+local function TDAD_fake_script() -- ScreenGui.Walkspeed.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Walkspeed)
 
 	
 end
-coroutine.wrap(LZZWB_fake_script)()
-local function TIAXLQR_fake_script() -- SliderThing_3.LocalScript 
-	local script = Instance.new('LocalScript', SliderThing_3)
+coroutine.wrap(TDAD_fake_script)()
+local function ORAZ_fake_script() -- ScreenGui.SliderThing_3.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.SliderThing_3)
 
 	local UserInputService = game:GetService("UserInputService")
 	local camera = workspace.CurrentCamera
@@ -2419,10 +2559,10 @@ local function TIAXLQR_fake_script() -- SliderThing_3.LocalScript
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = slider.Parent.Slider.Amount.Text
 	end)
 end
-coroutine.wrap(TIAXLQR_fake_script)()
--- VisualsTab_2.SliderScript is disabled.
-local function NUNO_fake_script() -- Switch1_5.LocalScript 
-	local script = Instance.new('LocalScript', Switch1_5)
+coroutine.wrap(ORAZ_fake_script)()
+-- ScreenGui.VisualsTab_2.SliderScript is disabled.
+local function LOXIFG_fake_script() -- ScreenGui.Switch1_5.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Switch1_5)
 
 	local toggle = script.Parent
 	local toggled = false
@@ -2545,7 +2685,278 @@ local function NUNO_fake_script() -- Switch1_5.LocalScript
 		end
 	end)
 end
-coroutine.wrap(NUNO_fake_script)()
+coroutine.wrap(LOXIFG_fake_script)()
+local function ZGEM_fake_script() -- ScreenGui.Switch1_6.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Switch1_6)
+
+	local toggle = script.Parent
+	local toggled = false
+	local tween = game:GetService("TweenService")
+	local mouse = game:GetService("Players").LocalPlayer:GetMouse()
+	
+	toggle.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			if not toggled and toggle.Parent.Parent.ZIndex == 19 then
+	
+	
+				local goal = {}
+				goal.Position = UDim2.new(0.8975, 0, toggle.Position.Y.Scale, 0)
+	
+				local info = TweenInfo.new(
+					0.7,
+					Enum.EasingStyle.Sine,
+					Enum.EasingDirection.Out,
+					0,
+					false
+				)
+	
+				toggled = true
+				tween:Create(toggle, info, goal):Play()
+	
+				local goal = {}
+				goal.Color = Color3.fromRGB(255,255,255)
+	
+				local info = TweenInfo.new(
+					0.7,
+					Enum.EasingStyle.Sine,
+					Enum.EasingDirection.Out,
+					0,
+					false
+				)
+	
+				tween:Create(toggle.Parent.Switch.UIStroke, info, goal):Play()
+			elseif toggle.Parent.Parent.ZIndex == 19 then
+	
+	
+				local goal = {}
+				goal.Position = UDim2.new(0.799, 0, toggle.Position.Y.Scale, 0)
+	
+				local info = TweenInfo.new(
+					0.7,
+					Enum.EasingStyle.Sine,
+					Enum.EasingDirection.Out,
+					0,
+					false
+				)
+	
+				toggled = false
+				tween:Create(toggle, info, goal):Play()
+	
+				local goal = {}
+				goal.Color = Color3.fromRGB(5,5,5)
+	
+				local info = TweenInfo.new(
+					0.7,
+					Enum.EasingStyle.Sine,
+					Enum.EasingDirection.Out,
+					0,
+					false
+				)
+				tween:Create(toggle.Parent.Switch.UIStroke, info, goal):Play()
+			end
+		end
+	end)
+	
+	local renderstepped = game:GetService("RunService").RenderStepped
+	local amount = toggle.Parent.Parent.Slider1Background.Slider.Amount
+	local VirtualInputManager = game:GetService("VirtualInputManager")
+	
+	renderstepped:Connect(function()
+	
+		local val = tonumber(amount.Text)
+	
+		local cf = nil
+	
+		for i,v in workspace:GetChildren() do
+			if v.Name == "Football" then
+				local distance = (v.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude
+	
+				if distance < val then
+					val = distance
+					cf = v
+				end
+			end
+		end
+	
+		if cf and toggled then
+			VirtualInputManager:SendMouseButtonEvent(0, 0, 0, true, game, 0)
+			task.wait()
+			VirtualInputManager:SendMouseButtonEvent(0, 0, 0, false, game, 0)
+		end
+	end)
+end
+coroutine.wrap(ZGEM_fake_script)()
+local function AUWW_fake_script() -- ScreenGui.Amount_4.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Amount_4)
+
+	
+end
+coroutine.wrap(AUWW_fake_script)()
+local function YJVZCY_fake_script() -- ScreenGui.Slider1Background_3.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.Slider1Background_3)
+
+	
+end
+coroutine.wrap(YJVZCY_fake_script)()
+local function LSQSXV_fake_script() -- ScreenGui.SliderThing_4.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.SliderThing_4)
+
+	local UserInputService = game:GetService("UserInputService")
+	local camera = workspace.CurrentCamera
+	local slider = script.Parent
+	local renderstepped = game:GetService("RunService").RenderStepped
+	local amount = slider.Parent.Slider.Amount
+	local tweenservice =game:GetService("TweenService")
+	
+	task.wait(2)
+	
+	slider.UIAspectRatioConstraint:Destroy()
+	
+	local holding = false
+	local initialMouseX = 0
+	local initialScaleX = slider.Size.X.Scale
+	local sensitivity = 2.7
+	
+	local function getSliderValue(size)
+		local inputMin = 0.034
+		local inputMax = 0.527
+		local outputMin = 1
+		local outputMax = 40
+	
+		local value = ((size - inputMin) / (inputMax - inputMin)) * (outputMax - outputMin) + outputMin
+		return value
+	end
+	
+	slider.InputBegan:Connect(function(input)
+		if input.UserInputType ~= Enum.UserInputType.MouseButton1 then
+			return
+		end
+	
+		holding = true
+		initialMouseX = UserInputService:GetMouseLocation().X
+		initialScaleX = slider.Size.X.Scale
+		
+		local debounce = false
+	
+		while holding do
+			renderstepped:Wait()
+			
+			if debounce or slider.Parent.Parent.ZIndex ~= 19 then
+				continue
+			end
+			
+			local currentMouseX = UserInputService:GetMouseLocation().X
+			local screenWidth = camera.ViewportSize.X
+	
+			local deltaX = (currentMouseX - initialMouseX) / screenWidth * sensitivity
+			
+			local goal = {}
+			
+			local newScaleX = math.clamp(initialScaleX + deltaX, 0.034, 0.527)
+			
+			goal.Size = UDim2.new(newScaleX, 0, slider.Size.Y.Scale, 0)
+			
+			local info = TweenInfo.new(
+				0.075,
+				Enum.EasingStyle.Sine,
+				Enum.EasingDirection.InOut,
+				0,
+				false,
+				0
+			)
+			
+			debounce = true
+			
+			local tween = tweenservice:Create(slider, info, goal)
+			tween:Play()
+	
+			local sliderValue = getSliderValue(newScaleX)
+			
+			amount.Text = math.round(sliderValue)
+			
+			renderstepped:Wait()
+			tween:Destroy()
+			debounce = false
+		end
+	end)
+	
+	slider.InputEnded:Connect(function(input)
+		if input.UserInputType ~= Enum.UserInputType.MouseButton1 then
+			return
+		end
+		holding = false
+	end)
+end
+coroutine.wrap(LSQSXV_fake_script)()
+-- ScreenGui.AutomaticsTab_2.SliderScript is disabled.
+local function WKNPF_fake_script() -- ScreenGui.ScreenGui.LocalScript 
+	local script = Instance.new('LocalScript', ScreenGui.ScreenGui)
+
+	local vis = false
+	
+	for i,v in script.Parent:GetDescendants() do
+		if not v:IsA("LocalScript") and not v:IsA("TextLabel") and not v:IsA("UICorner") and not v:IsA("UIGradient") and not v:IsA("UIAspectRatioConstraint") and not v:IsA("ImageLabel") then
+			v.Transparency = 1
+		elseif v:IsA("TextLabel") then
+			v.TextTransparency = 1
+		elseif v:IsA("ImageLabel") then
+			v.ImageTransparency = 1
+		end
+	end
+	
+	task.wait(3)
+	
+	vis = true
+	
+	game:GetService("UserInputService").InputBegan:Connect(function(input,gp)
+		if input.KeyCode == Enum.KeyCode.LeftControl then
+			if not vis then
+				local TweenService = game:GetService("TweenService")
+	
+				local tweenInfo = TweenInfo.new(.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	
+				for _, v in script.Parent.UI:GetDescendants() do
+					if v:IsA("Frame") and v.Name ~= "UI" or v:IsA("UIStroke") then
+						TweenService:Create(v, tweenInfo, {Transparency = 0}):Play()
+					elseif v:IsA("TextLabel") then
+						TweenService:Create(v, tweenInfo, {TextTransparency = 0}):Play()
+					elseif v:IsA("TextButton") and v.Name ~= "f" then
+						TweenService:Create(v, tweenInfo, {TextTransparency = 0}):Play()
+					elseif v:IsA("ImageLabel") then
+						TweenService:Create(v, tweenInfo, {ImageTransparency = 0}):Play()
+					end
+					
+					if v:IsA("TextButton") then
+						v.Interactable = true
+					end
+				end
+			else
+				local TweenService = game:GetService("TweenService")
+	
+				local tweenInfo = TweenInfo.new(.5, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+	
+				for _, v in script.Parent.UI:GetDescendants() do
+					if v:IsA("Frame") and v.Name ~= "UI" or v:IsA("UIStroke") then
+						TweenService:Create(v, tweenInfo, {Transparency = 1}):Play()
+					elseif v:IsA("TextLabel") then
+						TweenService:Create(v, tweenInfo, {TextTransparency = 1}):Play()
+					elseif v:IsA("TextButton") and v.Name ~= "f" then
+						TweenService:Create(v, tweenInfo, {TextTransparency = 1}):Play()
+					elseif v:IsA("ImageLabel") then
+						TweenService:Create(v, tweenInfo, {ImageTransparency = 1}):Play()
+					end
+					
+					if v:IsA("TextButton") then
+						v.Interactable = false
+					end
+				end
+			end
+			vis = not vis
+		end
+	end)
+end
+coroutine.wrap(WKNPF_fake_script)()
+
 
 			end				
 
