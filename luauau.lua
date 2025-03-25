@@ -1,320 +1,187 @@
--- Ensure the LPH-related functions are properly defined if not already
-if not LPHOBFUSCATED then
-    getfenv().LPH_NO_VIRTUALIZE = function(func) return func end
-    getfenv().LPH_JIT_MAX = function(func) return func end
-end
-
-LPH_JIT_MAX(function()
-    local Hooks, Targets, Whitelisted = {}, {}, {
-        {655, 775, 724, 633, 891},
-        {760, 760, 771, 665, 898},
-        {660, 759, 751, 863, 771},
-    }
-
-    -- Function to compare the equality of two tables
-    local function AreTablesEqual(a, b)
-        if #a ~= #b then return false end
-        for i, v in ipairs(a) do
-            if b[i] ~= v then return false end
-        end
-        return true
-    end
-
-    LPH_NO_VIRTUALIZE(function()
-        -- Scan garbage collected objects for target functions and metatables
-        for _, obj in ipairs(getgc(true)) do
-            if type(obj) == "function" then
-                local scriptSource, lineNumber = debug.info(obj, "sl")
-                if scriptSource:find("PlayerModule.LocalScript") and table.find({42, 51, 61}, lineNumber) then
-                    table.insert(Targets, obj)
-                end
-            elseif type(obj) == "table" and rawlen(obj) == 19 and getrawmetatable(obj) then
-                Targets.call = rawget(getrawmetatable(obj), "__call")
-            end
-        end
-    end)()
-
-    -- Validate that all necessary targets are found
-    if not (Targets[1] and Targets[2] and Targets[3] and Targets.call) then
-        warn("Bypass initialization failed")
-        return
-    else
-        print("BYPASSWORKEDPRO")
-local fetch
-if httpget then
-	fetch = httpget
-elseif http and http.get then
-	fetch = http.get
-elseif http and http.request then
-	fetch = function(url) return http.request({Url = url, Method = "GET"}).Body end
-elseif game and game.HttpGet then
-	fetch = function(url) return game:HttpGet(url, true) end
-else
-	error("Your executor doesn’t support any known HTTP functions!")
-end
-
-if not loadstring then
-	error("Your executor doesn’t support loadstring!")
-end
-
-local API_URL = "https://api.github.com/repos/mxqontopgames/lunorhub/commits/main"
-local GITHUB_URL_BASE = "https://raw.githubusercontent.com/mxqontopgames/lunorhub/"
-
-local function fetchKeys()
-	local commitResponse = fetch(API_URL)
-	if not commitResponse then
-		warn("Failed to fetch commit!")
-		return nil
-	end
-	local commitHash = commitResponse:match('"sha":"(.-)"')
-	if not commitHash then
-		warn("Failed to parse commit hash!")
-		return nil
-	end
-	local response = fetch(GITHUB_URL_BASE .. commitHash .. "/ff2keys.lua")
-	if not response then
-		warn("Failed to fetch keys!")
-		return nil
-	end
-	local keys = loadstring(response)()
-	if not keys or type(keys) ~= "table" then
-		warn("Failed to extract table from response!")
-		return nil
-	end
-	return keys
-end
-
-local function validatePlayerKey()
-	local player = game.Players.LocalPlayer
-	if not player then
-		warn("LocalPlayer not found!")
-		return false
-	end
-
-	local keys = fetchKeys()
-	if not keys then
-		warn("Key fetch failed for " .. player.Name)
-		return false
-	end
-
-	if not next(keys) then
-		warn("Please generate a key from the Discord with your UserId (" .. player.UserId .. "!)")
-		return false
-	end
-
-	for key, data in pairs(keys) do
-		if data.userId == player.UserId and data.active == true then
-			return true
-		end
-	end
-	warn("Please generate a key from the Discord with your UserId (" .. player.UserId .. "!)")
-	return false
-end
-
-local hasValidKey = validatePlayerKey()
-if not hasValidKey then
-	game.Players.LocalPlayer:Kick("Please do not execute without a key.")
-end
-
-if hasValidKey then
-        -- Gui to Lua
+-- Gui to Lua
 -- Version: 3.2
 
 -- Instances:
 
-local ScreenGui = Instance.new("ScreenGui")
+ ScreenGui = Instance.new("ScreenGui")
 local Welcome = Instance.new("TextLabel")
-local UIGradient = Instance.new("UIGradient")
-local UI = Instance.new("Frame")
-local CatchingTab = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local Background = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
-local Switch = Instance.new("Frame")
-local UICorner_3 = Instance.new("UICorner")
-local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
-local Switch1 = Instance.new("Frame")
-local UICorner_4 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local UIGradient_2 = Instance.new("UIGradient")
-local UIGradient_3 = Instance.new("UIGradient")
-local UIGradient_4 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
-local Slider1Background = Instance.new("Frame")
-local UICorner_5 = Instance.new("UICorner")
-local Slider = Instance.new("Frame")
-local UICorner_6 = Instance.new("UICorner")
-local Amount = Instance.new("TextLabel")
-local SliderThing = Instance.new("Frame")
-local UICorner_7 = Instance.new("UICorner")
-local UIGradient_5 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
-local TextButton = Instance.new("TextButton")
-local UIGradient_6 = Instance.new("UIGradient")
-local UIGradient_7 = Instance.new("UIGradient")
-local UIGradient_8 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
-local Tabs = Instance.new("Frame")
-local UICorner_8 = Instance.new("UICorner")
-local CatchingTab_2 = Instance.new("Frame")
-local UICorner_9 = Instance.new("UICorner")
-local TextLabel_2 = Instance.new("TextLabel")
-local UIGradient_9 = Instance.new("UIGradient")
-local UIGradient_10 = Instance.new("UIGradient")
-local UIGradient_11 = Instance.new("UIGradient")
-local f = Instance.new("TextButton")
-local UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
-local PlayerTab = Instance.new("Frame")
-local UICorner_10 = Instance.new("UICorner")
-local TextLabel_3 = Instance.new("TextLabel")
-local UIGradient_12 = Instance.new("UIGradient")
-local UIGradient_13 = Instance.new("UIGradient")
-local UIGradient_14 = Instance.new("UIGradient")
-local f_2 = Instance.new("TextButton")
-local UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
-local AutomaticsTab = Instance.new("Frame")
-local UICorner_11 = Instance.new("UICorner")
-local TextLabel_4 = Instance.new("TextLabel")
-local UIGradient_15 = Instance.new("UIGradient")
-local UIGradient_16 = Instance.new("UIGradient")
-local UIGradient_17 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint")
-local TextLabel_5 = Instance.new("TextLabel")
-local UIGradient_18 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_10 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_11 = Instance.new("UIAspectRatioConstraint")
-local VisualsTab = Instance.new("Frame")
-local UICorner_12 = Instance.new("UICorner")
-local TextLabel_6 = Instance.new("TextLabel")
-local UIGradient_19 = Instance.new("UIGradient")
-local UIGradient_20 = Instance.new("UIGradient")
-local UIGradient_21 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_12 = Instance.new("UIAspectRatioConstraint")
-local f_3 = Instance.new("TextButton")
-local UIAspectRatioConstraint_13 = Instance.new("UIAspectRatioConstraint")
-local Top = Instance.new("Frame")
-local UICorner_13 = Instance.new("UICorner")
-local TextLabel_7 = Instance.new("TextLabel")
-local UIGradient_22 = Instance.new("UIGradient")
-local UIGradient_23 = Instance.new("UIGradient")
-local UIGradient_24 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_14 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_15 = Instance.new("UIAspectRatioConstraint")
-local Label = Instance.new("ImageLabel")
-local UIAspectRatioConstraint_16 = Instance.new("UIAspectRatioConstraint")
-local UIAspectRatioConstraint_17 = Instance.new("UIAspectRatioConstraint")
-local PlayerTab_2 = Instance.new("Frame")
-local UICorner_14 = Instance.new("UICorner")
-local UIAspectRatioConstraint_18 = Instance.new("UIAspectRatioConstraint")
-local JpAeBackground = Instance.new("Frame")
-local UICorner_15 = Instance.new("UICorner")
-local Switch_2 = Instance.new("Frame")
-local UICorner_16 = Instance.new("UICorner")
-local UIAspectRatioConstraint_19 = Instance.new("UIAspectRatioConstraint")
-local Switch1_2 = Instance.new("Frame")
-local UICorner_17 = Instance.new("UICorner")
-local UIAspectRatioConstraint_20 = Instance.new("UIAspectRatioConstraint")
-local TextLabel_8 = Instance.new("TextLabel")
-local UIGradient_25 = Instance.new("UIGradient")
-local UIGradient_26 = Instance.new("UIGradient")
-local UIGradient_27 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_21 = Instance.new("UIAspectRatioConstraint")
-local Slider1Background_2 = Instance.new("Frame")
-local UICorner_18 = Instance.new("UICorner")
-local TextButton_2 = Instance.new("TextButton")
-local UIGradient_28 = Instance.new("UIGradient")
-local UIGradient_29 = Instance.new("UIGradient")
-local UIGradient_30 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_22 = Instance.new("UIAspectRatioConstraint")
-local Slider_2 = Instance.new("Frame")
-local UICorner_19 = Instance.new("UICorner")
-local Amount_2 = Instance.new("TextLabel")
-local SliderThing_2 = Instance.new("Frame")
-local UICorner_20 = Instance.new("UICorner")
-local UIGradient_31 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_23 = Instance.new("UIAspectRatioConstraint")
-local TextLabel_9 = Instance.new("TextLabel")
-local UIGradient_32 = Instance.new("UIGradient")
-local UIGradient_33 = Instance.new("UIGradient")
-local UIGradient_34 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_24 = Instance.new("UIAspectRatioConstraint")
-local DynamicAeBackground = Instance.new("Frame")
-local UICorner_21 = Instance.new("UICorner")
-local Switch_3 = Instance.new("Frame")
-local UICorner_22 = Instance.new("UICorner")
-local UIAspectRatioConstraint_25 = Instance.new("UIAspectRatioConstraint")
-local Switch1_3 = Instance.new("Frame")
-local UICorner_23 = Instance.new("UICorner")
-local UIAspectRatioConstraint_26 = Instance.new("UIAspectRatioConstraint")
-local TextLabel_10 = Instance.new("TextLabel")
-local UIGradient_35 = Instance.new("UIGradient")
-local UIGradient_36 = Instance.new("UIGradient")
-local UIGradient_37 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_27 = Instance.new("UIAspectRatioConstraint")
-local Divider = Instance.new("Frame")
-local UIAspectRatioConstraint_28 = Instance.new("UIAspectRatioConstraint")
-local QuickTP = Instance.new("Frame")
-local UICorner_24 = Instance.new("UICorner")
-local Switch_4 = Instance.new("Frame")
-local UICorner_25 = Instance.new("UICorner")
-local UIAspectRatioConstraint_29 = Instance.new("UIAspectRatioConstraint")
-local Switch1_4 = Instance.new("Frame")
-local UICorner_26 = Instance.new("UICorner")
-local UIAspectRatioConstraint_30 = Instance.new("UIAspectRatioConstraint")
-local TextLabel_11 = Instance.new("TextLabel")
-local UIGradient_38 = Instance.new("UIGradient")
-local UIGradient_39 = Instance.new("UIGradient")
-local UIGradient_40 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_31 = Instance.new("UIAspectRatioConstraint")
-local QuickTPKeybind = Instance.new("Frame")
-local UICorner_27 = Instance.new("UICorner")
-local TextLabel_12 = Instance.new("TextLabel")
-local UIGradient_41 = Instance.new("UIGradient")
+ UIGradient = Instance.new("UIGradient")
+ UI = Instance.new("Frame")
+ CatchingTab = Instance.new("Frame")
+ UICorner = Instance.new("UICorner")
+ Background = Instance.new("Frame")
+ UICorner_2 = Instance.new("UICorner")
+ Switch = Instance.new("Frame")
+ UICorner_3 = Instance.new("UICorner")
+ UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+ Switch1 = Instance.new("Frame")
+ UICorner_4 = Instance.new("UICorner")
+ TextLabel = Instance.new("TextLabel")
+ UIGradient_2 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+ UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+ Slider1Background = Instance.new("Frame")
+ UICorner_5 = Instance.new("UICorner")
+ Slider = Instance.new("Frame")
+ UICorner_6 = Instance.new("UICorner")
+ Amount = Instance.new("TextLabel")
+ SliderThing = Instance.new("Frame")
+ UICorner_7 = Instance.new("UICorner")
+ UIGradient_3 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+ TextButton = Instance.new("TextButton")
+ UIGradient_4 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_5 = Instance.new("UIAspectRatioConstraint")
+ Tabs = Instance.new("Frame")
+ UICorner_8 = Instance.new("UICorner")
+ CatchingTab_2 = Instance.new("Frame")
+ UICorner_9 = Instance.new("UICorner")
+ TextLabel_2 = Instance.new("TextLabel")
+ UIGradient_5 = Instance.new("UIGradient")
+ f = Instance.new("TextButton")
+ UIAspectRatioConstraint_6 = Instance.new("UIAspectRatioConstraint")
+ PlayerTab = Instance.new("Frame")
+ UICorner_10 = Instance.new("UICorner")
+ TextLabel_3 = Instance.new("TextLabel")
+ UIGradient_6 = Instance.new("UIGradient")
+ f_2 = Instance.new("TextButton")
+ UIAspectRatioConstraint_7 = Instance.new("UIAspectRatioConstraint")
+ AutomaticsTab = Instance.new("Frame")
+ UICorner_11 = Instance.new("UICorner")
+ TextLabel_4 = Instance.new("TextLabel")
+ UIGradient_7 = Instance.new("UIGradient")
+ UIGradient_8 = Instance.new("UIGradient")
+ UIGradient_9 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_8 = Instance.new("UIAspectRatioConstraint")
+ UIAspectRatioConstraint_9 = Instance.new("UIAspectRatioConstraint")
+ TextLabel_5 = Instance.new("TextLabel")
+ UIGradient_10 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_10 = Instance.new("UIAspectRatioConstraint")
+ UIAspectRatioConstraint_11 = Instance.new("UIAspectRatioConstraint")
+ VisualsTab = Instance.new("Frame")
+ UICorner_12 = Instance.new("UICorner")
+ TextLabel_6 = Instance.new("TextLabel")
+ UIGradient_11 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_12 = Instance.new("UIAspectRatioConstraint")
+ f_3 = Instance.new("TextButton")
+ UIAspectRatioConstraint_13 = Instance.new("UIAspectRatioConstraint")
+ Top = Instance.new("Frame")
+ UICorner_13 = Instance.new("UICorner")
+ TextLabel_7 = Instance.new("TextLabel")
+ UIGradient_12 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_14 = Instance.new("UIAspectRatioConstraint")
+ UIAspectRatioConstraint_15 = Instance.new("UIAspectRatioConstraint")
+ Label = Instance.new("ImageLabel")
+ UIAspectRatioConstraint_16 = Instance.new("UIAspectRatioConstraint")
+ UIAspectRatioConstraint_17 = Instance.new("UIAspectRatioConstraint")
+ PlayerTab_2 = Instance.new("Frame")
+ UICorner_14 = Instance.new("UICorner")
+ UIAspectRatioConstraint_18 = Instance.new("UIAspectRatioConstraint")
+ JpAeBackground = Instance.new("Frame")
+ UICorner_15 = Instance.new("UICorner")
+ Switch_2 = Instance.new("Frame")
+ UICorner_16 = Instance.new("UICorner")
+ UIAspectRatioConstraint_19 = Instance.new("UIAspectRatioConstraint")
+ Switch1_2 = Instance.new("Frame")
+ UICorner_17 = Instance.new("UICorner")
+ UIAspectRatioConstraint_20 = Instance.new("UIAspectRatioConstraint")
+ TextLabel_8 = Instance.new("TextLabel")
+ UIGradient_13 = Instance.new("UIGradient")
+ UIGradient_14 = Instance.new("UIGradient")
+ UIGradient_15 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_21 = Instance.new("UIAspectRatioConstraint")
+ Slider1Background_2 = Instance.new("Frame")
+ UICorner_18 = Instance.new("UICorner")
+ TextButton_2 = Instance.new("TextButton")
+ UIGradient_16 = Instance.new("UIGradient")
+ UIGradient_17 = Instance.new("UIGradient")
+ UIGradient_18 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_22 = Instance.new("UIAspectRatioConstraint")
+ Slider_2 = Instance.new("Frame")
+ UICorner_19 = Instance.new("UICorner")
+ Amount_2 = Instance.new("TextLabel")
+ SliderThing_2 = Instance.new("Frame")
+ UICorner_20 = Instance.new("UICorner")
+ UIGradient_19 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_23 = Instance.new("UIAspectRatioConstraint")
+ TextLabel_9 = Instance.new("TextLabel")
+ UIGradient_20 = Instance.new("UIGradient")
+ UIGradient_21 = Instance.new("UIGradient")
+ UIGradient_22 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_24 = Instance.new("UIAspectRatioConstraint")
+ DynamicAeBackground = Instance.new("Frame")
+ UICorner_21 = Instance.new("UICorner")
+ Switch_3 = Instance.new("Frame")
+ UICorner_22 = Instance.new("UICorner")
+ UIAspectRatioConstraint_25 = Instance.new("UIAspectRatioConstraint")
+ Switch1_3 = Instance.new("Frame")
+ UICorner_23 = Instance.new("UICorner")
+ UIAspectRatioConstraint_26 = Instance.new("UIAspectRatioConstraint")
+ TextLabel_10 = Instance.new("TextLabel")
+ UIGradient_23 = Instance.new("UIGradient")
+ UIGradient_24 = Instance.new("UIGradient")
+ UIGradient_25 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_27 = Instance.new("UIAspectRatioConstraint")
+ Divider = Instance.new("Frame")
+ UIAspectRatioConstraint_28 = Instance.new("UIAspectRatioConstraint")
+ QuickTP = Instance.new("Frame")
+ UICorner_24 = Instance.new("UICorner")
+ Switch_4 = Instance.new("Frame")
+ UICorner_25 = Instance.new("UICorner")
+ UIAspectRatioConstraint_29 = Instance.new("UIAspectRatioConstraint")
+ Switch1_4 = Instance.new("Frame")
+ UICorner_26 = Instance.new("UICorner")
+ UIAspectRatioConstraint_30 = Instance.new("UIAspectRatioConstraint")
+ TextLabel_11 = Instance.new("TextLabel")
+ UIGradient_26 = Instance.new("UIGradient")
+ UIGradient_27 = Instance.new("UIGradient")
+ UIGradient_28 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_31 = Instance.new("UIAspectRatioConstraint")
+ QuickTPKeybind = Instance.new("Frame")
+ UICorner_27 = Instance.new("UICorner")
+ TextLabel_12 = Instance.new("TextLabel")
+ UIGradient_29 = Instance.new("UIGradient")
+ UIGradient_30 = Instance.new("UIGradient")
+ UIGradient_31 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_32 = Instance.new("UIAspectRatioConstraint")
+ TextButton_3 = Instance.new("TextButton")
+ UICorner_28 = Instance.new("UICorner")
+ Putinkey = Instance.new("TextLabel")
+ UIGradient_32 = Instance.new("UIGradient")
+ UIGradient_33 = Instance.new("UIGradient")
+ UIGradient_34 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_33 = Instance.new("UIAspectRatioConstraint")
+ Walkspeed = Instance.new("Frame")
+ UICorner_29 = Instance.new("UICorner")
+ TextButton_4 = Instance.new("TextButton")
+ UIGradient_35 = Instance.new("UIGradient")
+ UIGradient_36 = Instance.new("UIGradient")
+ UIGradient_37 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_34 = Instance.new("UIAspectRatioConstraint")
+ Slider_3 = Instance.new("Frame")
+ UICorner_30 = Instance.new("UICorner")
+ Amount_3 = Instance.new("TextLabel")
+ SliderThing_3 = Instance.new("Frame")
+ UICorner_31 = Instance.new("UICorner")
+ UIGradient_38 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_35 = Instance.new("UIAspectRatioConstraint")
+ TextLabel_13 = Instance.new("TextLabel")
+ UIGradient_39 = Instance.new("UIGradient")
+ UIGradient_40 = Instance.new("UIGradient")
+ UIGradient_41 = Instance.new("UIGradient")
+ UIAspectRatioConstraint_36 = Instance.new("UIAspectRatioConstraint")
+ VisualsTab_2 = Instance.new("Frame")
+ UICorner_32 = Instance.new("UICorner")
+ UIAspectRatioConstraint_37 = Instance.new("UIAspectRatioConstraint")
+ Background_2 = Instance.new("Frame")
+ UICorner_33 = Instance.new("UICorner")
+ Switch_5 = Instance.new("Frame")
+ UICorner_34 = Instance.new("UICorner")
+ UIAspectRatioConstraint_38 = Instance.new("UIAspectRatioConstraint")
+ Switch1_5 = Instance.new("Frame")
+ UICorner_35 = Instance.new("UICorner")
+ TextLabel_14 = Instance.new("TextLabel")
 local UIGradient_42 = Instance.new("UIGradient")
-local UIGradient_43 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_32 = Instance.new("UIAspectRatioConstraint")
-local TextButton_3 = Instance.new("TextButton")
-local UICorner_28 = Instance.new("UICorner")
-local Putinkey = Instance.new("TextLabel")
-local UIGradient_44 = Instance.new("UIGradient")
-local UIGradient_45 = Instance.new("UIGradient")
-local UIGradient_46 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_33 = Instance.new("UIAspectRatioConstraint")
-local Walkspeed = Instance.new("Frame")
-local UICorner_29 = Instance.new("UICorner")
-local TextButton_4 = Instance.new("TextButton")
-local UIGradient_47 = Instance.new("UIGradient")
-local UIGradient_48 = Instance.new("UIGradient")
-local UIGradient_49 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_34 = Instance.new("UIAspectRatioConstraint")
-local Slider_3 = Instance.new("Frame")
-local UICorner_30 = Instance.new("UICorner")
-local Amount_3 = Instance.new("TextLabel")
-local SliderThing_3 = Instance.new("Frame")
-local UICorner_31 = Instance.new("UICorner")
-local UIGradient_50 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_35 = Instance.new("UIAspectRatioConstraint")
-local TextLabel_13 = Instance.new("TextLabel")
-local UIGradient_51 = Instance.new("UIGradient")
-local UIGradient_52 = Instance.new("UIGradient")
-local UIGradient_53 = Instance.new("UIGradient")
-local UIAspectRatioConstraint_36 = Instance.new("UIAspectRatioConstraint")
-local VisualsTab_2 = Instance.new("Frame")
-local UICorner_32 = Instance.new("UICorner")
-local UIAspectRatioConstraint_37 = Instance.new("UIAspectRatioConstraint")
-local Background_2 = Instance.new("Frame")
-local UICorner_33 = Instance.new("UICorner")
-local Switch_5 = Instance.new("Frame")
-local UICorner_34 = Instance.new("UICorner")
-local UIAspectRatioConstraint_38 = Instance.new("UIAspectRatioConstraint")
-local Switch1_5 = Instance.new("Frame")
-local UICorner_35 = Instance.new("UICorner")
-local TextLabel_14 = Instance.new("TextLabel")
-local UIGradient_54 = Instance.new("UIGradient")
-local UIGradient_55 = Instance.new("UIGradient")
-local UIGradient_56 = Instance.new("UIGradient")
 local UIAspectRatioConstraint_39 = Instance.new("UIAspectRatioConstraint")
 
 --Properties:
@@ -421,12 +288,6 @@ TextLabel.TextWrapped = true
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
 UIGradient_2.Parent = TextLabel
 
-UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_3.Parent = TextLabel
-
-UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_4.Parent = TextLabel
-
 UIAspectRatioConstraint_2.Parent = TextLabel
 UIAspectRatioConstraint_2.AspectRatio = 7.126
 
@@ -482,8 +343,8 @@ SliderThing.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
 UICorner_7.CornerRadius = UDim.new(10, 0)
 UICorner_7.Parent = SliderThing
 
-UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_5.Parent = SliderThing
+UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_3.Parent = SliderThing
 
 UIAspectRatioConstraint_4.Parent = SliderThing
 UIAspectRatioConstraint_4.AspectRatio = 1.077
@@ -503,14 +364,8 @@ TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
 TextButton.TextXAlignment = Enum.TextXAlignment.Left
 
-UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_6.Parent = TextButton
-
-UIGradient_7.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_7.Parent = TextButton
-
-UIGradient_8.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_8.Parent = TextButton
+UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_4.Parent = TextButton
 
 UIAspectRatioConstraint_5.Parent = TextButton
 UIAspectRatioConstraint_5.AspectRatio = 4.428
@@ -553,14 +408,8 @@ TextLabel_2.TextScaled = true
 TextLabel_2.TextSize = 14.000
 TextLabel_2.TextWrapped = true
 
-UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_9.Parent = TextLabel_2
-
-UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_10.Parent = TextLabel_2
-
-UIGradient_11.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_11.Parent = TextLabel_2
+UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_5.Parent = TextLabel_2
 
 f.Name = "f"
 f.Parent = TextLabel_2
@@ -606,14 +455,8 @@ TextLabel_3.TextScaled = true
 TextLabel_3.TextSize = 14.000
 TextLabel_3.TextWrapped = true
 
-UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_12.Parent = TextLabel_3
-
-UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_13.Parent = TextLabel_3
-
-UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_14.Parent = TextLabel_3
+UIGradient_6.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_6.Parent = TextLabel_3
 
 f_2.Name = "f"
 f_2.Parent = TextLabel_3
@@ -659,14 +502,14 @@ TextLabel_4.TextScaled = true
 TextLabel_4.TextSize = 14.000
 TextLabel_4.TextWrapped = true
 
-UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_15.Parent = TextLabel_4
+UIGradient_7.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_7.Parent = TextLabel_4
 
-UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_16.Parent = TextLabel_4
+UIGradient_8.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_8.Parent = TextLabel_4
 
-UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_17.Parent = TextLabel_4
+UIGradient_9.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_9.Parent = TextLabel_4
 
 UIAspectRatioConstraint_8.Parent = TextLabel_4
 UIAspectRatioConstraint_8.AspectRatio = 4.590
@@ -688,8 +531,8 @@ TextLabel_5.TextScaled = true
 TextLabel_5.TextSize = 14.000
 TextLabel_5.TextWrapped = true
 
-UIGradient_18.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_18.Parent = TextLabel_5
+UIGradient_10.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_10.Parent = TextLabel_5
 
 UIAspectRatioConstraint_10.Parent = TextLabel_5
 UIAspectRatioConstraint_10.AspectRatio = 3.667
@@ -723,14 +566,8 @@ TextLabel_6.TextScaled = true
 TextLabel_6.TextSize = 14.000
 TextLabel_6.TextWrapped = true
 
-UIGradient_19.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_19.Parent = TextLabel_6
-
-UIGradient_20.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_20.Parent = TextLabel_6
-
-UIGradient_21.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_21.Parent = TextLabel_6
+UIGradient_11.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_11.Parent = TextLabel_6
 
 UIAspectRatioConstraint_12.Parent = TextLabel_6
 UIAspectRatioConstraint_12.AspectRatio = 4.590
@@ -779,14 +616,8 @@ TextLabel_7.TextScaled = true
 TextLabel_7.TextSize = 14.000
 TextLabel_7.TextWrapped = true
 
-UIGradient_22.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_22.Parent = TextLabel_7
-
-UIGradient_23.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_23.Parent = TextLabel_7
-
-UIGradient_24.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_24.Parent = TextLabel_7
+UIGradient_12.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_12.Parent = TextLabel_7
 
 UIAspectRatioConstraint_14.Parent = TextLabel_7
 UIAspectRatioConstraint_14.AspectRatio = 4.040
@@ -882,14 +713,14 @@ TextLabel_8.TextScaled = true
 TextLabel_8.TextSize = 14.000
 TextLabel_8.TextWrapped = true
 
-UIGradient_25.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_25.Parent = TextLabel_8
+UIGradient_13.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_13.Parent = TextLabel_8
 
-UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_26.Parent = TextLabel_8
+UIGradient_14.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_14.Parent = TextLabel_8
 
-UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_27.Parent = TextLabel_8
+UIGradient_15.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_15.Parent = TextLabel_8
 
 UIAspectRatioConstraint_21.Parent = TextLabel_8
 UIAspectRatioConstraint_21.AspectRatio = 7.126
@@ -921,14 +752,14 @@ TextButton_2.TextSize = 14.000
 TextButton_2.TextWrapped = true
 TextButton_2.TextXAlignment = Enum.TextXAlignment.Left
 
-UIGradient_28.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_28.Parent = TextButton_2
+UIGradient_16.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_16.Parent = TextButton_2
 
-UIGradient_29.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_29.Parent = TextButton_2
+UIGradient_17.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_17.Parent = TextButton_2
 
-UIGradient_30.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_30.Parent = TextButton_2
+UIGradient_18.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_18.Parent = TextButton_2
 
 UIAspectRatioConstraint_22.Parent = TextButton_2
 UIAspectRatioConstraint_22.AspectRatio = 4.428
@@ -970,8 +801,8 @@ SliderThing_2.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
 UICorner_20.CornerRadius = UDim.new(10, 0)
 UICorner_20.Parent = SliderThing_2
 
-UIGradient_31.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_31.Parent = SliderThing_2
+UIGradient_19.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_19.Parent = SliderThing_2
 
 UIAspectRatioConstraint_23.Parent = SliderThing_2
 UIAspectRatioConstraint_23.AspectRatio = 1.077
@@ -990,14 +821,14 @@ TextLabel_9.TextScaled = true
 TextLabel_9.TextSize = 14.000
 TextLabel_9.TextWrapped = true
 
-UIGradient_32.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_32.Parent = TextLabel_9
+UIGradient_20.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_20.Parent = TextLabel_9
 
-UIGradient_33.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_33.Parent = TextLabel_9
+UIGradient_21.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_21.Parent = TextLabel_9
 
-UIGradient_34.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_34.Parent = TextLabel_9
+UIGradient_22.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_22.Parent = TextLabel_9
 
 UIAspectRatioConstraint_24.Parent = TextLabel_9
 UIAspectRatioConstraint_24.AspectRatio = 7.126
@@ -1059,14 +890,14 @@ TextLabel_10.TextScaled = true
 TextLabel_10.TextSize = 14.000
 TextLabel_10.TextWrapped = true
 
-UIGradient_35.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_35.Parent = TextLabel_10
+UIGradient_23.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_23.Parent = TextLabel_10
 
-UIGradient_36.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_36.Parent = TextLabel_10
+UIGradient_24.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_24.Parent = TextLabel_10
 
-UIGradient_37.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_37.Parent = TextLabel_10
+UIGradient_25.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_25.Parent = TextLabel_10
 
 UIAspectRatioConstraint_27.Parent = TextLabel_10
 UIAspectRatioConstraint_27.AspectRatio = 7.126
@@ -1139,14 +970,14 @@ TextLabel_11.TextScaled = true
 TextLabel_11.TextSize = 14.000
 TextLabel_11.TextWrapped = true
 
-UIGradient_38.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_38.Parent = TextLabel_11
+UIGradient_26.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_26.Parent = TextLabel_11
 
-UIGradient_39.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_39.Parent = TextLabel_11
+UIGradient_27.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_27.Parent = TextLabel_11
 
-UIGradient_40.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_40.Parent = TextLabel_11
+UIGradient_28.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_28.Parent = TextLabel_11
 
 UIAspectRatioConstraint_31.Parent = TextLabel_11
 UIAspectRatioConstraint_31.AspectRatio = 7.126
@@ -1177,14 +1008,14 @@ TextLabel_12.TextScaled = true
 TextLabel_12.TextSize = 14.000
 TextLabel_12.TextWrapped = true
 
-UIGradient_41.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_41.Parent = TextLabel_12
+UIGradient_29.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_29.Parent = TextLabel_12
 
-UIGradient_42.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_42.Parent = TextLabel_12
+UIGradient_30.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_30.Parent = TextLabel_12
 
-UIGradient_43.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_43.Parent = TextLabel_12
+UIGradient_31.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_31.Parent = TextLabel_12
 
 UIAspectRatioConstraint_32.Parent = TextLabel_12
 UIAspectRatioConstraint_32.AspectRatio = 7.126
@@ -1220,14 +1051,14 @@ Putinkey.TextScaled = true
 Putinkey.TextSize = 14.000
 Putinkey.TextWrapped = true
 
-UIGradient_44.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_44.Parent = Putinkey
+UIGradient_32.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_32.Parent = Putinkey
 
-UIGradient_45.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_45.Parent = Putinkey
+UIGradient_33.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_33.Parent = Putinkey
 
-UIGradient_46.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_46.Parent = Putinkey
+UIGradient_34.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_34.Parent = Putinkey
 
 UIAspectRatioConstraint_33.Parent = Putinkey
 UIAspectRatioConstraint_33.AspectRatio = 7.126
@@ -1259,14 +1090,14 @@ TextButton_4.TextSize = 14.000
 TextButton_4.TextWrapped = true
 TextButton_4.TextXAlignment = Enum.TextXAlignment.Left
 
-UIGradient_47.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_47.Parent = TextButton_4
+UIGradient_35.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_35.Parent = TextButton_4
 
-UIGradient_48.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_48.Parent = TextButton_4
+UIGradient_36.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_36.Parent = TextButton_4
 
-UIGradient_49.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_49.Parent = TextButton_4
+UIGradient_37.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_37.Parent = TextButton_4
 
 UIAspectRatioConstraint_34.Parent = TextButton_4
 UIAspectRatioConstraint_34.AspectRatio = 4.428
@@ -1308,8 +1139,8 @@ SliderThing_3.Size = UDim2.new(0.0337870941, 0, 0.266752243, 0)
 UICorner_31.CornerRadius = UDim.new(10, 0)
 UICorner_31.Parent = SliderThing_3
 
-UIGradient_50.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_50.Parent = SliderThing_3
+UIGradient_38.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_38.Parent = SliderThing_3
 
 UIAspectRatioConstraint_35.Parent = SliderThing_3
 UIAspectRatioConstraint_35.AspectRatio = 1.077
@@ -1328,14 +1159,14 @@ TextLabel_13.TextScaled = true
 TextLabel_13.TextSize = 14.000
 TextLabel_13.TextWrapped = true
 
-UIGradient_51.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_51.Parent = TextLabel_13
+UIGradient_39.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_39.Parent = TextLabel_13
 
-UIGradient_52.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_52.Parent = TextLabel_13
+UIGradient_40.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_40.Parent = TextLabel_13
 
-UIGradient_53.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_53.Parent = TextLabel_13
+UIGradient_41.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_41.Parent = TextLabel_13
 
 UIAspectRatioConstraint_36.Parent = TextLabel_13
 UIAspectRatioConstraint_36.AspectRatio = 7.126
@@ -1409,21 +1240,15 @@ TextLabel_14.TextScaled = true
 TextLabel_14.TextSize = 14.000
 TextLabel_14.TextWrapped = true
 
-UIGradient_54.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_54.Parent = TextLabel_14
-
-UIGradient_55.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_55.Parent = TextLabel_14
-
-UIGradient_56.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
-UIGradient_56.Parent = TextLabel_14
+UIGradient_42.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(102, 0, 255)), ColorSequenceKeypoint.new(0.27, Color3.fromRGB(85, 0, 255)), ColorSequenceKeypoint.new(0.70, Color3.fromRGB(131, 0, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(138, 20, 255))}
+UIGradient_42.Parent = TextLabel_14
 
 UIAspectRatioConstraint_39.Parent = TextLabel_14
 UIAspectRatioConstraint_39.AspectRatio = 7.126
 
 -- Scripts:
 
-local function AKDGFUM_fake_script() -- ScreenGui.LocalScript 
+local function XFDJIJ_fake_script() -- ScreenGui.LocalScript 
 	local script = Instance.new('LocalScript', ScreenGui)
 
 	local vis = false
@@ -1489,8 +1314,8 @@ local function AKDGFUM_fake_script() -- ScreenGui.LocalScript
 		end
 	end)
 end
-coroutine.wrap(AKDGFUM_fake_script)()
-local function UNBXXTI_fake_script() -- Welcome.LocalScript 
+coroutine.wrap(XFDJIJ_fake_script)()
+local function FPBHCBN_fake_script() -- Welcome.LocalScript 
 	local script = Instance.new('LocalScript', Welcome)
 
 	local TweenService = game:GetService("TweenService")
@@ -1522,8 +1347,8 @@ local function UNBXXTI_fake_script() -- Welcome.LocalScript
 		end
 	end
 end
-coroutine.wrap(UNBXXTI_fake_script)()
-local function DZNLZP_fake_script() -- Switch1.LocalScript 
+coroutine.wrap(FPBHCBN_fake_script)()
+local function CVOOI_fake_script() -- Switch1.LocalScript 
 	local script = Instance.new('LocalScript', Switch1)
 
 	local toggle = script.Parent
@@ -1652,14 +1477,14 @@ local function DZNLZP_fake_script() -- Switch1.LocalScript
 		end
 	end)
 end
-coroutine.wrap(DZNLZP_fake_script)()
-local function AWUU_fake_script() -- Slider1Background.LocalScript 
+coroutine.wrap(CVOOI_fake_script)()
+local function CRVNJZ_fake_script() -- Slider1Background.LocalScript 
 	local script = Instance.new('LocalScript', Slider1Background)
 
 	
 end
-coroutine.wrap(AWUU_fake_script)()
-local function DTXD_fake_script() -- SliderThing.LocalScript 
+coroutine.wrap(CRVNJZ_fake_script)()
+local function NMRXQT_fake_script() -- SliderThing.LocalScript 
 	local script = Instance.new('LocalScript', SliderThing)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1748,9 +1573,9 @@ local function DTXD_fake_script() -- SliderThing.LocalScript
 		holding = false
 	end)
 end
-coroutine.wrap(DTXD_fake_script)()
+coroutine.wrap(NMRXQT_fake_script)()
 -- CatchingTab.SliderScript is disabled.
-local function DQWHSHJ_fake_script() -- f.LocalScript 
+local function GCQW_fake_script() -- f.LocalScript 
 	local script = Instance.new('LocalScript', f)
 
 	local Button = script.Parent
@@ -1770,8 +1595,8 @@ local function DQWHSHJ_fake_script() -- f.LocalScript
 		end
 	end)
 end
-coroutine.wrap(DQWHSHJ_fake_script)()
-local function KUBHK_fake_script() -- f_2.LocalScript 
+coroutine.wrap(GCQW_fake_script)()
+local function FNXZFU_fake_script() -- f_2.LocalScript 
 	local script = Instance.new('LocalScript', f_2)
 
 	local Button = script.Parent
@@ -1790,14 +1615,14 @@ local function KUBHK_fake_script() -- f_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(KUBHK_fake_script)()
-local function SXKT_fake_script() -- TextLabel_5.LocalScript 
+coroutine.wrap(FNXZFU_fake_script)()
+local function BVXN_fake_script() -- TextLabel_5.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel_5)
 
 	script.Parent.Text = "Hello ".. game.Players.LocalPlayer.DisplayName .."!"
 end
-coroutine.wrap(SXKT_fake_script)()
-local function UXZUZZ_fake_script() -- f_3.LocalScript 
+coroutine.wrap(BVXN_fake_script)()
+local function BGIKN_fake_script() -- f_3.LocalScript 
 	local script = Instance.new('LocalScript', f_3)
 
 	local Button = script.Parent
@@ -1817,8 +1642,8 @@ local function UXZUZZ_fake_script() -- f_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(UXZUZZ_fake_script)()
-local function ROFIFNJ_fake_script() -- Top.LocalScript 
+coroutine.wrap(BGIKN_fake_script)()
+local function QLRKSK_fake_script() -- Top.LocalScript 
 	local script = Instance.new('LocalScript', Top)
 
 	local localplayer = game:GetService("Players").LocalPlayer
@@ -1919,8 +1744,8 @@ local function ROFIFNJ_fake_script() -- Top.LocalScript
 	end)
 	
 end
-coroutine.wrap(ROFIFNJ_fake_script)()
-local function OSCW_fake_script() -- Switch1_2.LocalScript 
+coroutine.wrap(QLRKSK_fake_script)()
+local function OVZHY_fake_script() -- Switch1_2.LocalScript 
 	local script = Instance.new('LocalScript', Switch1_2)
 
 	local toggle = script.Parent
@@ -2025,14 +1850,14 @@ local function OSCW_fake_script() -- Switch1_2.LocalScript
 		end
 	end)
 end
-coroutine.wrap(OSCW_fake_script)()
-local function UADAXBW_fake_script() -- Slider1Background_2.LocalScript 
+coroutine.wrap(OVZHY_fake_script)()
+local function PNEHFQ_fake_script() -- Slider1Background_2.LocalScript 
 	local script = Instance.new('LocalScript', Slider1Background_2)
 
 	
 end
-coroutine.wrap(UADAXBW_fake_script)()
-local function OZND_fake_script() -- SliderThing_2.LocalScript 
+coroutine.wrap(PNEHFQ_fake_script)()
+local function VVOI_fake_script() -- SliderThing_2.LocalScript 
 	local script = Instance.new('LocalScript', SliderThing_2)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -2121,8 +1946,8 @@ local function OZND_fake_script() -- SliderThing_2.LocalScript
 		holding = false
 	end)
 end
-coroutine.wrap(OZND_fake_script)()
-local function QKSWS_fake_script() -- Switch1_3.LocalScript 
+coroutine.wrap(VVOI_fake_script)()
+local function YITUTIY_fake_script() -- Switch1_3.LocalScript 
 	local script = Instance.new('LocalScript', Switch1_3)
 
 	local toggle = script.Parent
@@ -2254,8 +2079,8 @@ local function QKSWS_fake_script() -- Switch1_3.LocalScript
 		end
 	end)
 end
-coroutine.wrap(QKSWS_fake_script)()
-local function HKGHOAA_fake_script() -- Switch1_4.LocalScript 
+coroutine.wrap(YITUTIY_fake_script)()
+local function CQTXV_fake_script() -- Switch1_4.LocalScript 
 	local script = Instance.new('LocalScript', Switch1_4)
 
 	local toggle = script.Parent
@@ -2340,8 +2165,8 @@ local function HKGHOAA_fake_script() -- Switch1_4.LocalScript
 		end
 	end)
 end
-coroutine.wrap(HKGHOAA_fake_script)()
-local function UAIRRUC_fake_script() -- TextButton_3.LocalScript 
+coroutine.wrap(CQTXV_fake_script)()
+local function OKQWGCH_fake_script() -- TextButton_3.LocalScript 
 	local script = Instance.new('LocalScript', TextButton_3)
 
 	local characters = {
@@ -2375,14 +2200,14 @@ local function UAIRRUC_fake_script() -- TextButton_3.LocalScript
 		end)
 	end)
 end
-coroutine.wrap(UAIRRUC_fake_script)()
-local function UBLQMP_fake_script() -- Walkspeed.LocalScript 
+coroutine.wrap(OKQWGCH_fake_script)()
+local function LZZWB_fake_script() -- Walkspeed.LocalScript 
 	local script = Instance.new('LocalScript', Walkspeed)
 
 	
 end
-coroutine.wrap(UBLQMP_fake_script)()
-local function BHYCN_fake_script() -- SliderThing_3.LocalScript 
+coroutine.wrap(LZZWB_fake_script)()
+local function TIAXLQR_fake_script() -- SliderThing_3.LocalScript 
 	local script = Instance.new('LocalScript', SliderThing_3)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -2475,9 +2300,9 @@ local function BHYCN_fake_script() -- SliderThing_3.LocalScript
 		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = slider.Parent.Slider.Amount.Text
 	end)
 end
-coroutine.wrap(BHYCN_fake_script)()
+coroutine.wrap(TIAXLQR_fake_script)()
 -- VisualsTab_2.SliderScript is disabled.
-local function EPCFUCG_fake_script() -- Switch1_5.LocalScript 
+local function NUNO_fake_script() -- Switch1_5.LocalScript 
 	local script = Instance.new('LocalScript', Switch1_5)
 
 	local toggle = script.Parent
@@ -2601,37 +2426,4 @@ local function EPCFUCG_fake_script() -- Switch1_5.LocalScript
 		end
 	end)
 end
-coroutine.wrap(EPCFUCG_fake_script)()
-
-			end				
-
-end
-
-    local scriptIdentifier = debug.info(Targets[1], "s")
-
-    -- Hook the debug.info function to return the spoofed script path
-    Hooks.debug_info = hookfunction(debug.info, LPH_NO_VIRTUALIZE(function(...)
-        local args = {...}
-        if not checkcaller() and AreTablesEqual(args, {2, "s"}) then
-            return scriptIdentifier
-        end
-        return Hooks.debug_info(...)
-    end))
-
-    -- Neutralize the identified functions by hooking them to empty functions
-    for i = 1, 3 do
-        hookfunction(Targets[i], LPH_NO_VIRTUALIZE(function() end))
-    end
-
-    -- Hook the call metamethod to allow only whitelisted calls
-    Hooks.call = hookfunction(Targets.call, LPH_NO_VIRTUALIZE(function(self, ...)
-        local callArgs = {...}
-        for _, whitelist in ipairs(Whitelisted) do
-            if AreTablesEqual(whitelist, callArgs) then
-                return Hooks.call(self, ...)
-            end
-        end
-    end))
-
-    task.wait(3)
-end)()
+coroutine.wrap(NUNO_fake_script)()
